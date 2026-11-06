@@ -1,0 +1,22 @@
+{
+  "_format": "A — STORY WALK (default). Selfie/0.5x talking clips at locations + B-roll inserts. 35–75 s, avg shot 1.5–2.5 s.",
+  "_how": "Copy to projects/<reel>/edit.json. Replace src/in/out. One clip entry per sentence (jump cut). Every 3–5 talking clips, lay 1–2 B-roll overlays on a talking clip with \"broll\" so her voice keeps running (L-cut). Standalone B-roll clips (audio:false) are silent apart from music.",
+  "name": "REEL-NAME",
+  "format": "A",
+  "grade": "natural",
+  "clips": [
+    {"src": "../../inbox/REEL/HOOK.MOV", "in": 0.0, "out": 1.4, "_purpose": "HOOK: strongest line, face close"},
+    {"src": "../../inbox/REEL/TALK1.MOV", "in": 0.0, "out": 2.2, "_purpose": "context: where are we",
+     "broll": [{"src": "../../inbox/REEL/BROLL1.MOV", "in": 0.0, "at": 0.9, "dur": 1.2}]},
+    {"src": "../../inbox/REEL/TALK1.MOV", "in": 2.6, "out": 4.4, "punch": 1.12, "_purpose": "next sentence, punch-in hides the jump"},
+    {"src": "../../inbox/REEL/TALK2.MOV", "in": 0.0, "out": 2.0, "_purpose": "new location / outfit is fine"},
+    {"src": "../../inbox/REEL/BROLL2.MOV", "in": 0.0, "out": 1.0, "audio": false},
+    {"src": "../../inbox/REEL/TALK2.MOV", "in": 2.3, "out": 4.0, "punch": 1.1, "_purpose": "PAYOFF line, face back in frame"}
+  ],
+  "captions": {"style": "serif", "words": "words.json"},
+  "titles": [
+    {"type": "chapter", "text": "PLACE", "script": "mein", "start": 1.4, "end": 3.2},
+    {"type": "marker", "text": "fact one\nfact two", "start": 0.3, "end": 2.6, "y": 300, "rotate": -3}
+  ],
+  "music": {"src": "../../music/TRACK.mp3", "start": 0, "gain_db": -18, "duck": true}
+}

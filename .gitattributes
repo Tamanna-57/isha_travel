@@ -1,0 +1,18 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.png binary
+*.jpg binary
+*.ttf binary
+*.otf binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.cube binary
+*.onnx binary
+*.npy binary
+inbox/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+inbox/**/*.MOV filter=lfs diff=lfs merge=lfs -text
+inbox/**/*.mov filter=lfs diff=lfs merge=lfs -text
+inbox/**/*.MP4 filter=lfs diff=lfs merge=lfs -text

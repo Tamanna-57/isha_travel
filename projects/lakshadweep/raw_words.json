@@ -1,0 +1,337 @@
+[
+ {
+  "text": "A",
+  "start": 0.09,
+  "end": 0.11
+ },
+ {
+  "text": "friend's",
+  "start": 0.11,
+  "end": 1.05
+ },
+ {
+  "text": "message",
+  "start": 1.05,
+  "end": 1.76
+ },
+ {
+  "text": "is",
+  "start": 1.76,
+  "end": 2.0
+ },
+ {
+  "text": "that",
+  "start": 2.0,
+  "end": 2.07
+ },
+ {
+  "text": "Laxmadeep",
+  "start": 2.07,
+  "end": 2.2
+ },
+ {
+  "text": "will",
+  "start": 2.2,
+  "end": 2.27
+ },
+ {
+  "text": "go.",
+  "start": 2.27,
+  "end": 2.4
+ },
+ {
+  "text": "land",
+  "start": 9.982,
+  "end": 10.262
+ },
+ {
+  "text": "on",
+  "start": 10.262,
+  "end": 10.402
+ },
+ {
+  "text": "a",
+  "start": 10.402,
+  "end": 10.472
+ },
+ {
+  "text": "small",
+  "start": 10.472,
+  "end": 10.832
+ },
+ {
+  "text": "island",
+  "start": 10.832,
+  "end": 11.262
+ },
+ {
+  "text": "where",
+  "start": 11.262,
+  "end": 11.622
+ },
+ {
+  "text": "day",
+  "start": 11.622,
+  "end": 11.832
+ },
+ {
+  "text": "one",
+  "start": 11.832,
+  "end": 12.042
+ },
+ {
+  "text": "is",
+  "start": 12.042,
+  "end": 12.222
+ },
+ {
+  "text": "just",
+  "start": 12.222,
+  "end": 12.622
+ },
+ {
+  "text": "beach",
+  "start": 12.622,
+  "end": 13.062
+ },
+ {
+  "text": "breeze",
+  "start": 13.062,
+  "end": 13.572
+ },
+ {
+  "text": "water",
+  "start": 13.572,
+  "end": 14.652
+ },
+ {
+  "text": "and",
+  "start": 14.652,
+  "end": 14.662
+ },
+ {
+  "text": "friends",
+  "start": 14.662,
+  "end": 15.102
+ },
+ {
+  "text": "kesa",
+  "start": 15.102,
+  "end": 17.782
+ },
+ {
+  "text": "bohot",
+  "start": 17.782,
+  "end": 17.812
+ },
+ {
+  "text": "saani",
+  "start": 17.812,
+  "end": 17.842
+ },
+ {
+  "text": "must",
+  "start": 17.842,
+  "end": 17.872
+ },
+ {
+  "text": "and",
+  "start": 17.872,
+  "end": 17.912
+ },
+ {
+  "text": "then",
+  "start": 17.912,
+  "end": 17.922
+ },
+ {
+  "text": "comes",
+  "start": 17.922,
+  "end": 17.962
+ },
+ {
+  "text": "day",
+  "start": 17.962,
+  "end": 17.982
+ },
+ {
+  "text": "two",
+  "start": 17.982,
+  "end": 18.062
+ },
+ {
+  "text": "masks",
+  "start": 18.062,
+  "end": 18.992
+ },
+ {
+  "text": "on",
+  "start": 18.992,
+  "end": 19.272
+ },
+ {
+  "text": "regulators",
+  "start": 19.272,
+  "end": 22.222
+ },
+ {
+  "text": "in",
+  "start": 19.967,
+  "end": 21.967
+ },
+ {
+  "text": "all",
+  "start": 21.967,
+  "end": 21.967
+ },
+ {
+  "text": "set",
+  "start": 21.967,
+  "end": 21.967
+ },
+ {
+  "text": "for",
+  "start": 21.967,
+  "end": 21.967
+ },
+ {
+  "text": "a",
+  "start": 21.967,
+  "end": 21.967
+ },
+ {
+  "text": "first",
+  "start": 21.967,
+  "end": 21.967
+ },
+ {
+  "text": "time.",
+  "start": 21.967,
+  "end": 21.967
+ },
+ {
+  "text": "For",
+  "start": 21.967,
+  "end": 22.207
+ },
+ {
+  "text": "the",
+  "start": 22.207,
+  "end": 22.527
+ },
+ {
+  "text": "first",
+  "start": 22.527,
+  "end": 22.837
+ },
+ {
+  "text": "time",
+  "start": 22.837,
+  "end": 23.147
+ },
+ {
+  "text": "in",
+  "start": 23.147,
+  "end": 23.297
+ },
+ {
+  "text": "your",
+  "start": 23.297,
+  "end": 23.817
+ },
+ {
+  "text": "life,",
+  "start": 23.817,
+  "end": 24.047
+ },
+ {
+  "text": "you",
+  "start": 24.047,
+  "end": 24.187
+ },
+ {
+  "text": "breathe",
+  "start": 24.187,
+  "end": 24.567
+ },
+ {
+  "text": "underwater.",
+  "start": 24.567,
+  "end": 24.967
+ },
+ {
+  "text": "Just",
+  "start": 24.967,
+  "end": 25.527
+ },
+ {
+  "text": "corals,",
+  "start": 25.527,
+  "end": 25.947
+ },
+ {
+  "text": "colorful",
+  "start": 25.947,
+  "end": 26.817
+ },
+ {
+  "text": "fish",
+  "start": 26.817,
+  "end": 26.967
+ },
+ {
+  "text": "and",
+  "start": 26.967,
+  "end": 27.967
+ },
+ {
+  "text": "a",
+  "start": 27.967,
+  "end": 28.047
+ },
+ {
+  "text": "silence",
+  "start": 28.047,
+  "end": 28.627
+ },
+ {
+  "text": "that",
+  "start": 28.627,
+  "end": 28.967
+ },
+ {
+  "text": "you",
+  "start": 28.967,
+  "end": 29.237
+ },
+ {
+  "text": "never",
+  "start": 29.237,
+  "end": 29.677
+ },
+ {
+  "text": "get",
+  "start": 29.677,
+  "end": 29.967
+ },
+ {
+  "text": "to",
+  "start": 29.967,
+  "end": 29.967
+ },
+ {
+  "text": "see.",
+  "start": 29.967,
+  "end": 29.967
+ },
+ {
+  "text": "[MUSIC",
+  "start": 29.951,
+  "end": 31.381
+ },
+ {
+  "text": "PLAYING]",
+  "start": 31.381,
+  "end": 33.311
+ }
+]

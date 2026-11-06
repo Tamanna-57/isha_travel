@@ -1,0 +1,37 @@
+# ---- Heavy media: share via Google Drive, not git ----
+# Raw clips from Isha
+inbox/*
+!inbox/.gitkeep
+
+# Render intermediates and finished reels
+projects/*/build/
+projects/*/out/
+
+# Whisper model (465 MB) - download it, see README
+models/*.bin
+
+# Video / big audio anywhere
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.m4v
+
+# Duplicate Wikimedia downloads with tracking params in the filename
+*utm_source=*
+
+# Generated zip of the brand kit (rebuild from brand/ + fonts/ + luts/)
+share/*.zip
+
+# ---- Python / OS junk ----
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# ---- Raw clips we DO share (stored with Git LFS, see .gitattributes) ----
+!inbox/lakshadweep_part2/
+!inbox/lakshadweep_part2/*

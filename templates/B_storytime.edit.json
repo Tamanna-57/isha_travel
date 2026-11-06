@@ -1,0 +1,21 @@
+{
+  "_format": "B — SIT-DOWN STORYTIME. Isha at desk/mic + travel B-roll (>= 40%). 40–60 s, avg shot 1.1–2 s.",
+  "_how": "Cold open = 1–2 s of the most dramatic footage LETTERBOXED + a 'What happened?' caption. Name a place -> map card. Grade desk clips 'indoor', travel clips 'natural'.",
+  "name": "REEL-NAME",
+  "format": "B",
+  "grade": "natural",
+  "clips": [
+    {"src": "../../inbox/REEL/ACTION.MOV", "in": 3.0, "out": 4.8, "frame": "letterbox", "_purpose": "COLD OPEN (letterboxed action)"},
+    {"src": "../../inbox/REEL/DESK.MOV", "in": 0.0, "out": 2.6, "grade": "indoor", "_purpose": "'So...' setup"},
+    {"src": "../../inbox/REEL/MAP.mp4", "in": 0.0, "out": 2.4, "frame": "card", "audio": false, "_purpose": "globe zoom to the place (Google Earth Studio export)"},
+    {"src": "../../inbox/REEL/DESK.MOV", "in": 3.0, "out": 5.2, "grade": "indoor", "punch": 1.1},
+    {"src": "../../inbox/REEL/BROLL1.MOV", "in": 0.0, "out": 1.6, "audio": false},
+    {"src": "../../inbox/REEL/BROLL2.MOV", "in": 0.0, "out": 1.4, "audio": false},
+    {"src": "../../inbox/REEL/DESK.MOV", "in": 5.6, "out": 8.0, "grade": "indoor", "_purpose": "reflective ending, smile"}
+  ],
+  "captions": {"style": "sans", "words": "words.json"},
+  "titles": [
+    {"type": "chapter", "text": "PLACE", "script": "diaries", "start": 4.0, "end": 6.0, "y": 380}
+  ],
+  "music": {"src": "../../music/TRACK.mp3", "start": 0, "gain_db": -19, "duck": true}
+}

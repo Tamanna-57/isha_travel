@@ -1,0 +1,22 @@
+{
+  "_format": "C — CINEMATIC / MOOD. B-roll carried by one song, cut on the beat. 12–35 s, avg shot 0.8–1.5 s.",
+  "_how": "Run `isha.py beats music/TRACK.mp3` and set each clip length to 1 or 2 beats. Variants: letterbox_wide for every clip (bary look), one unbroken rotate:90 take (ronnie look), or captions style 'typewriter' + route map (sailing look).",
+  "name": "REEL-NAME",
+  "format": "C",
+  "grade": "film",
+  "clips": [
+    {"src": "../../inbox/REEL/CONCEPT.MOV", "in": 0.0, "out": 1.5, "_purpose": "concept shot (doorway in a field / silhouette)"},
+    {"src": "../../inbox/REEL/DRONE1.MOV", "in": 2.0, "out": 3.0, "audio": false},
+    {"src": "../../inbox/REEL/DRONE2.MOV", "in": 1.0, "out": 2.0, "audio": false},
+    {"src": "../../inbox/REEL/DRONE3.MOV", "in": 0.5, "out": 1.5, "audio": false},
+    {"src": "../../inbox/REEL/WIDE.MOV", "in": 0.0, "out": 1.0, "audio": false, "transition": "flash", "transition_dur": 0.1, "_purpose": "the ONE special transition, on the drop"},
+    {"src": "../../inbox/REEL/HOLD.MOV", "in": 0.0, "out": 2.5, "audio": false, "_purpose": "hold the last wide shot"}
+  ],
+  "captions": {"style": "serif", "words": "words.json", "enabled": false},
+  "titles": [
+    {"type": "pill", "text": "This *country* is 'Sukoon'", "start": 0.0, "end": 3.0},
+    {"type": "place", "text": "PLACE", "start": 1.5, "end": 4.5}
+  ],
+  "music": {"src": "../../music/TRACK.mp3", "start": 0, "gain_db": -6, "duck": false},
+  "voice": {"clean": false}
+}

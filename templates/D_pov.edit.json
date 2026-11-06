@@ -1,0 +1,16 @@
+{
+  "_format": "D — POV / THRILL. One continuous POV take, 0–3 cuts, the visual is the story. 10–25 s.",
+  "_how": "Hook line on top for the first 3–4 s. No word captions. Add the trending Bollywood sound inside Instagram (leave music out here if we don't own it).",
+  "name": "REEL-NAME",
+  "format": "D",
+  "grade": "natural",
+  "clips": [
+    {"src": "../../inbox/REEL/POV.MOV", "in": 0.0, "out": 9.0, "_purpose": "the drop / the walk"},
+    {"src": "../../inbox/REEL/SELFIE.MOV", "in": 0.0, "out": 2.5, "_purpose": "face reaction"},
+    {"src": "../../inbox/REEL/POV.MOV", "in": 9.0, "out": 16.0}
+  ],
+  "captions": {"style": "serif", "words": "words.json", "enabled": false},
+  "titles": [
+    {"type": "hook", "text": "One wrong move and you'll meet the creator", "start": 0.0, "end": 4.0}
+  ]
+}
