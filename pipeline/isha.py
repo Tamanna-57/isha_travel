@@ -93,7 +93,11 @@ def frac(s):
 def clip_info(path):
     j = ffprobe(path)
     v = next((s for s in j["streams"] if s["codec_type"] == "video"), None)
-    a = next((s for s in j["streams"] if s["codec_type"] == "audio"), None)
+    auds = [s for s in j["streams"] if s["codec_type"] == "audio"]
+    # iPhone 16+ MOVs carry an Apple spatial-audio track (APAC) first, which ffmpeg can't decode: use the first
+    # decodable track (the normal AAC one) and remember its position among the audio streams
+    a_idx = next((k for k, s in enumerate(auds) if s.get("codec_name") not in (None, "", "unknown", "none")), None)
+    a = auds[a_idx] if a_idx is not None else None
     dur = float(j["format"].get("duration", 0) or 0)
     info = {"file": str(path), "duration": round(dur, 3), "has_audio": a is not None}
     if v:
@@ -115,7 +119,7 @@ def clip_info(path):
             "hdr": trc in ("arib-std-b67", "smpte2084"),
         })
     if a:
-        info.update({"audio_channels": a.get("channels"), "audio_rate": a.get("sample_rate")})
+        info.update({"audio_channels": a.get("channels"), "audio_rate": a.get("sample_rate"), "audio_index": a_idx})
     return info
 
 def ass_time(t):
@@ -407,7 +411,7 @@ def build_segment(clip, i, proj, build, default_grade):
         if speed != 1.0:
             af.append(atempo_chain(speed))
         af.append(f"volume={clip.get('gain_db', 0)}dB")
-        fc += f";[0:a]{','.join(af)},apad[a]"
+        fc += f";[0:a:{info.get('audio_index', 0)}]{','.join(af)},apad[a]"
     else:
         fc += ";anullsrc=r=48000:cl=stereo[a]"
     run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",

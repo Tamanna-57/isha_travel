@@ -1,0 +1,235 @@
+{
+  "_note": "Bhai Dooj 2026 (R3 'To all the bhais I found on the road'), first draft. A/B hybrid: Isha at home with the tika thali, jump cuts on her sentences, her own Lakshadweep dive clips + safari photos as L-cut B-roll. Order: prep.py -> render --stage assemble -> align.py -> render --stage finish.",
+  "name": "bhai_dooj",
+  "format": "B",
+  "grade": "natural",
+  "clips": [
+    {
+      "src": "../../bhai dooj/IMG_2418.MOV",
+      "in": 0.0,
+      "out": 1.04,
+      "grade": "indoor",
+      "_say": "Aaj Bhai Dooj,"
+    },
+    {
+      "src": "../../bhai dooj/IMG_2418.MOV",
+      "in": 1.24,
+      "out": 3.9,
+      "grade": "indoor",
+      "punch": 1.1,
+      "_say": "aur mere paas ek nahi, bahut saare bhai."
+    },
+    {
+      "src": "../../bhai dooj/IMG_2419.MOV",
+      "in": 0.5,
+      "out": 2.74,
+      "grade": "indoor",
+      "_say": "Aur mujhe ye sab travel karte hue mile.",
+      "broll": [
+        {
+          "src": "../../inbox/lakshadweep_part2/IMG_3978.MOV",
+          "in": 0.5,
+          "at": 0.9,
+          "dur": 1.34,
+          "grade": "natural"
+        }
+      ]
+    },
+    {
+      "src": "../../bhai dooj/IMG_2420.MOV",
+      "in": 0.1,
+      "out": 3.64,
+      "grade": "indoor",
+      "punch": 1.08,
+      "_say": "Mere woh bhai, jinhone mujhe pahadon mein ekdum safe rakha hai."
+    },
+    {
+      "src": "../../bhai dooj/IMG_2421.MOV",
+      "in": 0.18,
+      "out": 1.46,
+      "grade": "indoor",
+      "_say": "Aur mere scuba instructors,",
+      "broll": [
+        {
+          "src": "../../inbox/lakshadweep_part2/IMG_3971.MOV",
+          "in": 0.3,
+          "at": 0.4,
+          "dur": 0.88,
+          "grade": "natural"
+        }
+      ]
+    },
+    {
+      "src": "../../bhai dooj/IMG_2421.MOV",
+      "in": 1.5,
+      "out": 4.52,
+      "grade": "indoor",
+      "punch": 1.08,
+      "_say": "jinhone mujhe 12 meter underwater",
+      "broll": [
+        {
+          "src": "../../inbox/lakshadweep_part2/IMG_3976.MP4",
+          "in": 11.3,
+          "at": 1.0,
+          "dur": 2.02,
+          "grade": "natural"
+        }
+      ]
+    },
+    {
+      "src": "../../bhai dooj/IMG_2421.MOV",
+      "in": 4.66,
+      "out": 5.74,
+      "grade": "indoor",
+      "_say": "kuch nahi hone diya."
+    },
+    {
+      "src": "../../bhai dooj/IMG_2422.MOV",
+      "in": 0.07,
+      "out": 1.4,
+      "grade": "indoor",
+      "punch": 1.1,
+      "_say": "Aur mere safari guide,"
+    },
+    {
+      "src": "../../bhai dooj/IMG_2422.MOV",
+      "in": 1.64,
+      "out": 6.12,
+      "grade": "indoor",
+      "_say": "jinhone jungle ke beech-o-beech mujhe bahut crazy experiences karwaye.",
+      "broll": [
+        {
+          "src": "build/broll/jeep_tiger.mp4",
+          "in": 0.0,
+          "at": 0.0,
+          "dur": 2.0,
+          "grade": "none"
+        },
+        {
+          "src": "build/broll/tiger_road.mp4",
+          "in": 0.0,
+          "at": 2.95,
+          "dur": 1.53,
+          "grade": "none"
+        }
+      ]
+    },
+    {
+      "src": "../../bhai dooj/IMG_2423.MOV",
+      "in": 0.16,
+      "out": 4.2,
+      "grade": "indoor",
+      "punch": 1.08,
+      "_say": "Aur aise bahut saare log, jinhone mujhe apni behen maankar, aise",
+      "broll": [
+        {
+          "src": "../../inbox/lakshadweep_part2/IMG_3979.MP4",
+          "in": 0.4,
+          "at": 0.0,
+          "dur": 1.5,
+          "grade": "natural"
+        }
+      ]
+    },
+    {
+      "src": "../../bhai dooj/IMG_2423.MOV",
+      "in": 4.34,
+      "out": 5.68,
+      "grade": "indoor",
+      "_say": "crazy jagahon pe",
+      "broll": [
+        {
+          "src": "../../inbox/lakshadweep_part2/IMG_3981.MOV",
+          "in": 12.0,
+          "at": 0.0,
+          "dur": 1.34,
+          "grade": "natural"
+        }
+      ]
+    },
+    {
+      "src": "../../bhai dooj/IMG_2423.MOV",
+      "in": 6.02,
+      "out": 7.1,
+      "grade": "indoor",
+      "_say": "kuch nahi hone diya."
+    },
+    {
+      "src": "../../bhai dooj/IMG_2424.MOV",
+      "in": 1.7,
+      "out": 4.86,
+      "grade": "indoor",
+      "punch": 1.1,
+      "_say": "Thank you for keeping me safe when I was far away from home. (the first 'Thank you.' is cut for length)"
+    },
+    {
+      "src": "../../bhai dooj/IMG_2425.MOV",
+      "in": 0.92,
+      "out": 2.23,
+      "grade": "indoor",
+      "_say": "Happy Bhai Dooj! + tika to the lens"
+    },
+    {
+      "src": "../../bhai dooj/IMG_2425.MOV",
+      "in": 1.95,
+      "out": 2.23,
+      "grade": "indoor",
+      "speed": 0.25,
+      "audio": false,
+      "_say": "(end card hold: tika hand over the lens, slowed)"
+    }
+  ],
+  "captions": {
+    "style": "karaoke",
+    "words": "words.json"
+  },
+  "titles": [
+    {
+      "type": "chapter",
+      "text": "Happy Bhai Dooj",
+      "script": "to my road bhais",
+      "start": 0.0,
+      "end": 2.6,
+      "y": 330,
+      "color": "sindoor"
+    },
+    {
+      "type": "pill",
+      "text": "My *scuba* instructors",
+      "start": 9.88,
+      "end": 13.78,
+      "y": 1060,
+      "_label": "one label per person; add the real name when Isha confirms it"
+    },
+    {
+      "type": "pill",
+      "text": "My *safari* guide",
+      "start": 14.95,
+      "end": 20.67,
+      "y": 1060,
+      "_label": "one label per person; add the real name when Isha confirms it"
+    },
+    {
+      "type": "pill",
+      "text": "*Travel* friends · Lakshadweep",
+      "start": 20.67,
+      "end": 22.17,
+      "y": 1060,
+      "_label": "one label per person; add the real name when Isha confirms it"
+    },
+    {
+      "type": "hook",
+      "text": "TAG YOUR ROAD WALA BHAI",
+      "start": 31.28,
+      "end": 32.72,
+      "y": 820,
+      "_timing": "set by align.py: from the end of 'Dooj!' to the end"
+    }
+  ],
+  "music": {
+    "src": "build/music.wav",
+    "start": 0,
+    "gain_db": -17,
+    "duck": true
+  }
+}

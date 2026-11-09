@@ -1,0 +1,468 @@
+[
+ {
+  "text": "Aaj",
+  "start": 0.05,
+  "end": 0.29
+ },
+ {
+  "text": "Bhai",
+  "start": 0.31,
+  "end": 0.6,
+  "emph": true
+ },
+ {
+  "text": "Dooj,",
+  "start": 0.62,
+  "end": 0.96
+ },
+ {
+  "text": "aur",
+  "start": 1.1,
+  "end": 1.21
+ },
+ {
+  "text": "mere",
+  "start": 1.23,
+  "end": 1.69
+ },
+ {
+  "text": "paas",
+  "start": 1.71,
+  "end": 1.98
+ },
+ {
+  "text": "ek",
+  "start": 2.0,
+  "end": 2.17
+ },
+ {
+  "text": "nahi,",
+  "start": 2.19,
+  "end": 2.62
+ },
+ {
+  "text": "bahut",
+  "start": 2.64,
+  "end": 2.94
+ },
+ {
+  "text": "saare",
+  "start": 2.96,
+  "end": 3.3
+ },
+ {
+  "text": "bhai.",
+  "start": 3.32,
+  "end": 3.6,
+  "emph": true
+ },
+ {
+  "text": "Aur",
+  "start": 3.76,
+  "end": 3.96
+ },
+ {
+  "text": "mujhe",
+  "start": 3.98,
+  "end": 4.27
+ },
+ {
+  "text": "ye",
+  "start": 4.29,
+  "end": 4.41
+ },
+ {
+  "text": "sab",
+  "start": 4.43,
+  "end": 4.65
+ },
+ {
+  "text": "travel",
+  "start": 4.67,
+  "end": 4.94,
+  "emph": true
+ },
+ {
+  "text": "karte",
+  "start": 4.96,
+  "end": 5.41
+ },
+ {
+  "text": "hue",
+  "start": 5.43,
+  "end": 5.51
+ },
+ {
+  "text": "mile.",
+  "start": 5.52,
+  "end": 5.85
+ },
+ {
+  "text": "Mere",
+  "start": 6.01,
+  "end": 6.22
+ },
+ {
+  "text": "woh",
+  "start": 6.24,
+  "end": 6.46
+ },
+ {
+  "text": "bhai,",
+  "start": 6.48,
+  "end": 6.62
+ },
+ {
+  "text": "jinhone",
+  "start": 6.64,
+  "end": 7.21
+ },
+ {
+  "text": "mujhe",
+  "start": 7.23,
+  "end": 7.51
+ },
+ {
+  "text": "pahadon",
+  "start": 7.53,
+  "end": 7.9
+ },
+ {
+  "text": "mein",
+  "start": 7.92,
+  "end": 8.2
+ },
+ {
+  "text": "ekdum",
+  "start": 8.22,
+  "end": 8.5
+ },
+ {
+  "text": "safe",
+  "start": 8.52,
+  "end": 8.79,
+  "emph": true
+ },
+ {
+  "text": "rakha",
+  "start": 8.81,
+  "end": 9.18
+ },
+ {
+  "text": "hai.",
+  "start": 9.2,
+  "end": 9.38
+ },
+ {
+  "text": "Aur",
+  "start": 9.55,
+  "end": 9.64
+ },
+ {
+  "text": "mere",
+  "start": 9.66,
+  "end": 9.94
+ },
+ {
+  "text": "scuba",
+  "start": 9.96,
+  "end": 10.23,
+  "emph": true
+ },
+ {
+  "text": "instructors,",
+  "start": 10.25,
+  "end": 10.68
+ },
+ {
+  "text": "jinhone",
+  "start": 10.8,
+  "end": 11.67
+ },
+ {
+  "text": "mujhe",
+  "start": 11.69,
+  "end": 12.12
+ },
+ {
+  "text": "12",
+  "start": 12.14,
+  "end": 12.4,
+  "emph": true
+ },
+ {
+  "text": "meter",
+  "start": 12.42,
+  "end": 12.84
+ },
+ {
+  "text": "underwater",
+  "start": 12.86,
+  "end": 13.69,
+  "emph": true
+ },
+ {
+  "text": "kuch",
+  "start": 13.85,
+  "end": 14.03
+ },
+ {
+  "text": "nahi",
+  "start": 14.05,
+  "end": 14.26
+ },
+ {
+  "text": "hone",
+  "start": 14.28,
+  "end": 14.57
+ },
+ {
+  "text": "diya.",
+  "start": 14.59,
+  "end": 14.74
+ },
+ {
+  "text": "Aur",
+  "start": 14.93,
+  "end": 15.04
+ },
+ {
+  "text": "mere",
+  "start": 15.06,
+  "end": 15.36
+ },
+ {
+  "text": "safari",
+  "start": 15.38,
+  "end": 15.88,
+  "emph": true
+ },
+ {
+  "text": "guide,",
+  "start": 15.9,
+  "end": 16.11
+ },
+ {
+  "text": "jinhone",
+  "start": 16.27,
+  "end": 16.77
+ },
+ {
+  "text": "jungle",
+  "start": 16.79,
+  "end": 17.29,
+  "emph": true
+ },
+ {
+  "text": "ke",
+  "start": 17.31,
+  "end": 17.4
+ },
+ {
+  "text": "beech-o-beech",
+  "start": 17.42,
+  "end": 18.24
+ },
+ {
+  "text": "mujhe",
+  "start": 18.26,
+  "end": 18.65
+ },
+ {
+  "text": "bahut",
+  "start": 18.67,
+  "end": 19.12
+ },
+ {
+  "text": "crazy",
+  "start": 19.26,
+  "end": 19.45,
+  "emph": true
+ },
+ {
+  "text": "experiences",
+  "start": 19.47,
+  "end": 20.13
+ },
+ {
+  "text": "karwaye.",
+  "start": 20.15,
+  "end": 20.59
+ },
+ {
+  "text": "Aur",
+  "start": 20.75,
+  "end": 20.97
+ },
+ {
+  "text": "aise",
+  "start": 20.99,
+  "end": 21.19
+ },
+ {
+  "text": "bahut",
+  "start": 21.21,
+  "end": 21.58
+ },
+ {
+  "text": "saare",
+  "start": 21.6,
+  "end": 22.02
+ },
+ {
+  "text": "log,",
+  "start": 22.04,
+  "end": 22.24
+ },
+ {
+  "text": "jinhone",
+  "start": 22.26,
+  "end": 22.63
+ },
+ {
+  "text": "mujhe",
+  "start": 22.65,
+  "end": 23.09
+ },
+ {
+  "text": "apni",
+  "start": 23.11,
+  "end": 23.52
+ },
+ {
+  "text": "behen",
+  "start": 23.54,
+  "end": 23.89,
+  "emph": true
+ },
+ {
+  "text": "maankar,",
+  "start": 23.91,
+  "end": 24.31
+ },
+ {
+  "text": "aise",
+  "start": 24.33,
+  "end": 24.62
+ },
+ {
+  "text": "crazy",
+  "start": 24.78,
+  "end": 25.1,
+  "emph": true
+ },
+ {
+  "text": "jagahon",
+  "start": 25.12,
+  "end": 25.77
+ },
+ {
+  "text": "pe",
+  "start": 25.79,
+  "end": 25.98
+ },
+ {
+  "text": "kuch",
+  "start": 26.13,
+  "end": 26.26
+ },
+ {
+  "text": "nahi",
+  "start": 26.28,
+  "end": 26.62
+ },
+ {
+  "text": "hone",
+  "start": 26.64,
+  "end": 26.88
+ },
+ {
+  "text": "diya.",
+  "start": 26.9,
+  "end": 27.03
+ },
+ {
+  "text": "Thank",
+  "start": 27.21,
+  "end": 27.44
+ },
+ {
+  "text": "you",
+  "start": 27.46,
+  "end": 27.61
+ },
+ {
+  "text": "for",
+  "start": 27.63,
+  "end": 27.77
+ },
+ {
+  "text": "keeping",
+  "start": 27.79,
+  "end": 28.23
+ },
+ {
+  "text": "me",
+  "start": 28.25,
+  "end": 28.33
+ },
+ {
+  "text": "safe",
+  "start": 28.35,
+  "end": 28.58,
+  "emph": true
+ },
+ {
+  "text": "when",
+  "start": 28.6,
+  "end": 28.72
+ },
+ {
+  "text": "I",
+  "start": 28.74,
+  "end": 28.97
+ },
+ {
+  "text": "was",
+  "start": 28.99,
+  "end": 29.15
+ },
+ {
+  "text": "far",
+  "start": 29.17,
+  "end": 29.38
+ },
+ {
+  "text": "away",
+  "start": 29.4,
+  "end": 29.71
+ },
+ {
+  "text": "from",
+  "start": 29.73,
+  "end": 30.01
+ },
+ {
+  "text": "home.",
+  "start": 30.03,
+  "end": 30.16,
+  "emph": true
+ },
+ {
+  "text": "Happy",
+  "start": 30.39,
+  "end": 30.79
+ },
+ {
+  "text": "Bhai",
+  "start": 30.81,
+  "end": 30.89,
+  "emph": true
+ },
+ {
+  "text": "Dooj!",
+  "start": 30.9,
+  "end": 31.18,
+  "emph": true
+ }
+]
