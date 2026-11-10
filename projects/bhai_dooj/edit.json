@@ -78,11 +78,12 @@
       "_say": "jinhone mujhe 12 meter underwater",
       "broll": [
         {
-          "src": "../../inbox/lakshadweep_part2/IMG_3976.MP4",
-          "in": 11.3,
+          "src": "../../inbox/bhai_dooj_extra/UW_12m.MOV",
+          "in": 27.9,
           "at": 1.0,
           "dur": 2.02,
-          "grade": "natural"
+          "grade": "natural",
+          "_what": "instructor bringing Isha toward the camera at 12 m (client's clip)"
         }
       ]
     },
@@ -193,7 +194,8 @@
   "captions": {
     "style": "karaoke",
     "words": "words.json",
-    "until": 31.25
+    "until": 31.25,
+    "keywords": false
   },
   "titles": [
     {

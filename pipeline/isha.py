@@ -761,6 +761,8 @@ def title_events(titles, top_captions=False):
 def write_ass(path, words, cap_cfg, titles):
     evs = []
     style = cap_cfg.get("style", "serif")
+    if words and cap_cfg.get("keywords") is False:   # keep a reel's approved look: ignore keyword marks
+        words = [{k: v for k, v in w.items() if k != "emph"} for w in words]
     if words and cap_cfg.get("enabled", True):
         evs += caption_events(words, style, cap_cfg.get("y"), cap_cfg.get("until"),
                               cap_cfg.get("key_color"), cap_cfg.get("key_font"), cap_cfg.get("hook_until"))
