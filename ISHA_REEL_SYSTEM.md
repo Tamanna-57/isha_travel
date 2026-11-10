@@ -231,6 +231,7 @@ Long titles auto-shrink so they never exceed the 78% safe width on one line.
 | `natural` (default) | `Isha_Natural.cube` | daylight outdoor | +4% contrast, soft highlight roll-off, black floor lifted to ~8/255, +12 vibrance, tiny warm push in mids |
 | `golden` | `Isha_Golden.cube` | sunset / golden hour | natural + warmer mids/highlights, +6% saturation |
 | `indoor` | `Isha_Indoor.cube` | desk/home storytime under tungsten | tames orange (−5% red in highlights), keeps skin warm, brighter mids |
+| `lift` | (pipeline only) | already-good indoor phone footage | luma contrast +6%, +1% brightness, +3% saturation, fine sharpening; no warmth shift (Leave Mumbai reel) |
 | `film` | `Isha_Film.cube` (+ add ~5% grain) | format C cinematic | lifted blacks (p5 ~40), teal shadows, warm highlights, −8% saturation |
 
 **Order:** correct first (exposure, white balance, match shots to each other), then the look. Skin never goes orange or grey. Shot-to-shot brightness stays within about ±8 luma. iPhone HDR footage is tone-mapped to SDR first (the pipeline does it automatically; in CapCut turn HDR off on export).

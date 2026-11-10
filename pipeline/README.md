@@ -117,6 +117,8 @@ Paths are relative to the project folder. All times are in seconds. Title and ca
                          "x": 540, "y": 300, "rotate": -3, "color": "chalk", "size": 149, "strike": false}
   ],
   "music": { "src": "../../music/track.mp3", "start": 0, "gain_db": -18, "duck": true },
+  "sfx": [ {"src": "../../sfx_library/msg_soft_pop.mp3", "at": 37.4, "gain_db": -14} ],      // one-shots
+  "overlays": [ {"src": "build/chart.mov", "at": 21.7, "x": 121, "y": 146} ],             // alpha videos, under captions
   "voice": { "clean": true }
 }
 ```
@@ -145,6 +147,7 @@ Paths are relative to the project folder. All times are in seconds. Title and ca
 [{"text": "Japan", "start": 0.82, "end": 1.20, "emph": true}, {"text": "mein", "start": 1.20, "end": 1.45}]
 ```
 - Word-level, in timeline time.
+- `"br": true` on a word ends a caption page there; if any word has `br`, pages follow these breaks only.
 - `emph` forces the big/accent treatment. Without it the longest non-filler word per page is picked; Hinglish fillers like *hai, toh, ka, mein* are never emphasised.
 - Pagination never ends a page on *the/of/ka/ki* and never leaves a filler word alone.
 

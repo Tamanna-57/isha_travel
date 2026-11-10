@@ -320,6 +320,7 @@ GRADES = {
                "vibrance=intensity=0.10,colorbalance=rm=0.04:gm=0.01:bm=-0.04:rh=0.03:bh=-0.03"),
     "indoor": ("curves=master='0/0.03 0.5/0.52 1/0.96',colorbalance=rh=-0.05:bh=0.02:rm=-0.01,"
                "eq=saturation=0.96"),
+    "lift": "eq=contrast=1.06:brightness=0.01:saturation=1.03,unsharp=5:5:0.25:5:5:0",   # light touch, no warmth shift
     "film": ("curves=master='0/0.12 0.25/0.27 0.5/0.5 0.8/0.78 1/0.94',"
              "colorbalance=rs=-0.04:bs=0.05:rh=0.04:bh=-0.04,eq=saturation=0.92,noise=alls=5:allf=t"),
 }
@@ -527,6 +528,13 @@ def ass_color(v, default="chalk"):
 
 def paginate(words, style):
     maxw, maxc = STYLE_DEFAULTS[style]
+    if any("br" in w for w in words):                 # hand-set pages: "br": true ends a page (words.json)
+        pages, cur = [], []
+        for w in words:
+            cur.append(w)
+            if w.get("br"):
+                pages.append(cur); cur = []
+        return pages + ([cur] if cur else [])
     pages, cur = [], []
     for w in words:
         if cur:
@@ -720,9 +728,18 @@ def finish(edit, proj, build, assembled):
             fc += "[mus][vsc]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=250:makeup=1[mduck];"
         else:
             fc += "[vsc]anullsink;[mus]anull[mduck];"
-        fc += f"[v][mduck]amix=inputs=2:duration=first:normalize=0,afade=t=out:st={max(0, dur - 0.6):.2f}:d=0.6[out]"
+        sfx = edit.get("sfx", [])
+        sins, smix = [], ""
+        for k, fx in enumerate(sfx):                  # one-shot sound effects on the timeline
+            sins += ["-i", str((proj / fx["src"]).resolve())]
+            ms = int(float(fx["at"]) * 1000)
+            fc += (f"[{2 + k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={fx.get('gain_db', -12)}dB,"
+                   f"adelay={ms}|{ms}[fx{k}];")
+            smix += f"[fx{k}]"
+        fc += (f"[v][mduck]{smix}amix=inputs={2 + len(sfx)}:duration=first:normalize=0,"
+               f"afade=t=out:st={max(0, dur - 0.6):.2f}:d=0.6[out]")
         run(["ffmpeg", "-y", "-v", "error", "-i", assembled, "-ss", str(m.get("start", 0)), "-stream_loop", "-1", "-i", msrc,
-             "-filter_complex", fc, "-map", "[out]", "-t", f"{dur:.3f}", "-c:a", "pcm_s16le", mix])
+             *sins, "-filter_complex", fc, "-map", "[out]", "-t", f"{dur:.3f}", "-c:a", "pcm_s16le", mix])
     else:
         run(["ffmpeg", "-y", "-v", "error", "-i", assembled, "-af", voice, "-vn", "-c:a", "pcm_s16le", mix])
     meas = loudnorm_measure(mix)
@@ -751,8 +768,16 @@ def finish(edit, proj, build, assembled):
            "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-movflags", "+faststart", "-r", str(FPS)]
     final = out_dir / f"{name}.mp4"; clean = out_dir / f"{name}_clean.mp4"
     tag = "setparams=color_primaries=bt709:color_trc=bt709:colorspace=bt709:range=tv,format=yuv420p"
-    run(["ffmpeg", "-y", "-v", "error", "-i", assembled.name, "-i", mix.name, "-map", "0:v", "-map", "1:a",
-         "-vf", f"ass=subs.ass:fontsdir={fonts_rel},{tag}", "-af", ln, *enc, os.path.relpath(final, build)], cwd=build)
+    ovs = edit.get("overlays", [])                    # [{"src", "at", "x", "y"}]: alpha videos placed on the timeline
+    oins, ofc, last = [], "", "0:v"
+    for k, o in enumerate(ovs):
+        oins += ["-i", str((proj / o["src"]).resolve())]
+        ofc += (f"[{2 + k}:v]setpts=PTS-STARTPTS+{float(o['at']):.3f}/TB[o{k}];"
+                f"[{last}][o{k}]overlay={int(o.get('x', 0))}:{int(o.get('y', 0))}:eof_action=pass[v{k}];")
+        last = f"v{k}"
+    run(["ffmpeg", "-y", "-v", "error", "-i", assembled.name, "-i", mix.name, *oins, "-filter_complex",
+         ofc + f"[{last}]ass=subs.ass:fontsdir={fonts_rel},{tag}[vout]", "-map", "[vout]", "-map", "1:a",
+         "-af", ln, *enc, os.path.relpath(final, build)], cwd=build)
     run(["ffmpeg", "-y", "-v", "error", "-i", assembled.name, "-i", mix.name, "-map", "0:v", "-map", "1:a",
          "-vf", tag, "-af", ln, *enc, os.path.relpath(clean, build)], cwd=build)
     # cover: first chapter/place title frame, else 1s
