@@ -258,7 +258,7 @@
   "music": {
     "src": "build/music.wav",
     "start": 0,
-    "gain_db": -26,
+    "gain_db": -30,
     "duck": true
   },
   "voice": {
