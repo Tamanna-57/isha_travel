@@ -26,7 +26,7 @@ SCRIPT = {
     "LM_07": [("*13* out of | the world's *20* | most *polluted* cities | are in *India.* |", 18.56, 22.40)],
     "LM_10": [("bas itna *socho* ki, | humne kiya kya hai. |", 3.33, 6.03)],     # take 4: the clear "kiya kya hai"
     "LM_11": [
-              ("toh is saal, | meri sirf ek *request* hai. |", 15.85, 17.85),
+              ("toh is saal, | meri sirf ek *request* hai. |", 15.85, 18.13),
               ("aur ye sab humein | laaya *kidhar* hai? |", 20.93, 23.31)],     # take 3 after "kya hai" (20.58-20.86)
     "LM_12": [("aur jab *saans* lene ki | jagah chahiye ho, |", 6.37, 8.44), ("main *jungle* jaati hoon, |", 8.97, 10.06),
               ("*Lost* *&* *Free* *Safaris* |", 10.59, 11.30),     # she says "Lost & Free"; "Safaris" = brand (client ask)
