@@ -202,7 +202,17 @@ def render(src, preview=False):
     name = NAME + ("_preview" if preview else "")
     # pop sound: one soft pop under the logo (the edit's own SFX stay as they are)
     sfx = ROOT / "sfx_library" / "msg_soft_pop.mp3"
-    fc_base = (f"[0:v]{tm}fps={FPS},{GRADE}[g];"
+    hide = ""
+    if preview:      # draft only: soften the old burned-in text under the new text (the final uses a text-free export)
+        m1, m2 = B / "mask_cap.png", B / "mask_top.png"
+        for path, h in ((m1, 300), (m2, 520)):
+            g = np.linspace(0, 1, h); a = np.clip(np.minimum(g, 1 - g) / 0.18, 0, 1)
+            Image.fromarray((np.tile(a[:, None], (1, W)) * 255).astype(np.uint8)).save(path)
+        hide = (f"split=3[g0][c][t];[c]crop={W}:300:0:1170,gblur=sigma=26[cb];"
+                f"movie={m1.name},format=gray[m1];[cb][m1]alphamerge[cm];"
+                f"[t]crop={W}:520:0:140,gblur=sigma=26[tb];movie={m2.name},format=gray[m2];[tb][m2]alphamerge[tm];"
+                f"[g0][cm]overlay=0:1170[g1];[g1][tm]overlay=0:140:enable='lt(t,3.1)',")
+    fc_base = (f"[0:v]{tm}fps={FPS},{GRADE},{hide}null[g];"
                f"[1:v]setpts=PTS-STARTPTS+{POP_IN}/TB[p];"
                f"[g][p]overlay={CARD_X - 4}:{CARD_Y - 4}:eof_action=pass[ov]")
     au = (f";[2:a]adelay={int(POP_IN * 1000)}|{int(POP_IN * 1000)},volume=-14dB,aformat=channel_layouts=stereo[s];"
