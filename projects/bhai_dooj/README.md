@@ -1,4 +1,4 @@
-# Bhai Dooj reel (R3 "To all the bhais I found on the road") — first draft
+# Bhai Dooj reel (R3 "To all the bhais I found on the road") — final (client-approved)
 
 **Client-approved.** Full look spec (fonts, colours, sizes, music, structure): [`REEL_SPEC.md`](REEL_SPEC.md).
 
