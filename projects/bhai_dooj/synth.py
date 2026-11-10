@@ -105,6 +105,7 @@ def main(out, dur, t_groove, t_soft, t_final):
     n = int(dur * SR) + 1
     mix = np.zeros((2, n))
     BPM = 100; BEAT = 60 / BPM; E = BEAT / 2           # eighth note
+    t_end = dur - 1.3                                  # drums and motif stop here; a last strum rings out
     # grid anchored so a bar starts exactly on the final "Happy Bhai Dooj"
     bars_before = int(np.ceil(t_final / (4 * BEAT)))
     t0 = t_final - bars_before * 4 * BEAT
@@ -115,7 +116,6 @@ def main(out, dur, t_groove, t_soft, t_final):
     # temple bells
     place(mix, bell(523.0, 4.0) * 0.55, 0.0, pan=-0.2)
     place(mix, bell(587.0, 4.0) * 0.6, t_final, pan=0.2)
-    place(mix, bell(440.0, 3.5) * 0.35, t_final + 4 * BEAT, pan=-0.2)
 
     # santoor: raag Khamaj-ish motif in D. Chord per bar: D, G, C (komal Ni), D
     D = 62
@@ -131,7 +131,7 @@ def main(out, dur, t_groove, t_soft, t_final):
         soft = t_soft <= t < t_final
         for k, m in enumerate(mot):
             tt = t + k * E
-            if tt < 0 or tt >= dur:
+            if tt < 0 or tt >= t_end:
                 continue
             vel = (0.55 if k % 2 == 0 else 0.4) * (0.75 if soft else 1.0)
             if soft and k % 2 == 1:
@@ -141,7 +141,8 @@ def main(out, dur, t_groove, t_soft, t_final):
                 for r in (1, 2):
                     place(mix, santoor(m, 0.5, vel * 0.45), tt + r * E / 3, pan=-0.2)
         # low santoor root on the downbeat
-        place(mix, santoor(mot[0] - 12, 1.6, 0.35 * (0.8 if soft else 1)), t, pan=0.0)
+        if t < t_end:
+            place(mix, santoor(mot[0] - 12, 1.6, 0.35 * (0.8 if soft else 1)), t, pan=0.0)
         t += 4 * BEAT; bar += 1
 
     # dholak kaherwa: Dha Ge Na Ti | Na Ka Dhi Na  (eighths)
@@ -149,7 +150,7 @@ def main(out, dur, t_groove, t_soft, t_final):
              (None, 0, "H", 0.75), ("B", 0.35, "s", 0.6), ("B", 0.85, "H", 0.65), (None, 0, "H", 0.7)]
     t = t0; k = 0
     while t < dur:
-        if t >= t_groove - 1e-3 and not (t_soft <= t < t_final):
+        if t >= t_groove - 1e-3 and not (t_soft <= t < t_final) and t < t_end:
             b, bv, h, hv = theka[k % 8]
             g = 1.0 if t >= t_final else 0.85
             if b:
@@ -165,6 +166,11 @@ def main(out, dur, t_groove, t_soft, t_final):
             if t >= t_final and k % 4 == 2:
                 place(mix, clap(0.9), t, 0.5, pan=0.3)
         t += E; k += 1
+
+    # ending: one soft D-major santoor strum + low root, left to ring
+    for k, m in enumerate([D - 12, D, D + 4, D + 7, D + 12, D + 16]):
+        place(mix, santoor(m, 2.4, 0.5 if k else 0.4), t_end + 0.06 * k, pan=-0.3 + 0.12 * k)
+    place(mix, bell(587.0, 3.0) * 0.3, t_end, pan=0.2)
 
     # gentle low-cut + soft master
     mix = sosfilt(butter(2, 45, "highpass", fs=SR, output="sos"), mix, axis=1)

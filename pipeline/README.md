@@ -111,6 +111,7 @@ Paths are relative to the project folder. All times are in seconds. Title and ca
     {"type": "pill",     "text": "This *country* is 'Sukoon'", "start": 0, "end": 4},
     {"type": "hook",     "text": "One wrong move and you'll meet the creator", "start": 0, "end": 3},
     {"type": "fact",     "text": "1178 ft above Chenab River", "start": 12, "end": 14, "color": "marigold"},
+    {"type": "label",    "text": "My *scuba* instructors", "start": 9.9, "end": 13.8},   // no box, soft glow
     {"type": "marker",   "text": "PoK  Pakistan\nTibet. China", "start": 0.3, "end": 3,
                          "x": 540, "y": 300, "rotate": -3, "color": "chalk", "size": 149, "strike": false}
   ],
@@ -132,6 +133,7 @@ Paths are relative to the project folder. All times are in seconds. Title and ca
   | marker | 330 |
   | place | 960 |
   | fact | 1090 (just above the caption band, so a fact and a caption can share the screen) |
+  | label | 1090 (same band as fact) |
 
   Any title takes an explicit `"y"`.
 - **With `top` captions:** the top-anchored titles (chapter, landmark, pill, hook, marker) move down 300 px automatically so they don't collide with the captions. An explicit `"y"` always wins.

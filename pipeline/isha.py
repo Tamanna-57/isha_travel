@@ -470,6 +470,7 @@ SIZE = {
     "landmark": 169, "sub": 48,                 # iffy Chenab: "CHENAB RAIL BRIDGE" = 68%
     "place": 136,                               # sayannath: "KYRGYZSTAN" = 72%
     "pill": 81, "hook": 96, "fact": 78,         # sayannath / iffy
+    "label": 70,                                # person/place label without a box (Bhai Dooj reel)
     "marker": 149,                              # iffy: "PoK Pakistan" = 49%
 }
 
@@ -500,6 +501,7 @@ def ass_header():
         s("Pill", "serif_reg", SIZE["pill"], C["chalk"], border=3, outline=20, shadow=0, ocol=C["ink"].replace("&H", "&H00"), align=8),
         s("Marker", "marker", SIZE["marker"], C["chalk"], outline=0, shadow=3),
         s("Fact", "serif_reg", SIZE["fact"], C["marigold"], italic=-1, outline=1.2),
+        s("Label", "serif", SIZE["label"], C["chalk"], outline=4, shadow=3, ocol="&H70000000&"),
         s("Hook", "sans_bold", SIZE["hook"], C["chalk"], align=8, outline=2),
     ]
     return ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n"
@@ -649,6 +651,10 @@ def title_events(titles, top_captions=False):
         elif typ == "pill":                       # *word* -> sindoor keyword
             txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['sindoor']}}}{m.group(1)}{{\\1c{C['chalk']}}}", ass_escape(t["text"]))
             evs.append(ev(s, e, "Pill", f"{{\\an8\\pos(540,{t.get('y', 300 + bump)})\\fad(80,80)}}{txt}", 4))
+        elif typ == "label":                      # no box: white serif on a soft dark glow, *word* in marigold
+            txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['marigold']}}}{m.group(1)}{{\\1c{C['chalk']}}}",
+                         ass_escape(t["text"]))
+            evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{t.get('y', 1090)})\\blur5{POP_T}}}{txt}", 2))
         elif typ == "hook":
             evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)})\\fad(60,100)}}{ass_escape(t['text'])}", 4))
         elif typ == "fact":                       # sits just above the caption band so both can be on screen

@@ -105,6 +105,8 @@ def titles_board(tmp):
          "Place name", "Cinzel SemiBold +8 tracking, centre"),
         ([{"type": "pill", "text": "This *country* is 'Sukoon'", "start": 0, "end": 5}], "sky",
          seq(["The", "world"], t0=0.2, emph=("world",)), "Hook pill", "Playfair on ink box · sindoor keyword"),
+        ([{"type": "label", "text": "My *scuba* instructors", "start": 0, "end": 5}], "sky",
+         seq(["kuch", "nahi", "hone", "diya"], t0=0.2, emph=("diya",)), "Person label", "Playfair SemiBold, soft glow, no box"),
         ([{"type": "hook", "text": "One wrong move and you'll meet the creator", "start": 0, "end": 5}], "green", [],
          "Hook line (POV)", "Poppins Bold top · format D"),
         ([{"type": "marker", "text": "PoK  Pakistan\nTibet.  China", "start": 0, "end": 5, "y": 300},

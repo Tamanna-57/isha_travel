@@ -79,6 +79,8 @@ def main():
     edit = json.loads((P / "edit.json").read_text(encoding="utf-8"))
     cache, words, acc = {}, [], 0.0
     for c in edit["clips"]:
+        if c.get("transition", "cut") != "cut":
+            acc -= float(c.get("transition_dur", 0.25))      # xfade overlaps the two clips
         stem = Path(c["src"]).stem
         sp = c.get("speed", 1.0); dur = (c["out"] - c["in"]) / sp
         if stem in SCRIPT and c.get("audio", True):

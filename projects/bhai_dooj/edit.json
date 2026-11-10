@@ -165,18 +165,19 @@
     {
       "src": "../../bhai dooj/IMG_2425.MOV",
       "in": 0.92,
-      "out": 2.23,
+      "out": 2.12,
       "grade": "indoor",
-      "_say": "Happy Bhai Dooj! + tika to the lens"
+      "_say": "Happy Bhai Dooj! + tika hand reaching the lens"
     },
     {
-      "src": "../../bhai dooj/IMG_2425.MOV",
-      "in": 1.95,
-      "out": 2.23,
-      "grade": "indoor",
-      "speed": 0.25,
+      "src": "build/broll/end_hold.mp4",
+      "in": 0.0,
+      "out": 2.0,
       "audio": false,
-      "_say": "(end card hold: tika hand over the lens, slowed)"
+      "grade": "indoor",
+      "transition": "dissolve",
+      "transition_dur": 0.5,
+      "_say": "(end card: her tika hand on the lens, soft blur, slow push; dissolves in)"
     }
   ],
   "captions": {
@@ -194,7 +195,7 @@
       "color": "sindoor"
     },
     {
-      "type": "pill",
+      "type": "label",
       "text": "My *scuba* instructors",
       "start": 9.88,
       "end": 13.78,
@@ -202,7 +203,7 @@
       "_label": "one label per person; add the real name when Isha confirms it"
     },
     {
-      "type": "pill",
+      "type": "label",
       "text": "My *safari* guide",
       "start": 14.95,
       "end": 20.67,
@@ -210,7 +211,7 @@
       "_label": "one label per person; add the real name when Isha confirms it"
     },
     {
-      "type": "pill",
+      "type": "label",
       "text": "*Travel* friends · Lakshadweep",
       "start": 20.67,
       "end": 22.17,
@@ -221,7 +222,7 @@
       "type": "hook",
       "text": "TAG YOUR ROAD WALA BHAI",
       "start": 31.28,
-      "end": 32.72,
+      "end": 32.99,
       "y": 820,
       "_timing": "set by align.py: from the end of 'Dooj!' to the end"
     }
