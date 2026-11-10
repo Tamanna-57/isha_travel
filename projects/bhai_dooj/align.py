@@ -98,13 +98,17 @@ def main():
         acc += dur
     (P / "words.json").write_text(json.dumps(words, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(" ".join(f"{w['text']}@{w['start']:.2f}" for w in words))
-    # end card: from the end of "Dooj!" to the end of the reel
-    last = next(w for w in reversed(words) if w["text"] == "Dooj!")
+    # last clip = black; the clip before fades into it. Captions clear when the fade starts,
+    # the end card comes in once the screen is (nearly) black and stays to the end.
+    fade = float(edit["clips"][-1].get("transition_dur", 0.25))
+    black_at = acc - (edit["clips"][-1]["out"] - edit["clips"][-1]["in"])     # fade starts here
+    edit["captions"]["until"] = round(black_at + 0.1, 2)
     for t in edit["titles"]:
         if t["type"] == "hook" and t["text"].startswith("TAG"):
-            t["start"], t["end"] = round(last["end"] + 0.1, 2), round(acc, 2)
+            t["start"], t["end"] = round(black_at + fade * 0.7, 2), round(acc, 2)
+    last = {"end": black_at}
     (P / "edit.json").write_text(json.dumps(edit, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"{len(words)} words, reel {acc:.2f}s, end card {last['end'] + 0.1:.2f}-{acc:.2f}")
+    print(f"{len(words)} words, reel {acc:.2f}s, fade to black at {black_at:.2f}s, end card {black_at + fade * 0.7:.2f}-{acc:.2f}")
 
 if __name__ == "__main__":
     main()

@@ -165,24 +165,25 @@
     {
       "src": "../../bhai dooj/IMG_2425.MOV",
       "in": 0.92,
-      "out": 2.12,
+      "out": 2.23,
       "grade": "indoor",
-      "_say": "Happy Bhai Dooj! + tika hand reaching the lens"
+      "_say": "Happy Bhai Dooj! + tika finger to the lens (fades to black)"
     },
     {
-      "src": "build/broll/end_hold.mp4",
+      "src": "build/broll/black.mp4",
       "in": 0.0,
       "out": 2.0,
       "audio": false,
-      "grade": "indoor",
+      "grade": "none",
       "transition": "dissolve",
-      "transition_dur": 0.5,
-      "_say": "(end card: her tika hand on the lens, soft blur, slow push; dissolves in)"
+      "transition_dur": 0.45,
+      "_say": "(black end card: TAG YOUR ROAD WALA BHAI)"
     }
   ],
   "captions": {
     "style": "karaoke",
-    "words": "words.json"
+    "words": "words.json",
+    "until": 31.25
   },
   "titles": [
     {
@@ -221,9 +222,9 @@
     {
       "type": "hook",
       "text": "TAG YOUR ROAD WALA BHAI",
-      "start": 31.28,
-      "end": 32.99,
-      "y": 820,
+      "start": 31.46,
+      "end": 33.15,
+      "y": 960,
       "_timing": "set by align.py: from the end of 'Dooj!' to the end"
     }
   ],

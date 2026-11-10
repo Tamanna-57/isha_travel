@@ -172,7 +172,7 @@ Long titles auto-shrink so they never exceed the 78% safe width on one line.
 | **Landmark** `landmark` | Anton caps **marigold**, italic-sheared + Montserrat Bold white subtitle | y **280** | big landmark facts (iffy Chenab) |
 | **Place name** `place` | Cinzel SemiBold, +8 tracking, white, fades 250 ms, hold 1.5–2.5 s over drone shots | centre **960** | format C |
 | **Hook pill** `pill` | Playfair white on an **ink** box, `*keyword*` in sindoor; persists through the hook (or the whole reel, sayannath style) | top **300** | concept hooks (C/D, any) |
-| **Person label** `label` | Playfair SemiBold white on a soft dark glow (no box), `*keyword*` in marigold, size 70 | y **1090** (above the caption band) | who's on screen in a montage ("My *scuba* instructors"); use instead of `pill` when a box feels too heavy |
+| **Person label** `label` | Playfair **Bold** white, hard drop shadow (85% black, 5 px, no blur), no box, `*keyword*` in marigold, size 70 | y **1090** (above the caption band) | who's on screen in a montage ("My *scuba* instructors"); use instead of `pill` when a box feels too heavy |
 | **Hook line** `hook` | Poppins Bold white, outline, wraps to 2 lines | top **260** | format D |
 | **Fact line** `fact` | Playfair Italic **marigold** | y **1090** (just above the caption band) | stats, heights, prices |
 | **Marker note** `marker` | Caveat Bold, white = note, **sindoor + strike** = correction; ±3° rotation; writes on left→right in 450 ms | sky / top third, y 150–600 | facts, lists, corrections (max 4 per reel) |

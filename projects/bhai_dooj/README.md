@@ -27,8 +27,8 @@ kuch nahi hone diya. (Thank you.) Thank you for keeping me safe when I was far a
 - Length 32.7 s vs the brief's 25–30 s: every line she recorded is in. To get under 30 s, drop one line
   (e.g. "Aur mujhe ye sab travel karte hue mile" or the pahadon line, which has no mountain footage).
 - Words to double-check by ear: "safe rakha hai", "Aur aise bahut saare log", "aise crazy jagahon pe".
-- Labels use the new `label` title type (no box, soft glow). Ending: dissolve into a soft still of the tika hand
-  on the lens (end card over it), music ends on one santoor strum + bell.
+- Labels use the `label` title type (bold, hard shadow, no box). Ending: her last clip fades to black as the
+  tika finger reaches the lens; end card on black; music ends on one santoor strum + bell.
 - Waiting on: Isha's clip for after the pahadon line (goes after clip 3 in edit.json).
 - Music is an original synth bed (synth.py: santoor, dholak, manjira, tanpura, temple bell). Swap for a
   trending Instagram sound if preferred: post `bhai_dooj_clean.mp4`-style without music or lower `gain_db`.

@@ -101,7 +101,8 @@ Paths are relative to the project folder. All times are in seconds. Title and ca
       "transition_dur": 0.2
     }
   ],
-  "captions": { "style": "serif", "words": "words.json", "y": null, "enabled": true },
+  "captions": { "style": "serif", "words": "words.json", "y": null, "enabled": true, "until": null },
+              // until: no caption after this time (e.g. clear the screen before a fade to black)
               // serif | sans | karaoke | caps | top | typewriter
   "titles": [
     {"type": "chapter",  "text": "Goa", "script": "mein", "start": 1.2, "end": 3.0,
@@ -111,7 +112,7 @@ Paths are relative to the project folder. All times are in seconds. Title and ca
     {"type": "pill",     "text": "This *country* is 'Sukoon'", "start": 0, "end": 4},
     {"type": "hook",     "text": "One wrong move and you'll meet the creator", "start": 0, "end": 3},
     {"type": "fact",     "text": "1178 ft above Chenab River", "start": 12, "end": 14, "color": "marigold"},
-    {"type": "label",    "text": "My *scuba* instructors", "start": 9.9, "end": 13.8},   // no box, soft glow
+    {"type": "label",    "text": "My *scuba* instructors", "start": 9.9, "end": 13.8},   // no box, bold, hard shadow
     {"type": "marker",   "text": "PoK  Pakistan\nTibet. China", "start": 0.3, "end": 3,
                          "x": 540, "y": 300, "rotate": -3, "color": "chalk", "size": 149, "strike": false}
   ],

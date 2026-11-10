@@ -21,8 +21,8 @@ PHOTOS = {
     "jeep_tiger": ("DSC_2505~2_Original.jpg", 0.52, 0.55, 1.00, 1.06, 2.6),   # tiger walking past the safari jeeps
     "tiger_road": ("20191001163304_IMG_6083_Original.JPG", 0.50, 0.50, 1.04, 1.00, 2.2),  # tiger on the jungle road
 }
-# end card background: her tika hand on the lens (IMG_2425 at 2.06 s, red tika on her finger), softly blurred, slow push-in
-END_HOLD = ("bhai dooj/IMG_2425.MOV", 2.06, 2.0)
+# end card: plain black, the last clip fades into it as her tika finger reaches the lens
+BLACK_DUR = 2.0
 # music cues: clip index in edit.json whose start is the cue
 CUES = {"groove": 1, "soft": 12, "final": 13}
 
@@ -51,21 +51,18 @@ def photo_clip(name, src, cx, cy, z0, z1, dur, img=None):
     proc.stdin.close(); proc.wait()
     print(f"photo clip: {out.relative_to(P)} ({dur}s)")
 
-def end_hold():
-    sys.path.insert(0, str(ROOT / "pipeline"))
-    import isha
-    src, t, dur = END_HOLD
-    png = B / "broll" / "end_hold.png"
-    png.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", str(t), "-i", str(ROOT / src), "-frames:v", "1",
-                    "-vf", f"{isha.HDR_TO_SDR},scale={W}:{H},gblur=sigma=4", str(png)], check=True)
-    return photo_clip("end_hold", None, 0.5, 0.5, 1.00, 1.05, dur, img=Image.open(png).convert("RGB"))
+def black_clip():
+    out = B / "broll" / "black.mp4"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", f"color=c=black:s={W}x{H}:r={FPS}:d={BLACK_DUR}",
+                    "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", "-pix_fmt", "yuv420p", str(out)], check=True)
+    print(f"black clip: {out.relative_to(P)} ({BLACK_DUR}s)")
 
 def main():
     B.mkdir(exist_ok=True)
     for name, args in PHOTOS.items():
         photo_clip(name, *args)
-    end_hold()
+    black_clip()
     edit = json.loads((P / "edit.json").read_text(encoding="utf-8"))
     starts, acc = [], 0.0
     for c in edit["clips"]:

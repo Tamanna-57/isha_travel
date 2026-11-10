@@ -36,6 +36,7 @@ PAPER_RGB = "0xF7F3EA"
 FONT_ROLES = {
     "serif":      ("Playfair Display SemiBold", "PlayfairDisplay-SemiBold.ttf", 0, "Georgia", 1),
     "serif_reg":  ("Playfair Display", "PlayfairDisplay-Regular.ttf", 0, "Georgia", 0),
+    "serif_bold": ("Playfair Display", "PlayfairDisplay-Bold.ttf", 1, "Georgia", 1),
     "serif_it":   ("Instrument Serif", "InstrumentSerif-Italic.ttf", 0, "Georgia", 0),
     "sans_semi":  ("Poppins SemiBold", "Poppins-SemiBold.ttf", 0, "Segoe UI Semibold", 0),
     "sans_med":   ("Poppins Medium", "Poppins-Medium.ttf", 0, "Segoe UI", 0),
@@ -470,7 +471,7 @@ SIZE = {
     "landmark": 169, "sub": 48,                 # iffy Chenab: "CHENAB RAIL BRIDGE" = 68%
     "place": 136,                               # sayannath: "KYRGYZSTAN" = 72%
     "pill": 81, "hook": 96, "fact": 78,         # sayannath / iffy
-    "label": 70,                                # person/place label without a box (Bhai Dooj reel)
+    "label": 70,                                # person/place label, no box, hard shadow (Bhai Dooj reel)
     "marker": 149,                              # iffy: "PoK Pakistan" = 49%
 }
 
@@ -501,7 +502,7 @@ def ass_header():
         s("Pill", "serif_reg", SIZE["pill"], C["chalk"], border=3, outline=20, shadow=0, ocol=C["ink"].replace("&H", "&H00"), align=8),
         s("Marker", "marker", SIZE["marker"], C["chalk"], outline=0, shadow=3),
         s("Fact", "serif_reg", SIZE["fact"], C["marigold"], italic=-1, outline=1.2),
-        s("Label", "serif", SIZE["label"], C["chalk"], outline=4, shadow=3, ocol="&H70000000&"),
+        s("Label", "serif_bold", SIZE["label"], C["chalk"], outline=0, shadow=5, back="&H26000000&"),
         s("Hook", "sans_bold", SIZE["hook"], C["chalk"], align=8, outline=2),
     ]
     return ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n"
@@ -565,13 +566,17 @@ def pick_emphasis(page):
         pick.add(cands[1][1])
     return pick
 
-def caption_events(words, style, y=None):
+def caption_events(words, style, y=None, until=None):
     evs = []
     pages = paginate(words, style)
     for pi, page in enumerate(pages):
         start = page[0]["start"]
         nxt = pages[pi + 1][0]["start"] if pi + 1 < len(pages) else page[-1]["end"] + 0.5
         end = min(nxt, page[-1]["end"] + 0.7)
+        if until is not None:                         # e.g. clear the last caption before a fade to black
+            end = min(end, float(until))
+            if end <= start:
+                continue
         emph = pick_emphasis(page)
         if style == "serif":                          # inline: small marigold fillers, big white key word(s)
             body = []
@@ -651,10 +656,10 @@ def title_events(titles, top_captions=False):
         elif typ == "pill":                       # *word* -> sindoor keyword
             txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['sindoor']}}}{m.group(1)}{{\\1c{C['chalk']}}}", ass_escape(t["text"]))
             evs.append(ev(s, e, "Pill", f"{{\\an8\\pos(540,{t.get('y', 300 + bump)})\\fad(80,80)}}{txt}", 4))
-        elif typ == "label":                      # no box: white serif on a soft dark glow, *word* in marigold
+        elif typ == "label":                      # no box: bold white serif, hard drop shadow, *word* in marigold
             txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['marigold']}}}{m.group(1)}{{\\1c{C['chalk']}}}",
                          ass_escape(t["text"]))
-            evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{t.get('y', 1090)})\\blur5{POP_T}}}{txt}", 2))
+            evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{t.get('y', 1090)}){POP_T}}}{txt}", 2))
         elif typ == "hook":
             evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)})\\fad(60,100)}}{ass_escape(t['text'])}", 4))
         elif typ == "fact":                       # sits just above the caption band so both can be on screen
@@ -679,7 +684,7 @@ def write_ass(path, words, cap_cfg, titles):
     evs = []
     style = cap_cfg.get("style", "serif")
     if words and cap_cfg.get("enabled", True):
-        evs += caption_events(words, style, cap_cfg.get("y"))
+        evs += caption_events(words, style, cap_cfg.get("y"), cap_cfg.get("until"))
     evs += title_events(titles or [], top_captions=bool(words) and cap_cfg.get("enabled", True) and style == "top")
     Path(path).write_text(ass_header() + "\n".join(evs) + "\n", encoding="utf-8")
 
