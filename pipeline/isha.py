@@ -644,9 +644,12 @@ def caption_events(words, style, y=None, until=None, key_color=None, key_font=No
             # word by word as spoken; content words heavy rounded sans in yellow, filler words small white, upper third
             yy = y or 490
             body = []
-            for w in page:
+            isf = lambda w: re.sub(r"[^\w']", "", w["text"]).lower() in STOP and not w.get("emph")
+            # a line made only of filler words still gets one yellow word (its longest), like every line in the ref
+            lead = max(range(len(page)), key=lambda i: len(page[i]["text"])) if all(isf(w) for w in page) else -1
+            for wi, w in enumerate(page):
                 dt = int((w["start"] - start) * 1000)
-                filler = re.sub(r"[^\w']", "", w["text"]).lower() in STOP and not w.get("emph")
+                filler = isf(w) and wi != lead
                 look = (f"{fn_tag('sans_semi')}\\fs{SIZE['build_small']}\\1c{C['chalk']}" if filler else
                         f"{fn_tag('sans_xbold')}\\fs{SIZE['build_key']}\\1c{ass_color(key_color, 'marigold')}")
                 body.append(f"{{{look}\\alpha&HFF&\\t({dt},{dt + 1},\\alpha&H00&)}}{ass_escape(w['text'])} ")
