@@ -28,695 +28,700 @@
  },
  {
   "text": "ab",
-  "start": 1.78,
+  "start": 1.76,
   "end": 1.95
  },
  {
   "text": "toh",
   "start": 1.97,
-  "end": 2.07
+  "end": 2.22
  },
  {
   "text": "Mumbai",
-  "start": 2.09,
-  "end": 2.35,
+  "start": 2.24,
+  "end": 2.46,
   "br": true,
   "emph": true
  },
  {
   "text": "chhod",
-  "start": 2.37,
-  "end": 2.65
+  "start": 2.48,
+  "end": 2.72
+ },
+ {
+  "text": "hi",
+  "start": 2.74,
+  "end": 2.87
  },
  {
   "text": "dena",
-  "start": 2.67,
-  "end": 2.94
+  "start": 2.89,
+  "end": 3.16
  },
  {
   "text": "chahiye.",
-  "start": 2.96,
-  "end": 3.29,
+  "start": 3.18,
+  "end": 3.51,
   "br": true
  },
  {
   "text": "main",
-  "start": 3.52,
-  "end": 3.7
+  "start": 3.74,
+  "end": 3.92
  },
  {
   "text": "phir",
-  "start": 3.72,
-  "end": 3.8
+  "start": 3.94,
+  "end": 4.02
  },
  {
   "text": "bhi,",
-  "start": 3.78,
-  "end": 3.94,
+  "start": 4.0,
+  "end": 4.16,
   "br": true
  },
  {
   "text": "rukne",
-  "start": 3.96,
-  "end": 4.2
+  "start": 4.18,
+  "end": 4.42
  },
  {
   "text": "ki",
-  "start": 4.22,
-  "end": 4.43
+  "start": 4.44,
+  "end": 4.65
  },
  {
   "text": "poori",
-  "start": 4.45,
-  "end": 4.81
+  "start": 4.67,
+  "end": 5.03
  },
  {
   "text": "koshish",
-  "start": 4.83,
-  "end": 5.14,
+  "start": 5.05,
+  "end": 5.36,
   "br": true,
   "emph": true
  },
  {
   "text": "karti",
-  "start": 5.16,
-  "end": 5.35
+  "start": 5.38,
+  "end": 5.57
  },
  {
   "text": "hoon,",
-  "start": 5.37,
-  "end": 5.6
+  "start": 5.59,
+  "end": 5.82
  },
  {
   "text": "because",
-  "start": 5.62,
-  "end": 6.1,
+  "start": 5.84,
+  "end": 6.32,
   "br": true
  },
  {
   "text": "it's",
-  "start": 6.44,
-  "end": 6.57
+  "start": 6.66,
+  "end": 6.79
  },
  {
   "text": "my",
-  "start": 6.59,
-  "end": 6.74
+  "start": 6.81,
+  "end": 6.96
  },
  {
   "text": "city,",
-  "start": 6.76,
-  "end": 7.1,
+  "start": 6.98,
+  "end": 7.32,
   "br": true,
   "emph": true
  },
  {
   "text": "you",
-  "start": 7.12,
-  "end": 7.24
+  "start": 7.34,
+  "end": 7.46
  },
  {
   "text": "know,",
-  "start": 7.26,
-  "end": 7.34
+  "start": 7.48,
+  "end": 7.56
  },
  {
   "text": "and",
-  "start": 7.34,
-  "end": 7.43
+  "start": 7.56,
+  "end": 7.65
  },
  {
   "text": "I",
-  "start": 7.45,
-  "end": 7.58
+  "start": 7.67,
+  "end": 7.8
  },
  {
   "text": "love",
-  "start": 7.6,
-  "end": 7.81,
+  "start": 7.82,
+  "end": 8.03,
   "emph": true
  },
  {
   "text": "it.",
-  "start": 7.83,
-  "end": 8.0,
+  "start": 8.05,
+  "end": 8.22,
   "br": true
  },
  {
   "text": "but",
-  "start": 8.25,
-  "end": 8.4
+  "start": 8.47,
+  "end": 8.62
  },
  {
   "text": "honestly,",
-  "start": 8.42,
-  "end": 9.05,
+  "start": 8.64,
+  "end": 9.27,
   "br": true,
   "emph": true
  },
  {
   "text": "Mumbai",
-  "start": 9.45,
-  "end": 9.86
+  "start": 9.67,
+  "end": 10.08
  },
  {
   "text": "has",
-  "start": 9.88,
-  "end": 9.98
+  "start": 10.1,
+  "end": 10.2
  },
  {
   "text": "become",
-  "start": 10.0,
-  "end": 10.65,
+  "start": 10.22,
+  "end": 10.87,
   "br": true
  },
  {
   "text": "unlivable.",
-  "start": 10.9,
-  "end": 11.53,
+  "start": 11.12,
+  "end": 11.75,
   "br": true,
   "emph": true
  },
  {
   "text": "mangroves",
-  "start": 11.79,
-  "end": 12.22,
+  "start": 12.01,
+  "end": 12.44,
   "emph": true
  },
  {
   "text": "are",
-  "start": 12.24,
-  "end": 12.51
+  "start": 12.46,
+  "end": 12.73
  },
  {
   "text": "being",
-  "start": 12.53,
-  "end": 12.72
+  "start": 12.75,
+  "end": 12.94
  },
  {
   "text": "cut,",
-  "start": 12.74,
-  "end": 12.97,
+  "start": 12.96,
+  "end": 13.19,
   "br": true
  },
  {
   "text": "rivers",
-  "start": 12.99,
-  "end": 13.3,
+  "start": 13.21,
+  "end": 13.52,
   "emph": true
  },
  {
   "text": "are",
-  "start": 13.32,
-  "end": 13.5
+  "start": 13.54,
+  "end": 13.72
  },
  {
   "text": "being",
-  "start": 13.52,
-  "end": 13.69
+  "start": 13.74,
+  "end": 13.91
  },
  {
   "text": "polluted",
-  "start": 13.71,
-  "end": 14.36,
+  "start": 13.93,
+  "end": 14.58,
   "br": true
  },
  {
   "text": "and",
-  "start": 14.38,
-  "end": 14.52
+  "start": 14.6,
+  "end": 14.74
  },
  {
   "text": "honestly,",
-  "start": 14.54,
-  "end": 15.1,
+  "start": 14.76,
+  "end": 15.32,
   "br": true
  },
  {
   "text": "aajkal",
-  "start": 15.24,
-  "end": 15.58
+  "start": 15.46,
+  "end": 15.8
  },
  {
   "text": "koi",
-  "start": 15.6,
-  "end": 15.76,
+  "start": 15.82,
+  "end": 15.98,
   "br": true
  },
  {
   "text": "kisi",
-  "start": 15.78,
-  "end": 16.1
+  "start": 16.0,
+  "end": 16.32
  },
  {
   "text": "cheez",
-  "start": 16.12,
-  "end": 16.29
+  "start": 16.34,
+  "end": 16.51
  },
  {
   "text": "ki",
-  "start": 16.31,
-  "end": 16.5
+  "start": 16.53,
+  "end": 16.72
  },
  {
   "text": "respect",
-  "start": 16.52,
-  "end": 17.03,
+  "start": 16.74,
+  "end": 17.25,
   "br": true,
   "emph": true
  },
  {
   "text": "hi",
-  "start": 17.05,
-  "end": 17.27
+  "start": 17.27,
+  "end": 17.49
  },
  {
   "text": "nahi",
-  "start": 17.29,
-  "end": 17.6
+  "start": 17.51,
+  "end": 17.82
  },
  {
   "text": "karta",
-  "start": 17.62,
-  "end": 17.84
+  "start": 17.84,
+  "end": 18.06
  },
  {
   "text": "hai",
-  "start": 17.86,
-  "end": 18.12
+  "start": 18.08,
+  "end": 18.34
  },
  {
   "text": "yaar.",
-  "start": 18.14,
-  "end": 18.26,
+  "start": 18.36,
+  "end": 18.48,
   "br": true
  },
  {
   "text": "aur",
-  "start": 18.53,
-  "end": 18.69
+  "start": 18.75,
+  "end": 18.91
  },
  {
   "text": "har",
-  "start": 18.71,
-  "end": 18.92
+  "start": 18.93,
+  "end": 19.14
  },
  {
   "text": "Diwali,",
-  "start": 18.94,
-  "end": 19.44,
+  "start": 19.16,
+  "end": 19.66,
   "br": true,
   "emph": true
  },
  {
   "text": "pollution",
-  "start": 19.46,
-  "end": 20.04,
+  "start": 19.68,
+  "end": 20.26,
   "emph": true
  },
  {
   "text": "aur",
-  "start": 20.06,
-  "end": 20.14
+  "start": 20.28,
+  "end": 20.36
  },
  {
   "text": "bhi",
-  "start": 20.13,
-  "end": 20.33,
+  "start": 20.35,
+  "end": 20.55,
   "br": true
  },
  {
   "text": "zyada",
-  "start": 20.35,
-  "end": 20.69
+  "start": 20.57,
+  "end": 20.91
  },
  {
   "text": "badh",
-  "start": 20.71,
-  "end": 20.95
+  "start": 20.93,
+  "end": 21.17
  },
  {
   "text": "jaata",
-  "start": 20.97,
-  "end": 21.27
+  "start": 21.19,
+  "end": 21.49
  },
  {
   "text": "hai.",
-  "start": 21.29,
-  "end": 21.52,
+  "start": 21.51,
+  "end": 21.74,
   "br": true
  },
  {
   "text": "13",
-  "start": 21.77,
-  "end": 21.99,
+  "start": 21.99,
+  "end": 22.21,
   "emph": true
  },
  {
   "text": "out",
-  "start": 22.01,
-  "end": 22.26
+  "start": 22.23,
+  "end": 22.48
  },
  {
   "text": "of",
-  "start": 22.28,
-  "end": 22.54,
+  "start": 22.5,
+  "end": 22.76,
   "br": true
  },
  {
   "text": "the",
-  "start": 22.56,
-  "end": 22.64
+  "start": 22.78,
+  "end": 22.86
  },
  {
   "text": "world's",
-  "start": 22.63,
-  "end": 23.01
+  "start": 22.85,
+  "end": 23.23
  },
  {
   "text": "20",
-  "start": 23.03,
-  "end": 23.33,
+  "start": 23.25,
+  "end": 23.55,
   "br": true,
   "emph": true
  },
  {
   "text": "most",
-  "start": 23.35,
-  "end": 23.5
+  "start": 23.57,
+  "end": 23.72
  },
  {
   "text": "polluted",
-  "start": 23.52,
-  "end": 24.09,
+  "start": 23.74,
+  "end": 24.31,
   "emph": true
  },
  {
   "text": "cities",
-  "start": 24.11,
-  "end": 24.6,
+  "start": 24.33,
+  "end": 24.82,
   "br": true
  },
  {
   "text": "are",
-  "start": 24.62,
-  "end": 25.0
- },
- {
-  "text": "in",
-  "start": 25.02,
+  "start": 24.84,
   "end": 25.22
  },
  {
-  "text": "India.",
+  "text": "in",
   "start": 25.24,
-  "end": 25.59,
+  "end": 25.44
+ },
+ {
+  "text": "India.",
+  "start": 25.46,
+  "end": 25.81,
   "br": true,
   "emph": true
  },
  {
   "text": "toh",
-  "start": 25.86,
-  "end": 25.99
+  "start": 26.08,
+  "end": 26.21
  },
  {
   "text": "is",
-  "start": 26.01,
-  "end": 26.25
+  "start": 26.23,
+  "end": 26.47
  },
  {
   "text": "saal,",
-  "start": 26.27,
-  "end": 26.46,
+  "start": 26.49,
+  "end": 26.68,
   "br": true
  },
  {
   "text": "meri",
-  "start": 26.48,
-  "end": 26.74
+  "start": 26.7,
+  "end": 26.96
  },
  {
   "text": "sirf",
-  "start": 26.76,
-  "end": 26.98
+  "start": 26.98,
+  "end": 27.2
  },
  {
   "text": "ek",
-  "start": 27.0,
-  "end": 27.19
+  "start": 27.22,
+  "end": 27.41
  },
  {
   "text": "request",
-  "start": 27.21,
-  "end": 27.6,
+  "start": 27.43,
+  "end": 27.82,
   "emph": true
  },
  {
   "text": "hai.",
-  "start": 27.62,
-  "end": 27.84,
+  "start": 27.84,
+  "end": 28.06,
   "br": true
  },
  {
   "text": "itna",
-  "start": 28.04,
-  "end": 28.3
+  "start": 28.26,
+  "end": 28.52
  },
  {
   "text": "socho",
-  "start": 28.32,
-  "end": 28.73
+  "start": 28.54,
+  "end": 28.95
  },
  {
   "text": "ki,",
-  "start": 28.75,
-  "end": 28.92,
+  "start": 28.97,
+  "end": 29.14,
   "br": true
  },
  {
   "text": "humne",
-  "start": 28.94,
-  "end": 29.16
+  "start": 29.16,
+  "end": 29.38
  },
  {
   "text": "exactly",
-  "start": 29.18,
-  "end": 29.67,
+  "start": 29.4,
+  "end": 29.89,
   "emph": true
  },
  {
   "text": "kiya",
-  "start": 29.69,
-  "end": 29.9
+  "start": 29.91,
+  "end": 30.12
  },
  {
   "text": "kya",
-  "start": 29.92,
-  "end": 30.1
+  "start": 30.14,
+  "end": 30.32
  },
  {
   "text": "hai.",
-  "start": 30.12,
-  "end": 30.29,
+  "start": 30.34,
+  "end": 30.51,
   "br": true
  },
  {
   "text": "aur",
-  "start": 30.4,
-  "end": 30.55
+  "start": 30.62,
+  "end": 30.77
  },
  {
   "text": "ye",
-  "start": 30.57,
-  "end": 30.87
+  "start": 30.79,
+  "end": 31.09
  },
  {
   "text": "sab",
-  "start": 30.89,
-  "end": 31.08
+  "start": 31.11,
+  "end": 31.3
  },
  {
   "text": "humein",
-  "start": 31.1,
-  "end": 31.63,
+  "start": 31.32,
+  "end": 31.85,
   "br": true
  },
  {
   "text": "laaya",
-  "start": 31.65,
-  "end": 31.92
+  "start": 31.87,
+  "end": 32.14
  },
  {
   "text": "kidhar",
-  "start": 31.94,
-  "end": 32.5,
+  "start": 32.16,
+  "end": 32.72,
   "emph": true
  },
  {
   "text": "hai?",
-  "start": 32.52,
-  "end": 32.76,
+  "start": 32.74,
+  "end": 32.98,
   "br": true
  },
  {
   "text": "aur",
-  "start": 32.99,
-  "end": 33.16
- },
- {
-  "text": "jab",
-  "start": 33.18,
+  "start": 33.21,
   "end": 33.38
  },
  {
-  "text": "saans",
+  "text": "jab",
   "start": 33.4,
-  "end": 33.63,
+  "end": 33.6
+ },
+ {
+  "text": "saans",
+  "start": 33.62,
+  "end": 33.85,
   "emph": true
  },
  {
   "text": "lene",
-  "start": 33.65,
-  "end": 33.97
+  "start": 33.87,
+  "end": 34.19
  },
  {
   "text": "ki",
-  "start": 33.99,
-  "end": 34.07,
+  "start": 34.21,
+  "end": 34.29,
   "br": true
  },
  {
   "text": "jagah",
-  "start": 34.04,
-  "end": 34.47
+  "start": 34.26,
+  "end": 34.69
  },
  {
   "text": "chahiye",
-  "start": 34.49,
-  "end": 34.82
+  "start": 34.71,
+  "end": 35.04
  },
  {
   "text": "ho,",
-  "start": 34.84,
-  "end": 35.04,
+  "start": 35.06,
+  "end": 35.26,
   "br": true
  },
  {
   "text": "main",
-  "start": 35.59,
-  "end": 35.79
+  "start": 35.81,
+  "end": 36.01
  },
  {
   "text": "jungle",
-  "start": 35.81,
-  "end": 36.01,
+  "start": 36.03,
+  "end": 36.23,
   "emph": true
  },
  {
   "text": "jaati",
-  "start": 36.03,
-  "end": 36.4
+  "start": 36.25,
+  "end": 36.62
  },
  {
   "text": "hoon,",
-  "start": 36.42,
-  "end": 36.66,
+  "start": 36.64,
+  "end": 36.88,
   "br": true
  },
  {
   "text": "Lost",
-  "start": 37.21,
-  "end": 37.4,
+  "start": 37.43,
+  "end": 37.62,
   "emph": true
  },
  {
   "text": "&",
-  "start": 37.42,
-  "end": 37.5,
+  "start": 37.64,
+  "end": 37.72,
   "emph": true
  },
  {
   "text": "Free",
-  "start": 37.52,
-  "end": 37.67,
+  "start": 37.74,
+  "end": 37.89,
   "emph": true
  },
  {
   "text": "Safaris",
-  "start": 37.69,
-  "end": 37.9,
+  "start": 37.91,
+  "end": 38.12,
   "br": true,
   "emph": true
  },
  {
   "text": "ke",
-  "start": 37.98,
-  "end": 38.11
+  "start": 38.2,
+  "end": 38.33
  },
  {
   "text": "saath,",
-  "start": 38.13,
-  "end": 38.29,
+  "start": 38.35,
+  "end": 38.51,
   "br": true
  },
  {
   "text": "aap",
-  "start": 38.55,
-  "end": 38.7
+  "start": 38.77,
+  "end": 38.92
  },
  {
   "text": "bhi",
-  "start": 38.72,
-  "end": 38.89
+  "start": 38.94,
+  "end": 39.11
  },
  {
   "text": "chalna?",
-  "start": 38.91,
-  "end": 39.24,
+  "start": 39.13,
+  "end": 39.46,
   "br": true,
   "emph": true
  },
  {
   "text": "details",
-  "start": 39.66,
-  "end": 40.12
+  "start": 39.88,
+  "end": 40.34
  },
  {
   "text": "coming",
-  "start": 40.14,
-  "end": 40.55
+  "start": 40.36,
+  "end": 40.77
  },
  {
   "text": "out",
-  "start": 40.57,
-  "end": 40.68
+  "start": 40.79,
+  "end": 40.9
  },
  {
   "text": "soon.",
-  "start": 40.7,
-  "end": 40.97,
+  "start": 40.92,
+  "end": 41.19,
   "br": true,
   "emph": true
  },
  {
   "text": "main",
-  "start": 41.24,
-  "end": 41.41
+  "start": 41.46,
+  "end": 41.63
  },
  {
   "text": "har",
-  "start": 41.43,
-  "end": 41.59
+  "start": 41.65,
+  "end": 41.81
  },
  {
   "text": "roz",
-  "start": 41.61,
-  "end": 41.69
+  "start": 41.83,
+  "end": 41.91
  },
  {
   "text": "uthke…",
-  "start": 41.71,
-  "end": 41.98,
+  "start": 41.93,
+  "end": 42.2,
   "br": true
  }
 ]

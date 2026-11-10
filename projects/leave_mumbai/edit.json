@@ -12,10 +12,10 @@
     },
     {
       "src": "../../inbox/leave_mumbai/LM_02.MOV",
-      "in": 22.28,
+      "in": 22.06,
       "out": 24.02,
       "punch": 1.08,
-      "_say": "ab toh Mumbai chhod dena chahiye"
+      "_say": "ab toh Mumbai chhod hi dena chahiye ('ab' starts 22.14)"
     },
     {
       "src": "../../inbox/leave_mumbai/LM_03.MOV",
@@ -155,13 +155,13 @@
   "overlays": [
     {
       "src": "build/chart.mov",
-      "at": 21.74,
+      "at": 21.96,
       "x": 121,
       "y": 146
     },
     {
       "src": "build/logo.mov",
-      "at": 37.0,
+      "at": 37.22,
       "x": 106,
       "y": 171
     }
@@ -169,47 +169,47 @@
   "sfx": [
     {
       "src": "../../sfx_library/msg_soft_pop.mp3",
-      "at": 37.0,
+      "at": 37.22,
       "gain_db": -14
     },
     {
       "src": "../../sfx_library/msg_soft_pop.mp3",
-      "at": 21.74,
+      "at": 21.96,
       "gain_db": -16
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 3.24,
+      "at": 3.46,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 7.96,
+      "at": 8.18,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 11.51,
+      "at": 11.73,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 18.24,
+      "at": 18.46,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 21.48,
+      "at": 21.7,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 32.71,
+      "at": 32.93,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 40.96,
+      "at": 41.18,
       "gain_db": -21
     }
   ]

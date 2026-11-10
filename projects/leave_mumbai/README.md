@@ -37,7 +37,7 @@ python pipeline/isha.py render projects/leave_mumbai/edit.json --stage finish
 
 | # | Raw clip | Source in–out | Words |
 |---|---|---|---|
-| 1–2 | LM_02 | 19.92–21.60, 22.28–24.02 | yahi sochti hoon ki bas, ab toh Mumbai chhod dena chahiye |
+| 1–2 | LM_02 | 19.92–21.60, 22.06–24.02 | yahi sochti hoon ki bas, ab toh Mumbai chhod hi dena chahiye |
 | 3–4 | LM_03 | 22.88–27.60 | main phir bhi rukne ki poori koshish karti hoon because it's my city you know and I love it |
 | 5 | LM_04 | 4.45–8.00 | but honestly, Mumbai has become unlivable |
 | 6–7 | LM_05 | 1.25–7.98 | mangroves are being cut … hi nahi karta hai yaar |

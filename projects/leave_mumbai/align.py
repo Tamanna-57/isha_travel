@@ -16,7 +16,7 @@ SR, HOP = 16000, 160
 # "|" = caption page break (hand-set so every page is a natural phrase); *word* = keyword highlight
 SCRIPT = {
     "LM_02": [("main har roz uthke… |", 19.13, 19.90), ("yahi sochti hoon |", 19.96, 21.04), ("ki bas, |", 21.17, 21.52),
-              ("ab toh *Mumbai* | chhod dena chahiye. |", 22.38, 23.91)],
+              ("ab toh *Mumbai* | chhod hi dena chahiye. |", 22.14, 23.91)],
     "LM_03": [("main phir bhi, | rukne ki poori *koshish* | karti hoon, because |", 22.98, 25.58),
               ("it's my *city,* | you know, and I *love* it. |", 25.90, 27.48)],
     "LM_04": [("but *honestly,* |", 4.56, 5.38), ("Mumbai has become |", 5.76, 6.98), ("*unlivable.* |", 7.21, 7.86)],
