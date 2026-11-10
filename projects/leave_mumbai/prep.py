@@ -12,9 +12,15 @@ from PIL import Image, ImageDraw, ImageFont
 from scipy.io import wavfile
 from scipy.signal import butter, sosfilt
 
-P = Path(__file__).resolve().parent
+P = Path(__file__).resolve().parent             # project dir (overridden by --project for the trial versions)
 ROOT = P.parent.parent
 B = P / "build"
+# per-version look: chart India colour + music bed
+VARIANTS = {
+    "final": {"india": (215, 38, 61), "music": "calm"},
+    "ocean": {"india": (47, 128, 237), "music": "lofi"},
+    "pop":   {"india": (255, 79, 139), "music": "pop"},
+}
 FPS = 30
 
 # ------------------------------------------------------------------ Lost & Free Safaris pop-up
@@ -33,7 +39,7 @@ def card_image():
     lg = lg.resize((lw, lh), Image.LANCZOS)
     card.alpha_composite(lg, ((CARD_W * s - lw) // 2, int(26 * s)))
     f = ImageFont.truetype(str(ROOT / "fonts" / "Poppins-SemiBold.ttf"), 30 * s)
-    handle = "@lostandfree"
+    handle = "@lostandfreesafaris"     # client-confirmed handle
     tw = d.textlength(handle, font=f)
     d.text(((CARD_W * s - tw) / 2, CARD_H * s - 58 * s), handle, font=f, fill=(247, 243, 234, 255))
     card = card.resize((CARD_W, CARD_H), Image.LANCZOS)
@@ -192,11 +198,111 @@ def music(path, dur, t_lift):
     out /= np.abs(out).max() + 1e-9; out *= 0.8
     wavfile.write(path, SR, out.T.astype(np.float32))
 
+def _kick(sr, f0=50, f1=110, dec=0.14, amp=0.5):
+    t = np.arange(int(0.4 * sr)) / sr
+    return np.sin(2 * np.pi * np.cumsum(f0 + f1 * np.exp(-t / 0.03)) / sr) * np.exp(-t / dec) * amp
+
+def _noise_hit(sr, lo, hi, dec, amp, rng, body=0.0, bf=190):
+    n = int(0.3 * sr); t = np.arange(n) / sr
+    nz = sosfilt(butter(2, [lo, hi], "bandpass", fs=sr, output="sos"), rng.standard_normal(n))
+    return (nz * np.exp(-t / dec) + body * np.sin(2 * np.pi * bf * t) * np.exp(-t / 0.05)) * amp
+
+def _add(out, x, t, gain=1.0, pan=0.0):
+    i0 = int(t * SR)
+    if i0 >= out.shape[1] or i0 < 0:
+        return
+    L = min(len(x), out.shape[1] - i0)
+    out[0, i0:i0 + L] += x[:L] * gain * (1 - pan) / 2 * 2 ** 0.5
+    out[1, i0:i0 + L] += x[:L] * gain * (1 + pan) / 2 * 2 ** 0.5
+
+def music_lofi(path, dur, t_lift):
+    """Trial A: lo-fi groove all the way through. 82 BPM, swung hats, boom-bap kick/snare, electric-piano
+    7th chords (Am7 Fmaj7 Cmaj7 G6), round bass, a little vinyl crackle; on the lift a soft lead melody."""
+    rng = np.random.default_rng(5); n = int(dur * SR) + 1; out = np.zeros((2, n))
+    f = lambda m: 440 * 2 ** ((m - 69) / 12)
+    beat = 60 / 82; bar = 4 * beat
+    chords = [[57, 60, 64, 67], [53, 57, 60, 64], [48, 52, 55, 59], [55, 59, 62, 64]]
+    def ep(m, L):                                    # electric piano: sine + bell partial, tremolo, soft decay
+        t = np.arange(int(L * SR)) / SR
+        return ((np.sin(2 * np.pi * f(m) * t) + 0.18 * np.sin(2 * np.pi * f(m) * 4 * t) * np.exp(-t / 0.3))
+                * np.exp(-t / 1.6) * (1 + 0.15 * np.sin(2 * np.pi * 5 * t)) * np.minimum(1, t / 0.005))
+    kick, snare = _kick(SR, amp=0.55), _noise_hit(SR, 1200, 6000, 0.08, 0.22, rng, body=0.5)
+    hat = _noise_hit(SR, 7000, 11000, 0.02, 0.10, rng)
+    k = 0; t0 = 0.0
+    while t0 < dur:
+        ch = chords[k % 4]
+        for j, m in enumerate(ch):
+            _add(out, ep(m, bar + 0.4), t0 + 0.012 * j, 0.10, -0.3 + 0.2 * j)
+            _add(out, ep(m, 1.2), t0 + 2.5 * beat + 0.012 * j, 0.06, 0.2 - 0.15 * j)
+        tb = np.arange(int((bar + 0.2) * SR)) / SR
+        bass = np.sin(2 * np.pi * f(ch[0] - 24) * tb) * np.minimum(1, tb / 0.01) * np.exp(-tb / 2.5) * 0.30
+        _add(out, bass, t0)
+        for bt, w in ((0, 1), (1.5, 0.7), (2.5, 0.8)):
+            _add(out, kick, t0 + bt * beat, w)
+        for bt in (1, 3):
+            _add(out, snare, t0 + bt * beat, 1.0, 0.1)
+        for e8 in range(8):
+            sw = 0.09 * beat if e8 % 2 else 0.0     # swing
+            _add(out, hat, t0 + e8 * beat / 2 + sw, 0.8 if e8 % 2 else 1.0, 0.35)
+        if t0 + bar > t_lift:                      # lift: a simple lead line
+            for j, m in enumerate([ch[3] + 12, ch[2] + 12, ch[1] + 12, ch[2] + 12]):
+                ts = t0 + j * beat
+                if ts >= t_lift:
+                    _add(out, ep(m, 0.9), ts, 0.07, 0.25)
+        t0 += bar; k += 1
+    crackle = (rng.random(n) > 0.9993) * rng.standard_normal(n) * 0.25
+    crackle = sosfilt(butter(2, 2500, "highpass", fs=SR, output="sos"), crackle)
+    out += crackle * 0.4
+    out = sosfilt(butter(2, [40, 11000], "bandpass", fs=SR, output="sos"), out, axis=1)
+    out /= np.abs(out).max() + 1e-9; out *= 0.85
+    wavfile.write(path, SR, out.T.astype(np.float32))
+
+def music_pop(path, dur, t_lift, t_chart):
+    """Trial B: upbeat pop bed. 104 BPM, soft four-on-the-floor kick, claps on 2 and 4, open hats on the off-beats,
+    plucky filtered-saw arpeggio (Am F C G), sub bass; a riser into the chart; brighter octave on the lift."""
+    rng = np.random.default_rng(9); n = int(dur * SR) + 1; out = np.zeros((2, n))
+    f = lambda m: 440 * 2 ** ((m - 69) / 12)
+    beat = 60 / 104; bar = 4 * beat
+    chords = [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]]
+    def pluck(m, L=0.35, bright=1.0):
+        t = np.arange(int(L * SR)) / SR
+        saw = 2 * ((f(m) * t) % 1) - 1
+        lp = sosfilt(butter(2, min(9000, 1800 + 3000 * bright), "lowpass", fs=SR, output="sos"), saw)
+        return lp * np.exp(-t / 0.12) * np.minimum(1, t / 0.003)
+    kick = _kick(SR, 45, 120, 0.11, 0.6)
+    clap = _noise_hit(SR, 900, 4000, 0.05, 0.22, rng)
+    ohat = _noise_hit(SR, 6000, 12000, 0.06, 0.07, rng)
+    k = 0; t0 = 0.0
+    while t0 < dur:
+        ch = chords[k % 4]; lift = t0 >= t_lift - 0.01
+        for bt in range(4):
+            _add(out, kick, t0 + bt * beat, 0.9)
+            _add(out, ohat, t0 + (bt + 0.5) * beat, 1.0, 0.3)
+        for bt in (1, 3):
+            _add(out, clap, t0 + bt * beat, 1.0, -0.15)
+        for s16 in range(16):
+            m = ch[s16 % 3] + (12 if (s16 // 3) % 2 else 0) + (12 if lift else 0)
+            _add(out, pluck(m, bright=1.4 if lift else 1.0), t0 + s16 * beat / 4, 0.09, -0.35 + 0.7 * ((s16 % 4) / 3))
+        tb = np.arange(int(bar * SR)) / SR
+        _add(out, np.sin(2 * np.pi * f(ch[0] - 24) * tb) * np.minimum(1, tb / 0.01) * np.minimum(1, (bar - tb) / 0.05) * 0.28, t0)
+        t0 += bar; k += 1
+    # riser (filtered noise swelling for 1.6 s) into the chart
+    L = int(1.6 * SR); t = np.arange(L) / SR
+    nz = sosfilt(butter(2, [2000, 9000], "bandpass", fs=SR, output="sos"), rng.standard_normal(L)) * (t / 1.6) ** 2 * 0.25
+    _add(out, nz, max(0, t_chart - 1.6))
+    out = sosfilt(butter(2, [35, 13000], "bandpass", fs=SR, output="sos"), out, axis=1)
+    out /= np.abs(out).max() + 1e-9; out *= 0.85
+    wavfile.write(path, SR, out.T.astype(np.float32))
+
 # ------------------------------------------------------------------ main
 def main():
-    global POP_IN, POP_OUT, CH_IN, CH_OUT
+    global POP_IN, POP_OUT, CH_IN, CH_OUT, P, B, SIND
+    if "--project" in sys.argv:                       # trial versions live in their own project folders
+        P = (Path.cwd() / sys.argv[sys.argv.index("--project") + 1]).resolve(); B = P / "build"
     B.mkdir(exist_ok=True)
     edit = json.loads((P / "edit.json").read_text(encoding="utf-8"))
+    var = VARIANTS[edit.get("_variant", "final")]
+    SIND = var["india"]
     starts, acc = [], 0.0
     for c in edit["clips"]:
         starts.append(acc); acc += (c["out"] - c["in"]) / c.get("speed", 1.0)
@@ -204,7 +310,12 @@ def main():
     CH_IN, CH_OUT = cue["chart"] + 0.08, cue["chart_end"]
     POP_IN, POP_OUT = cue["logo"] + 0.05, cue["logo_end"]
     chart_clip(); popup_clip()
-    music(str(B / "music.wav"), acc + 0.5, cue["lift"])
+    if var["music"] == "lofi":
+        music_lofi(str(B / "music.wav"), acc + 0.5, cue["lift"])
+    elif var["music"] == "pop":
+        music_pop(str(B / "music.wav"), acc + 0.5, cue["lift"], CH_IN)
+    else:
+        music(str(B / "music.wav"), acc + 0.5, cue["lift"])
     # write the overlay/sfx timing back into edit.json
     edit["overlays"] = [{"src": "build/chart.mov", "at": round(CH_IN, 3), "x": CH_X - 4, "y": CH_Y - 4},
                         {"src": "build/logo.mov", "at": round(POP_IN, 3), "x": CARD_X - 4, "y": CARD_Y - 4}]

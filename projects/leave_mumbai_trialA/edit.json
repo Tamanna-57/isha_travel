@@ -1,0 +1,218 @@
+{
+  "_note": "TRIAL A 'Ocean' of the Leave Mumbai reel: same cut/grade/captions as the final, different colours (cobalt heading, aqua keywords, white) and a lo-fi groove all the way through. For A/B testing on Isha's page.",
+  "name": "leave_mumbai_trialA_ocean",
+  "format": "B",
+  "grade": "lift",
+  "clips": [
+    {
+      "src": "../../inbox/leave_mumbai/LM_02.MOV",
+      "in": 19.92,
+      "out": 21.6,
+      "_say": "yahi sochti hoon ki bas,"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_02.MOV",
+      "in": 22.06,
+      "out": 24.02,
+      "punch": 1.08,
+      "_say": "ab toh Mumbai chhod hi dena chahiye ('ab' starts 22.14)"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_03.MOV",
+      "in": 22.88,
+      "out": 25.74,
+      "_say": "main phir bhi rukne ki poori koshish karti hoon because",
+      "_whoosh": true
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_03.MOV",
+      "in": 25.74,
+      "out": 27.6,
+      "punch": 1.08,
+      "_say": "it's my city you know and I love it"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_04.MOV",
+      "in": 4.45,
+      "out": 8.0,
+      "_say": "but honestly, Mumbai has become unlivable",
+      "_whoosh": true
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_05.MOV",
+      "in": 1.25,
+      "out": 4.745,
+      "_say": "mangroves are being cut, rivers are being polluted and honestly",
+      "_whoosh": true
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_05.MOV",
+      "in": 4.745,
+      "out": 7.98,
+      "punch": 1.08,
+      "_say": "aajkal koi kisi cheez ki respect hi nahi karta hai yaar"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_06.MOV",
+      "in": 5.86,
+      "out": 9.1,
+      "_say": "aur har Diwali pollution aur bhi zyada badh jaata hai",
+      "_whoosh": true
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_07.MOV",
+      "in": 18.45,
+      "out": 22.55,
+      "_cue": "chart",
+      "_say": "13 out of the world's 20 most polluted cities are in India",
+      "_whoosh": true
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_11.MOV",
+      "in": 15.75,
+      "out": 17.93,
+      "_cue": "chart_end",
+      "_say": "toh is saal meri sirf ek request hai (take 3)"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_11.MOV",
+      "in": 4.55,
+      "out": 6.97,
+      "punch": 1.08,
+      "_say": "itna socho ki humne exactly kiya kya hai (take 1)"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_11.MOV",
+      "in": 20.89,
+      "out": 23.42,
+      "_say": "aur ye sab humein laaya kidhar hai (take 3, starts on 'aur', after its 'kya hai')"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_12.MOV",
+      "in": 6.27,
+      "out": 8.7,
+      "_say": "aur jab saans lene ki jagah chahiye ho,",
+      "_whoosh": true
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_12.MOV",
+      "in": 8.7,
+      "out": 10.33,
+      "punch": 1.08,
+      "_cue": "lift",
+      "_say": "main jungle jaati hoon"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_12.MOV",
+      "in": 10.33,
+      "out": 11.82,
+      "_cue": "logo",
+      "_say": "Lost & Free ke saath"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_12.MOV",
+      "in": 12.5,
+      "out": 15.2,
+      "punch": 1.08,
+      "_say": "aap bhi chalna? details coming out soon"
+    },
+    {
+      "src": "../../inbox/leave_mumbai/LM_02.MOV",
+      "in": 19.03,
+      "out": 19.92,
+      "_cue": "logo_end",
+      "_say": "main har roz uthke... (loops into the first line)",
+      "_whoosh": true
+    }
+  ],
+  "captions": {
+    "style": "karaoke",
+    "words": "words.json",
+    "key_color": "#56CCF2"
+  },
+  "titles": [
+    {
+      "type": "label",
+      "text": "every morning, I want to",
+      "start": 0.0,
+      "end": 2.6,
+      "y": 215
+    },
+    {
+      "type": "chapter",
+      "text": "Leave Mumbai",
+      "start": 0.08,
+      "end": 2.6,
+      "y": 360,
+      "color": "#2F80ED"
+    }
+  ],
+  "music": {
+    "src": "build/music.wav",
+    "start": 0,
+    "gain_db": -15,
+    "duck": true
+  },
+  "overlays": [
+    {
+      "src": "build/chart.mov",
+      "at": 21.96,
+      "x": 121,
+      "y": 146
+    },
+    {
+      "src": "build/logo.mov",
+      "at": 37.22,
+      "x": 106,
+      "y": 171
+    }
+  ],
+  "sfx": [
+    {
+      "src": "../../sfx_library/msg_soft_pop.mp3",
+      "at": 37.22,
+      "gain_db": -14
+    },
+    {
+      "src": "../../sfx_library/msg_soft_pop.mp3",
+      "at": 21.96,
+      "gain_db": -16
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 3.46,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 8.18,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 11.73,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 18.46,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 21.7,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 32.93,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 41.18,
+      "gain_db": -21
+    }
+  ],
+  "_variant": "ocean"
+}

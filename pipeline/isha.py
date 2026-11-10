@@ -341,6 +341,20 @@ def atempo_chain(speed):
     return ",".join(parts)
 
 # ------------------------------------------------------------------ assemble
+def clip_fx(fx):
+    """video-only intro effects on a clip (the audio is never touched, so no word is cut or faded):
+    zoom = scale-in 116% -> 100% over 0.28 s · whip = zoom + 0.1 s horizontal motion blur · flash = white flash 0.16 s"""
+    out = []
+    for f in ([fx] if isinstance(fx, str) else (fx or [])):
+        if f in ("zoom", "whip"):
+            z = "(1+0.16*max(0\\,1-t/0.28))"
+            out.append(f"scale=w='trunc(iw*{z}/2)*2':h='trunc(ih*{z}/2)*2':eval=frame,crop={W}:{H}")
+        if f == "whip":
+            out.append("avgblur=sizeX=36:sizeY=1:enable='lt(t\\,0.1)'")
+        if f == "flash":
+            out.append("fade=t=in:st=0:d=0.16:color=white")
+    return out
+
 def build_segment(clip, i, proj, build, default_grade):
     src = (proj / clip["src"]).resolve()
     info = clip_info(src)
@@ -368,6 +382,7 @@ def build_segment(clip, i, proj, build, default_grade):
     if frame == "fill":
         sw, sh = int(W * punch) // 2 * 2, int(H * punch) // 2 * 2
         vf.append(f"scale={sw}:{sh}:force_original_aspect_ratio=increase,crop={W}:{H}")
+        vf += clip_fx(clip.get("fx"))
         fc = f"[0:v]{','.join(vf)},setsar=1,format=yuv420p[v]"
     elif frame in ("letterbox", "letterbox_wide"):
         crop = "crop=iw:min(ih\\,iw/2.0)," if frame == "letterbox_wide" else ""
@@ -456,7 +471,7 @@ def assemble(edit, proj, build):
 
 # ------------------------------------------------------------------ captions (ASS)
 STYLE_DEFAULTS = {  # style -> (max words/page, max chars/page)
-    "serif": (5, 34), "sans": (3, 18), "karaoke": (4, 20), "caps": (4, 18), "top": (6, 30), "typewriter": (5, 28),
+    "serif": (5, 34), "sans": (3, 18), "karaoke": (4, 20), "pop": (4, 20), "caps": (4, 18), "top": (6, 30), "typewriter": (5, 28),
 }
 
 # libass font sizes, calibrated (pipeline/calibrate_type.py) so text occupies the same share of the frame
@@ -466,6 +481,7 @@ SIZE = {
     "sans_key": 128, "sans_small": 73,          # brinda orca: "Expensive" = 35% (fillers 57%)
     "karaoke": 115,                             # brinda 7.4M: "Trip pe Jaane se" = 50%
     "karaoke_key": 124,                         # keyword (emph) in karaoke: Playfair Bold Italic marigold
+    "pop": 84, "pop_key": 96,                   # "pop" captions: Montserrat Bold caps, words pop in as spoken
     "caps": 77,                                 # brinda Japan: "MAI HU ABHI AAJ" = 49%
     "top": 68, "top_accent": 86,                # brinda IndiGo: "I booked my flights" = 34%
     "mono": 49,                                 # sailing 21M: "we started sailing from" = 47%
@@ -506,6 +522,7 @@ def ass_header():
         s("Fact", "serif_reg", SIZE["fact"], C["marigold"], italic=-1, outline=1.2),
         s("Label", "serif_bold", SIZE["label"], C["chalk"], outline=0, shadow=5, back="&H26000000&"),
         s("Hook", "sans_bold", SIZE["hook"], C["chalk"], align=8, outline=2),
+        s("Pop", "caps", SIZE["pop"], C["chalk"], sp=2, outline=0, shadow=5, back="&H26000000&"),
     ]
     return ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n"
             "ScaledBorderAndShadow: yes\nYCbCr Matrix: TV.709\n\n[V4+ Styles]\n"
@@ -575,7 +592,7 @@ def pick_emphasis(page):
         pick.add(cands[1][1])
     return pick
 
-def caption_events(words, style, y=None, until=None):
+def caption_events(words, style, y=None, until=None, key_color=None, key_font=None):
     evs = []
     pages = paginate(words, style)
     for pi, page in enumerate(pages):
@@ -610,12 +627,24 @@ def caption_events(words, style, y=None, until=None):
             for w in page:
                 dt = int((w["start"] - start) * 1000)
                 if w.get("emph"):                     # keyword: Playfair Bold Italic, marigold, a touch bigger
-                    body.append(f"{{{fn_tag('serif_bold')}\\i1\\fs{SIZE['karaoke_key']}\\1c{C['grey']}\\alpha&H30&"
-                                f"\\t({dt},{dt + 120},\\1c{C['marigold']}\\alpha&H00&)}}{ass_escape(w['text'])}"
+                    kf = key_font or "serif_bold"
+                    body.append(f"{{{fn_tag(kf)}\\i{1 if kf.startswith('serif') else 0}\\fs{SIZE['karaoke_key']}"
+                                f"\\1c{C['grey']}\\alpha&H30&"
+                                f"\\t({dt},{dt + 120},\\1c{ass_color(key_color, 'marigold')}\\alpha&H00&)}}{ass_escape(w['text'])}"
                                 f"{{{fn_tag('sans_semi')}\\i0\\fs{SIZE['karaoke']}}} ")
                 else:
                     body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
             evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{y or 1340})\\fad(40,0)}}" + "".join(body).rstrip()))
+        elif style == "pop":                          # words pop in one by one as spoken (Montserrat caps), keyword accent
+            body = []
+            for w in page:
+                dt = int((w["start"] - start) * 1000)
+                col = ass_color(key_color, "marigold") if w.get("emph") else C["chalk"]
+                fs = SIZE["pop_key"] if w.get("emph") else SIZE["pop"]
+                # scale only vertically while popping, so the line never reflows sideways
+                body.append(f"{{\\fs{fs}\\1c{col}\\alpha&HFF&\\fscy55\\t({dt},{dt + 1},\\alpha&H00&)"
+                            f"\\t({dt},{dt + 140},0.5,\\fscy100)}}{ass_escape(w['text']).upper()} ")
+            evs.append(ev(start, end, "Pop", f"{{\\an5\\pos(540,{y or 1340})}}" + "".join(body).rstrip()))
         elif style == "caps":
             txt = " ".join(ass_escape(w["text"]).upper() for w in page)
             evs.append(ev(start, end, "Caps", f"{{\\an5\\pos(540,{y or 1400}){POP}}}{txt}"))
@@ -650,7 +679,8 @@ def title_events(titles, top_captions=False):
         if typ == "chapter":
             y = t.get("y", 370 + bump); col = ass_color(t.get("color"), "sindoor")
             fs = fit("chapter", txt_up, 5, 0.66)
-            evs.append(ev(s, e, "Chapter", f"{{\\an5\\pos(540,{y})\\fs{fs}\\1c{col}{POP_T}}}{txt_up}", 2))
+            hard = r"\shad7\4a&H1A&\blur0" if t.get("hard_shadow") else ""   # crisp, near-opaque drop shadow
+            evs.append(ev(s, e, "Chapter", f"{{\\an5\\pos(540,{y})\\fs{fs}\\1c{col}{hard}{POP_T}}}{txt_up}", 2))
             if t.get("script"):
                 sfs = int(SIZE["script"] * min(1.0, fs / SIZE["chapter"]))
                 evs.append(ev(s + 0.12, e, "Script", f"{{\\an5\\pos(540,{y + int(fs * 0.24)})\\fs{sfs}"
@@ -671,7 +701,8 @@ def title_events(titles, top_captions=False):
             txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['sindoor']}}}{m.group(1)}{{\\1c{C['chalk']}}}", ass_escape(t["text"]))
             evs.append(ev(s, e, "Pill", f"{{\\an8\\pos(540,{t.get('y', 300 + bump)})\\fad(80,80)}}{txt}", 4))
         elif typ == "label":                      # no box: bold white serif, hard drop shadow, *word* in marigold
-            txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['marigold']}}}{m.group(1)}{{\\1c{C['chalk']}}}",
+            acc = ass_color(t.get("accent"), "marigold")
+            txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{acc}}}{m.group(1)}{{\\1c{C['chalk']}}}",
                          ass_escape(t["text"]))
             evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{t.get('y', 1090)}){POP_T}}}{txt}", 2))
         elif typ == "hook":
@@ -698,7 +729,8 @@ def write_ass(path, words, cap_cfg, titles):
     evs = []
     style = cap_cfg.get("style", "serif")
     if words and cap_cfg.get("enabled", True):
-        evs += caption_events(words, style, cap_cfg.get("y"), cap_cfg.get("until"))
+        evs += caption_events(words, style, cap_cfg.get("y"), cap_cfg.get("until"),
+                              cap_cfg.get("key_color"), cap_cfg.get("key_font"))
     evs += title_events(titles or [], top_captions=bool(words) and cap_cfg.get("enabled", True) and style == "top")
     Path(path).write_text(ass_header() + "\n".join(evs) + "\n", encoding="utf-8")
 
@@ -710,8 +742,8 @@ def write_srt(path, words):
     Path(path).write_text("\n".join(lines), encoding="utf-8")
 
 # ------------------------------------------------------------------ finish (audio mix + burn-in)
-def loudnorm_measure(wav):
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(wav), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json",
+def loudnorm_measure(wav, lufs=-14):
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(wav), "-af", f"loudnorm=I={lufs}:TP=-1.5:LRA=11:print_format=json",
                         "-f", "null", "-"], capture_output=True, text=True, encoding="utf-8", errors="replace")
     m = re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", r.stderr, re.S)
     return json.loads(m.group(0)) if m else None
@@ -748,9 +780,10 @@ def finish(edit, proj, build, assembled):
              *sins, "-filter_complex", fc, "-map", "[out]", "-t", f"{dur:.3f}", "-c:a", "pcm_s16le", mix])
     else:
         run(["ffmpeg", "-y", "-v", "error", "-i", assembled, "-af", voice, "-vn", "-c:a", "pcm_s16le", mix])
-    meas = loudnorm_measure(mix)
+    lufs = float(edit.get("lufs", -14))               # integrated loudness target (Instagram-safe default -14)
+    meas = loudnorm_measure(mix, lufs)
     if meas and meas.get("input_i") not in (None, "-inf"):
-        ln = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:"
+        ln = (f"loudnorm=I={lufs}:TP=-1.5:LRA=11:measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:"
               f"measured_LRA={meas['input_lra']}:measured_thresh={meas['input_thresh']}:offset={meas['target_offset']}:linear=true")
     else:
         ln = "anull"   # silent track
@@ -804,13 +837,13 @@ def cmd_render(a):
     if a.stage in ("all", "finish"):
         final = finish(edit, proj, build, assembled)
         if not a.no_qa:
-            qa(final, edit.get("format"))
+            qa(final, edit.get("format"), edit.get("lufs", -14))
 
 # ------------------------------------------------------------------ QA
 # format -> (min length s, max length s, min avg shot s, max avg shot s), from ISHA_REEL_SYSTEM.md §1
 FORMAT_TARGETS = {"A": (35, 75, 1.5, 2.5), "B": (40, 60, 1.1, 2.0), "C": (12, 35, 0.8, 1.5), "D": (10, 25, 1.5, 25)}
 
-def qa(path, fmt=None):
+def qa(path, fmt=None, lufs=-14):
     i = clip_info(path)
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-af", "ebur128=peak=true", "-f", "null", "-"],
                        capture_output=True, text=True, encoding="utf-8", errors="replace")
@@ -824,7 +857,7 @@ def qa(path, fmt=None):
         ("resolution 1080x1920", (i.get("width"), i.get("height")) == (W, H)),
         ("30 fps CFR", abs(i.get("fps", 0) - FPS) < 0.01 and not i.get("vfr")),
         ("BT.709 tagged", v.get("color_primaries") == "bt709" and v.get("color_transfer") == "bt709"),
-        (f"loudness {I[-1] if I else '?'} LUFS (target -14±1)", bool(I) and abs(float(I[-1]) + 14) <= 1.0),
+        (f"loudness {I[-1] if I else '?'} LUFS (target {lufs}±1)", bool(I) and abs(float(I[-1]) - lufs) <= 1.0),
         (f"true peak {TP[-1] if TP else '?'} dBFS (<= -1.0)", bool(TP) and float(TP[-1]) <= -1.0),
         (f"first cut at {float(cuts[0]):.2f}s (<= 2.5s)" if cuts else "no cuts detected", bool(cuts) and float(cuts[0]) <= 2.5),
     ]
