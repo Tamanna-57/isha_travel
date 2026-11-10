@@ -471,7 +471,7 @@ def assemble(edit, proj, build):
 
 # ------------------------------------------------------------------ captions (ASS)
 STYLE_DEFAULTS = {  # style -> (max words/page, max chars/page)
-    "serif": (5, 34), "sans": (3, 18), "karaoke": (4, 20), "pop": (4, 20), "caps": (4, 18), "top": (6, 30), "typewriter": (5, 28),
+    "serif": (5, 34), "sans": (3, 18), "karaoke": (4, 20), "pop": (4, 20), "topbold": (4, 24), "caps": (4, 18), "top": (6, 30), "typewriter": (5, 28),
 }
 
 # libass font sizes, calibrated (pipeline/calibrate_type.py) so text occupies the same share of the frame
@@ -482,6 +482,8 @@ SIZE = {
     "karaoke": 115,                             # brinda 7.4M: "Trip pe Jaane se" = 50%
     "karaoke_key": 124,                         # keyword (emph) in karaoke: Playfair Bold Italic marigold
     "pop": 84, "pop_key": 96,                   # "pop" captions: Montserrat Bold caps, words pop in as spoken
+    "topbold": 86, "topbold_big": 120,          # "topbold" captions (ixigo/sailing_amrutha ref): 23 chars = 54% width
+    "topbold_hook": 118,                        # its neon condensed-caps hook line
     "caps": 77,                                 # brinda Japan: "MAI HU ABHI AAJ" = 49%
     "top": 68, "top_accent": 86,                # brinda IndiGo: "I booked my flights" = 34%
     "mono": 49,                                 # sailing 21M: "we started sailing from" = 47%
@@ -523,6 +525,7 @@ def ass_header():
         s("Label", "serif_bold", SIZE["label"], C["chalk"], outline=0, shadow=5, back="&H26000000&"),
         s("Hook", "sans_bold", SIZE["hook"], C["chalk"], align=8, outline=2),
         s("Pop", "caps", SIZE["pop"], C["chalk"], sp=2, outline=0, shadow=5, back="&H26000000&"),
+        s("TopBold", "sans_bold", SIZE["topbold"], C["chalk"], outline=2.5, shadow=2, ocol="&H60202020&", back="&H70000000&"),
     ]
     return ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n"
             "ScaledBorderAndShadow: yes\nYCbCr Matrix: TV.709\n\n[V4+ Styles]\n"
@@ -592,7 +595,7 @@ def pick_emphasis(page):
         pick.add(cands[1][1])
     return pick
 
-def caption_events(words, style, y=None, until=None, key_color=None, key_font=None):
+def caption_events(words, style, y=None, until=None, key_color=None, key_font=None, hook_until=None):
     evs = []
     pages = paginate(words, style)
     for pi, page in enumerate(pages):
@@ -635,6 +638,20 @@ def caption_events(words, style, y=None, until=None, key_color=None, key_font=No
                 else:
                     body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
             evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{y or 1340})\\fad(40,0)}}" + "".join(body).rstrip()))
+        elif style == "topbold":                      # reference style (sailing_amrutha ixigo reel): white rounded-bold
+            # phrases high in the frame, no word highlight; the opening line(s) as a neon condensed-caps hook;
+            # a page that is a single emphasised word is set bigger
+            yy = y or 436
+            hook = start < float(hook_until or 0)
+            if hook:
+                txt = " ".join(ass_escape(w["text"]).upper() for w in page)
+                evs.append(ev(start, end, "TopBold", f"{{\\an5\\pos(540,{yy}){fn_tag('condensed')}\\fs{SIZE['topbold_hook']}"
+                                                     f"\\1c{ass_color(key_color, 'marigold')}\\bord3\\shad3{POP}}}{txt}"))
+            else:
+                big = len(page) == 1 and page[0].get("emph")
+                txt = " ".join(ass_escape(w["text"]) for w in page)
+                evs.append(ev(start, end, "TopBold", f"{{\\an5\\pos(540,{yy})\\fs{SIZE['topbold_big'] if big else SIZE['topbold']}"
+                                                     f"\\fad(60,0)}}{txt}"))
         elif style == "pop":                          # words pop in one by one as spoken (Montserrat caps), keyword accent
             body = []
             for w in page:
@@ -730,7 +747,7 @@ def write_ass(path, words, cap_cfg, titles):
     style = cap_cfg.get("style", "serif")
     if words and cap_cfg.get("enabled", True):
         evs += caption_events(words, style, cap_cfg.get("y"), cap_cfg.get("until"),
-                              cap_cfg.get("key_color"), cap_cfg.get("key_font"))
+                              cap_cfg.get("key_color"), cap_cfg.get("key_font"), cap_cfg.get("hook_until"))
     evs += title_events(titles or [], top_captions=bool(words) and cap_cfg.get("enabled", True) and style == "top")
     Path(path).write_text(ass_header() + "\n".join(evs) + "\n", encoding="utf-8")
 

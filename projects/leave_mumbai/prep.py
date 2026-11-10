@@ -19,6 +19,7 @@ B = P / "build"
 VARIANTS = {
     "final": {"india": (215, 38, 61), "music": "calm"},
     "ocean": {"india": (47, 128, 237), "music": "lofi"},
+    "refstyle": {"india": (176, 196, 40), "music": "lofi", "chart_y": 1060, "card_y": 1070},  # captions live up top
     "pop":   {"india": (255, 79, 139), "music": "pop"},
 }
 FPS = 30
@@ -303,6 +304,8 @@ def main():
     edit = json.loads((P / "edit.json").read_text(encoding="utf-8"))
     var = VARIANTS[edit.get("_variant", "final")]
     SIND = var["india"]
+    global CH_Y, CARD_Y
+    CH_Y = var.get("chart_y", CH_Y); CARD_Y = var.get("card_y", CARD_Y)
     starts, acc = [], 0.0
     for c in edit["clips"]:
         starts.append(acc); acc += (c["out"] - c["in"]) / c.get("speed", 1.0)

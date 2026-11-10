@@ -1,7 +1,7 @@
 {
-  "_note": "TRIAL A 'Ocean': the final's picture and voice untouched; top layer only: cobalt heading, aqua keywords, chart in cobalt, lo-fi groove all the way through.",
-  "name": "leave_mumbai_trialA_ocean",
-  "_variant": "ocean",
+  "_note": "TRIAL A, in the style of the client's reference (sailing_amrutha x ixigo reel): the final's picture and voice untouched; top layer only: her opening line as a neon-lime condensed-caps hook, then plain white rounded-bold phrases high in the frame (no word highlight), hard cuts, chart + logo card moved low, lo-fi bed.",
+  "name": "leave_mumbai_trialA_refstyle",
+  "_variant": "refstyle",
   "format": "B",
   "grade": "lift",
   "clips": [
@@ -144,28 +144,13 @@
     }
   ],
   "lufs": -12,
-  "titles": [
-    {
-      "type": "label",
-      "text": "every morning, I want to",
-      "start": 0.0,
-      "end": 2.4,
-      "y": 258
-    },
-    {
-      "type": "chapter",
-      "text": "Leave Mumbai",
-      "start": 0.08,
-      "end": 2.4,
-      "y": 375,
-      "color": "#2F80ED",
-      "hard_shadow": true
-    }
-  ],
+  "titles": [],
   "captions": {
-    "style": "karaoke",
+    "style": "topbold",
     "words": "words.json",
-    "key_color": "#56CCF2"
+    "key_color": "#D6EC47",
+    "hook_until": 3.3,
+    "y": 436
   },
   "music": {
     "src": "build/music.wav",
@@ -178,13 +163,13 @@
       "src": "build/chart.mov",
       "at": 20.339,
       "x": 121,
-      "y": 146
+      "y": 1056
     },
     {
       "src": "build/logo.mov",
       "at": 35.069,
       "x": 106,
-      "y": 171
+      "y": 1066
     }
   ],
   "sfx": [
@@ -197,41 +182,6 @@
       "src": "../../sfx_library/msg_soft_pop.mp3",
       "at": 20.339,
       "gain_db": -16
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 3.19,
-      "gain_db": -21
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 7.561,
-      "gain_db": -21
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 10.848,
-      "gain_db": -21
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 17.079,
-      "gain_db": -21
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 20.079,
-      "gain_db": -21
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 31.079,
-      "gain_db": -21
-    },
-    {
-      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 38.718,
-      "gain_db": -21
     }
   ]
 }

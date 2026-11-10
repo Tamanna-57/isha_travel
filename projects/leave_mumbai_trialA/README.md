@@ -1,15 +1,14 @@
-# Leave Mumbai — Trial A "Ocean" (A/B test version)
+# Leave Mumbai — Trial A (reference style)
 
-Same cut, words, grade, chart and logo card as the final (`projects/leave_mumbai`). Changes only **colours + music**,
-so its result tells us whether the palette and a fuller music bed help.
+Style copied from the client's reference reel (sailing_amrutha x ixigo, 22.9 s). Base layer = the final
+(`projects/leave_mumbai`): same clips, cut points, speed, takes, voice and words; `assembled.mov` is the final's own file.
 
-| | Final | Trial A |
+| | Reference | Trial A |
 |---|---|---|
-| Heading | LEAVE MUMBAI, Anton, sindoor `#D7263D` | Anton, **cobalt `#2F80ED`** |
-| Captions | karaoke white, keywords Playfair Bold Italic **marigold** | same, keywords **aqua `#56CCF2`** |
-| Chart India slice | sindoor | cobalt |
-| Music | calm pad, −17 dB | **lo-fi groove all through** (82 BPM, e-piano 7ths, boom-bap, vinyl crackle), −15 dB ducked |
-| Cuts / SFX | hard cuts, soft whooshes, pops | same |
+| Hook | "PAY ATTENTION", condensed heavy caps, neon lime `#D6EC47`, thin dark edge, ~23% down | her opening line "YAHI SOCHTI HOON … CHHOD HI DENA CHAHIYE." in Anton caps, neon lime `#D6EC47` |
+| Captions | white rounded-bold phrases, 2–4 words, high in frame (23% down), soft dark outline, no word highlight | `topbold`: Poppins Bold 86 white, y 436, soft dark outline + shadow; single-word punch ("unlivable.") 120 |
+| Cuts | hard cuts only (energy from in-shot motion and pace) | hard cuts (no whooshes) |
+| Overlays | n/a | IQAir chart (lime India slice) and Lost & Free Safaris card moved low (y ~1060) so they don't clash with the top captions |
+| Music | n/a | lo-fi groove, −15 dB ducked |
 
-Build: `python projects/leave_mumbai/prep.py --project projects/leave_mumbai_trialA`, then
-`python pipeline/isha.py render projects/leave_mumbai_trialA/edit.json` (uses the final's words.json).
+Build: `python projects/leave_mumbai/build_trials.py A` (checks the base layer against the final before rendering).

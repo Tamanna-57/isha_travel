@@ -3,7 +3,8 @@
 Base layer (never changed here): the final's clips, cut points, speed, takes, words.json, loudness target.
 Top layer (per trial): heading/caption style + colours, title, music bed, SFX levels, transition effects.
 
-  Trial A "Ocean":    cobalt heading, aqua keywords, lo-fi groove. Picture/voice = the final's assembled.mov itself.
+  Trial A (ref style): the client's reference reel look: neon-lime hook line, white bold top captions, hard cuts,
+                      lo-fi groove. Picture/voice = the final's assembled.mov itself.
   Trial B "Bold Pop": Caveat write-on title, pop captions (Montserrat caps), hot-pink keywords, whip/zoom/flash
                       intros (video only), upbeat bed. Re-cut for the effects; its voice track is then checked
                       sample-for-sample against the final's.
@@ -22,14 +23,14 @@ import isha  # noqa: E402
 
 TRIALS = {
     "A": {
-        "dir": "leave_mumbai_trialA", "name": "leave_mumbai_trialA_ocean", "variant": "ocean",
-        "note": "TRIAL A 'Ocean': the final's picture and voice untouched; top layer only: cobalt heading, aqua "
-                "keywords, chart in cobalt, lo-fi groove all the way through.",
-        "titles": [{"type": "label", "text": "every morning, I want to", "start": 0.0, "end": 2.4, "y": 258},
-                   {"type": "chapter", "text": "Leave Mumbai", "start": 0.08, "end": 2.4, "y": 375,
-                    "color": "#2F80ED", "hard_shadow": True}],
-        "captions": {"style": "karaoke", "words": "words.json", "key_color": "#56CCF2"},
-        "music_gain": -15, "whoosh_gain": -21, "fx": {},
+        "dir": "leave_mumbai_trialA", "name": "leave_mumbai_trialA_refstyle", "variant": "refstyle",
+        "note": "TRIAL A, in the style of the client's reference (sailing_amrutha x ixigo reel): the final's picture and "
+                "voice untouched; top layer only: her opening line as a neon-lime condensed-caps hook, then plain white "
+                "rounded-bold phrases high in the frame (no word highlight), hard cuts, chart + logo card moved low, "
+                "lo-fi bed.",
+        "titles": [],
+        "captions": {"style": "topbold", "words": "words.json", "key_color": "#D6EC47", "hook_until": 3.3, "y": 436},
+        "music_gain": -15, "whoosh_gain": None, "fx": {},
     },
     "B": {
         "dir": "leave_mumbai_trialB", "name": "leave_mumbai_trialB_pop", "variant": "pop",
@@ -80,6 +81,8 @@ def build(key):
     subprocess.run([sys.executable, str(FINAL / "prep.py"), "--project", str(d.relative_to(ROOT))], check=True,
                    cwd=ROOT)                         # music, chart (version colour), logo card, overlays + sfx times
     e = json.loads((d / "edit.json").read_text(encoding="utf-8"))
+    if cfg["whoosh_gain"] is None:                   # this style uses clean hard cuts: no whooshes
+        e["sfx"] = [s for s in e["sfx"] if "swoosh" not in s["src"]]
     for s in e["sfx"]:
         if "swoosh" in s["src"]:
             s["gain_db"] = cfg["whoosh_gain"]
