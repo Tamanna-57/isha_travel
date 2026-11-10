@@ -33,18 +33,15 @@ TRIALS = {
         "music_gain": -15, "whoosh_gain": None, "fx": {},
     },
     "B": {
-        "dir": "leave_mumbai_trialB", "name": "leave_mumbai_trialB_pop", "variant": "pop",
-        "note": "TRIAL B 'Bold Pop': the final's cut and voice untouched; top layer only: Caveat write-on title, "
-                "Montserrat caps captions popping in word by word, hot-pink keywords, whip/zoom/flash intros on "
-                "room changes (video only), upbeat pop bed.",
-        "titles": [{"type": "marker", "text": "every morning, I want to", "start": 0.0, "end": 2.4, "x": 540,
-                    "y": 250, "size": 92, "rotate": -2, "color": "chalk", "write_ms": 350},
-                   {"type": "marker", "text": "Leave Mumbai!", "start": 0.25, "end": 2.4, "x": 540, "y": 400,
-                    "size": 205, "rotate": -3, "color": "#FF4F8B", "write_ms": 450}],
-        "captions": {"style": "pop", "words": "words.json", "key_color": "#FF4F8B"},
-        "music_gain": -15, "whoosh_gain": -17,
-        # clip index -> intro effect, only on room/setting changes (same clips that get a whoosh)
-        "fx": {2: "whip", 4: "zoom", 5: "whip", 7: "whip", 8: "flash", 12: "zoom", 16: "whip"},
+        "dir": "leave_mumbai_trialB", "name": "leave_mumbai_trialB_refstyle", "variant": "build",
+        "note": "TRIAL B, in the style of the client's second reference (brindasharma 'Auraton' reel): the final's cut "
+                "and voice untouched; top layer only: each line builds word by word as she speaks, content words in "
+                "heavy yellow, filler words small white, upper third; quick whip/zoom punches on room changes "
+                "(video only); chart + logo card low; upbeat bed.",
+        "titles": [],
+        "captions": {"style": "build", "words": "words.json", "key_color": "#F2E25A", "y": 490},
+        "music_gain": -15, "whoosh_gain": -19,
+        "fx": {2: "whip", 4: "zoom", 5: "whip", 7: "whip", 8: "zoom", 12: "zoom", 16: "whip"},
     },
 }
 

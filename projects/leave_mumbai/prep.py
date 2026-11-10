@@ -19,6 +19,7 @@ B = P / "build"
 VARIANTS = {
     "final": {"india": (215, 38, 61), "music": "calm"},
     "ocean": {"india": (47, 128, 237), "music": "lofi"},
+    "build": {"india": (242, 226, 90), "music": "pop", "chart_y": 1060, "card_y": 1070},     # captions upper third
     "refstyle": {"india": (176, 196, 40), "music": "lofi", "chart_y": 1060, "card_y": 1070},  # captions live up top
     "pop":   {"india": (255, 79, 139), "music": "pop"},
 }

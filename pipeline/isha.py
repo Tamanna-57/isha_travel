@@ -471,7 +471,7 @@ def assemble(edit, proj, build):
 
 # ------------------------------------------------------------------ captions (ASS)
 STYLE_DEFAULTS = {  # style -> (max words/page, max chars/page)
-    "serif": (5, 34), "sans": (3, 18), "karaoke": (4, 20), "pop": (4, 20), "topbold": (4, 24), "caps": (4, 18), "top": (6, 30), "typewriter": (5, 28),
+    "serif": (5, 34), "sans": (3, 18), "karaoke": (4, 20), "pop": (4, 20), "topbold": (4, 24), "build": (4, 22), "caps": (4, 18), "top": (6, 30), "typewriter": (5, 28),
 }
 
 # libass font sizes, calibrated (pipeline/calibrate_type.py) so text occupies the same share of the frame
@@ -482,6 +482,7 @@ SIZE = {
     "karaoke": 115,                             # brinda 7.4M: "Trip pe Jaane se" = 50%
     "karaoke_key": 124,                         # keyword (emph) in karaoke: Playfair Bold Italic marigold
     "pop": 84, "pop_key": 96,                   # "pop" captions: Montserrat Bold caps, words pop in as spoken
+    "build_key": 100, "build_small": 64,        # "build" captions (brindasharma ref): yellow heavy keys, small white fillers
     "topbold": 86, "topbold_big": 120,          # "topbold" captions (ixigo/sailing_amrutha ref): 23 chars = 54% width
     "topbold_hook": 118,                        # its neon condensed-caps hook line
     "caps": 77,                                 # brinda Japan: "MAI HU ABHI AAJ" = 49%
@@ -525,6 +526,7 @@ def ass_header():
         s("Label", "serif_bold", SIZE["label"], C["chalk"], outline=0, shadow=5, back="&H26000000&"),
         s("Hook", "sans_bold", SIZE["hook"], C["chalk"], align=8, outline=2),
         s("Pop", "caps", SIZE["pop"], C["chalk"], sp=2, outline=0, shadow=5, back="&H26000000&"),
+        s("Build", "sans_xbold", SIZE["build_key"], C["chalk"], outline=0, shadow=4, back="&H66000000&"),
         s("TopBold", "sans_bold", SIZE["topbold"], C["chalk"], outline=2.5, shadow=2, ocol="&H60202020&", back="&H70000000&"),
     ]
     return ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n"
@@ -638,6 +640,17 @@ def caption_events(words, style, y=None, until=None, key_color=None, key_font=No
                 else:
                     body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
             evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{y or 1340})\\fad(40,0)}}" + "".join(body).rstrip()))
+        elif style == "build":                        # reference style (brindasharma "Auraton" reel): the line builds
+            # word by word as spoken; content words heavy rounded sans in yellow, filler words small white, upper third
+            yy = y or 490
+            body = []
+            for w in page:
+                dt = int((w["start"] - start) * 1000)
+                filler = re.sub(r"[^\w']", "", w["text"]).lower() in STOP and not w.get("emph")
+                look = (f"{fn_tag('sans_semi')}\\fs{SIZE['build_small']}\\1c{C['chalk']}" if filler else
+                        f"{fn_tag('sans_xbold')}\\fs{SIZE['build_key']}\\1c{ass_color(key_color, 'marigold')}")
+                body.append(f"{{{look}\\alpha&HFF&\\t({dt},{dt + 1},\\alpha&H00&)}}{ass_escape(w['text'])} ")
+            evs.append(ev(start, end, "Build", f"{{\\an5\\pos(540,{yy})}}" + "".join(body).rstrip()))
         elif style == "topbold":                      # reference style (sailing_amrutha ixigo reel): white rounded-bold
             # phrases high in the frame, no word highlight; the opening line(s) as a neon condensed-caps hook;
             # a page that is a single emphasised word is set bigger
