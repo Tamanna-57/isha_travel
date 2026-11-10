@@ -1,727 +1,727 @@
 [
  {
   "text": "yahi",
-  "start": 0.04,
-  "end": 0.45
+  "start": 0.037,
+  "end": 0.417
  },
  {
   "text": "sochti",
-  "start": 0.47,
-  "end": 0.81
+  "start": 0.435,
+  "end": 0.75
  },
  {
   "text": "hoon",
-  "start": 0.83,
-  "end": 1.1,
+  "start": 0.769,
+  "end": 1.019,
   "br": true
  },
  {
   "text": "ki",
-  "start": 1.25,
-  "end": 1.42
+  "start": 1.157,
+  "end": 1.315
  },
  {
   "text": "bas,",
-  "start": 1.44,
-  "end": 1.58,
+  "start": 1.333,
+  "end": 1.463,
   "br": true
  },
  {
   "text": "ab",
-  "start": 1.76,
-  "end": 1.95
+  "start": 1.63,
+  "end": 1.806
  },
  {
   "text": "toh",
-  "start": 1.97,
-  "end": 2.22
+  "start": 1.824,
+  "end": 2.056
  },
  {
   "text": "Mumbai",
-  "start": 2.24,
-  "end": 2.46,
+  "start": 2.074,
+  "end": 2.278,
   "br": true,
   "emph": true
  },
  {
   "text": "chhod",
-  "start": 2.48,
-  "end": 2.72
+  "start": 2.296,
+  "end": 2.519
  },
  {
   "text": "hi",
-  "start": 2.74,
-  "end": 2.87
+  "start": 2.537,
+  "end": 2.657
  },
  {
   "text": "dena",
-  "start": 2.89,
-  "end": 3.16
+  "start": 2.676,
+  "end": 2.926
  },
  {
   "text": "chahiye.",
-  "start": 3.18,
-  "end": 3.51,
+  "start": 2.944,
+  "end": 3.25,
   "br": true
  },
  {
   "text": "main",
-  "start": 3.74,
-  "end": 3.92
+  "start": 3.463,
+  "end": 3.63
  },
  {
   "text": "phir",
-  "start": 3.94,
-  "end": 4.02
+  "start": 3.648,
+  "end": 3.722
  },
  {
   "text": "bhi,",
-  "start": 4.0,
-  "end": 4.16,
+  "start": 3.704,
+  "end": 3.852,
   "br": true
  },
  {
   "text": "rukne",
-  "start": 4.18,
-  "end": 4.42
+  "start": 3.87,
+  "end": 4.093
  },
  {
   "text": "ki",
-  "start": 4.44,
-  "end": 4.65
+  "start": 4.111,
+  "end": 4.306
  },
  {
   "text": "poori",
-  "start": 4.67,
-  "end": 5.03
+  "start": 4.324,
+  "end": 4.657
  },
  {
   "text": "koshish",
-  "start": 5.05,
-  "end": 5.36,
+  "start": 4.676,
+  "end": 4.963,
   "br": true,
   "emph": true
  },
  {
   "text": "karti",
-  "start": 5.38,
-  "end": 5.57
+  "start": 4.981,
+  "end": 5.157
  },
  {
   "text": "hoon,",
-  "start": 5.59,
-  "end": 5.82
+  "start": 5.176,
+  "end": 5.389
  },
  {
   "text": "because",
-  "start": 5.84,
-  "end": 6.32,
+  "start": 5.407,
+  "end": 5.852,
   "br": true
  },
  {
   "text": "it's",
-  "start": 6.66,
-  "end": 6.79
+  "start": 6.167,
+  "end": 6.287
  },
  {
   "text": "my",
-  "start": 6.81,
-  "end": 6.96
+  "start": 6.306,
+  "end": 6.444
  },
  {
   "text": "city,",
-  "start": 6.98,
-  "end": 7.32,
+  "start": 6.463,
+  "end": 6.778,
   "br": true,
   "emph": true
  },
  {
   "text": "you",
-  "start": 7.34,
-  "end": 7.46
+  "start": 6.796,
+  "end": 6.907
  },
  {
   "text": "know,",
-  "start": 7.48,
-  "end": 7.56
+  "start": 6.926,
+  "end": 7.0
  },
  {
   "text": "and",
-  "start": 7.56,
-  "end": 7.65
+  "start": 7.0,
+  "end": 7.083
  },
  {
   "text": "I",
-  "start": 7.67,
-  "end": 7.8
+  "start": 7.102,
+  "end": 7.222
  },
  {
   "text": "love",
-  "start": 7.82,
-  "end": 8.03,
+  "start": 7.241,
+  "end": 7.435,
   "emph": true
  },
  {
   "text": "it.",
-  "start": 8.05,
-  "end": 8.22,
+  "start": 7.454,
+  "end": 7.611,
   "br": true
  },
  {
   "text": "but",
-  "start": 8.47,
-  "end": 8.62
+  "start": 7.843,
+  "end": 7.981
  },
  {
   "text": "honestly,",
-  "start": 8.64,
-  "end": 9.27,
+  "start": 8.0,
+  "end": 8.583,
   "br": true,
   "emph": true
  },
  {
   "text": "Mumbai",
-  "start": 9.67,
-  "end": 10.08
+  "start": 8.954,
+  "end": 9.333
  },
  {
   "text": "has",
-  "start": 10.1,
-  "end": 10.2
+  "start": 9.352,
+  "end": 9.444
  },
  {
   "text": "become",
-  "start": 10.22,
-  "end": 10.87,
+  "start": 9.463,
+  "end": 10.065,
   "br": true
  },
  {
   "text": "unlivable.",
-  "start": 11.12,
-  "end": 11.75,
+  "start": 10.296,
+  "end": 10.88,
   "br": true,
   "emph": true
  },
  {
   "text": "mangroves",
-  "start": 12.01,
-  "end": 12.44,
+  "start": 11.12,
+  "end": 11.519,
   "emph": true
  },
  {
   "text": "are",
-  "start": 12.46,
-  "end": 12.73
+  "start": 11.537,
+  "end": 11.787
  },
  {
   "text": "being",
-  "start": 12.75,
-  "end": 12.94
+  "start": 11.806,
+  "end": 11.981
  },
  {
   "text": "cut,",
-  "start": 12.96,
-  "end": 13.19,
+  "start": 12.0,
+  "end": 12.213,
   "br": true
  },
  {
   "text": "rivers",
-  "start": 13.21,
-  "end": 13.52,
+  "start": 12.231,
+  "end": 12.519,
   "emph": true
  },
  {
   "text": "are",
-  "start": 13.54,
-  "end": 13.72
+  "start": 12.537,
+  "end": 12.704
  },
  {
   "text": "being",
-  "start": 13.74,
-  "end": 13.91
+  "start": 12.722,
+  "end": 12.88
  },
  {
   "text": "polluted",
-  "start": 13.93,
-  "end": 14.58,
+  "start": 12.898,
+  "end": 13.5,
   "br": true
  },
  {
   "text": "and",
-  "start": 14.6,
-  "end": 14.74
+  "start": 13.519,
+  "end": 13.648
  },
  {
   "text": "honestly,",
-  "start": 14.76,
-  "end": 15.32,
+  "start": 13.667,
+  "end": 14.185,
   "br": true
  },
  {
   "text": "aajkal",
-  "start": 15.46,
-  "end": 15.8
+  "start": 14.315,
+  "end": 14.63
  },
  {
   "text": "koi",
-  "start": 15.82,
-  "end": 15.98,
+  "start": 14.648,
+  "end": 14.796,
   "br": true
  },
  {
   "text": "kisi",
-  "start": 16.0,
-  "end": 16.32
+  "start": 14.815,
+  "end": 15.111
  },
  {
   "text": "cheez",
-  "start": 16.34,
-  "end": 16.51
+  "start": 15.13,
+  "end": 15.287
  },
  {
   "text": "ki",
-  "start": 16.53,
-  "end": 16.72
+  "start": 15.306,
+  "end": 15.481
  },
  {
   "text": "respect",
-  "start": 16.74,
-  "end": 17.25,
+  "start": 15.5,
+  "end": 15.972,
   "br": true,
   "emph": true
  },
  {
   "text": "hi",
-  "start": 17.27,
-  "end": 17.49
+  "start": 15.991,
+  "end": 16.194
  },
  {
   "text": "nahi",
-  "start": 17.51,
-  "end": 17.82
+  "start": 16.213,
+  "end": 16.5
  },
  {
   "text": "karta",
-  "start": 17.84,
-  "end": 18.06
+  "start": 16.519,
+  "end": 16.722
  },
  {
   "text": "hai",
-  "start": 18.08,
-  "end": 18.34
+  "start": 16.741,
+  "end": 16.981
  },
  {
   "text": "yaar.",
-  "start": 18.36,
-  "end": 18.48,
+  "start": 17.0,
+  "end": 17.111,
   "br": true
  },
  {
   "text": "aur",
-  "start": 18.75,
-  "end": 18.91
+  "start": 17.361,
+  "end": 17.509
  },
  {
   "text": "har",
-  "start": 18.93,
-  "end": 19.14
+  "start": 17.528,
+  "end": 17.722
  },
  {
   "text": "Diwali,",
-  "start": 19.16,
-  "end": 19.66,
+  "start": 17.741,
+  "end": 18.204,
   "br": true,
   "emph": true
  },
  {
   "text": "pollution",
-  "start": 19.68,
-  "end": 20.26,
+  "start": 18.222,
+  "end": 18.759,
   "emph": true
  },
  {
   "text": "aur",
-  "start": 20.28,
-  "end": 20.36
+  "start": 18.778,
+  "end": 18.852
  },
  {
   "text": "bhi",
-  "start": 20.35,
-  "end": 20.55,
+  "start": 18.843,
+  "end": 19.028,
   "br": true
  },
  {
   "text": "zyada",
-  "start": 20.57,
-  "end": 20.91
+  "start": 19.046,
+  "end": 19.361
  },
  {
   "text": "badh",
-  "start": 20.93,
-  "end": 21.17
+  "start": 19.38,
+  "end": 19.602
  },
  {
   "text": "jaata",
-  "start": 21.19,
-  "end": 21.49
+  "start": 19.62,
+  "end": 19.898
  },
  {
   "text": "hai.",
-  "start": 21.51,
-  "end": 21.74,
+  "start": 19.917,
+  "end": 20.13,
   "br": true
  },
  {
   "text": "13",
-  "start": 21.99,
-  "end": 22.21,
+  "start": 20.361,
+  "end": 20.565,
   "emph": true
  },
  {
   "text": "out",
-  "start": 22.23,
-  "end": 22.48
+  "start": 20.583,
+  "end": 20.815
  },
  {
   "text": "of",
-  "start": 22.5,
-  "end": 22.76,
+  "start": 20.833,
+  "end": 21.074,
   "br": true
  },
  {
   "text": "the",
-  "start": 22.78,
-  "end": 22.86
+  "start": 21.093,
+  "end": 21.167
  },
  {
   "text": "world's",
-  "start": 22.85,
-  "end": 23.23
+  "start": 21.157,
+  "end": 21.509
  },
  {
   "text": "20",
-  "start": 23.25,
-  "end": 23.55,
+  "start": 21.528,
+  "end": 21.806,
   "br": true,
   "emph": true
  },
  {
   "text": "most",
-  "start": 23.57,
-  "end": 23.72
+  "start": 21.824,
+  "end": 21.963
  },
  {
   "text": "polluted",
-  "start": 23.74,
-  "end": 24.31,
+  "start": 21.981,
+  "end": 22.509,
   "emph": true
  },
  {
   "text": "cities",
-  "start": 24.33,
-  "end": 24.82,
+  "start": 22.528,
+  "end": 22.981,
   "br": true
  },
  {
   "text": "are",
-  "start": 24.84,
-  "end": 25.22
+  "start": 23.0,
+  "end": 23.352
  },
  {
   "text": "in",
-  "start": 25.24,
-  "end": 25.44
+  "start": 23.37,
+  "end": 23.556
  },
  {
   "text": "India.",
-  "start": 25.46,
-  "end": 25.81,
+  "start": 23.574,
+  "end": 23.898,
   "br": true,
   "emph": true
  },
  {
   "text": "toh",
-  "start": 26.08,
-  "end": 26.21
+  "start": 24.148,
+  "end": 24.269
  },
  {
   "text": "is",
-  "start": 26.23,
-  "end": 26.47
+  "start": 24.287,
+  "end": 24.519
  },
  {
   "text": "saal,",
-  "start": 26.49,
-  "end": 26.68,
+  "start": 24.537,
+  "end": 24.722,
   "br": true
  },
  {
   "text": "meri",
-  "start": 26.7,
-  "end": 26.96
+  "start": 24.741,
+  "end": 25.093
  },
  {
   "text": "sirf",
-  "start": 26.98,
-  "end": 27.2
+  "start": 25.111,
+  "end": 25.343
  },
  {
   "text": "ek",
-  "start": 27.22,
-  "end": 27.41
+  "start": 25.361,
+  "end": 25.444
  },
  {
   "text": "request",
-  "start": 27.43,
-  "end": 27.82,
+  "start": 25.463,
+  "end": 26.028,
   "emph": true
  },
  {
   "text": "hai.",
-  "start": 27.84,
-  "end": 28.06,
+  "start": 26.046,
+  "end": 26.241,
   "br": true
  },
  {
+  "text": "bas",
+  "start": 26.38,
+  "end": 26.62
+ },
+ {
   "text": "itna",
-  "start": 28.26,
-  "end": 28.52
+  "start": 26.639,
+  "end": 27.093
  },
  {
   "text": "socho",
-  "start": 28.54,
-  "end": 28.95
+  "start": 27.111,
+  "end": 27.481,
+  "emph": true
  },
  {
   "text": "ki,",
-  "start": 28.97,
-  "end": 29.14,
+  "start": 27.5,
+  "end": 27.704,
   "br": true
  },
  {
   "text": "humne",
-  "start": 29.16,
-  "end": 29.38
- },
- {
-  "text": "exactly",
-  "start": 29.4,
-  "end": 29.89,
-  "emph": true
+  "start": 27.722,
+  "end": 28.083
  },
  {
   "text": "kiya",
-  "start": 29.91,
-  "end": 30.12
+  "start": 28.102,
+  "end": 28.389
  },
  {
   "text": "kya",
-  "start": 30.14,
-  "end": 30.32
+  "start": 28.407,
+  "end": 28.602
  },
  {
   "text": "hai.",
-  "start": 30.34,
-  "end": 30.51,
+  "start": 28.62,
+  "end": 28.861,
   "br": true
  },
  {
   "text": "aur",
-  "start": 30.62,
-  "end": 30.77
+  "start": 28.954,
+  "end": 29.093
  },
  {
   "text": "ye",
-  "start": 30.79,
-  "end": 31.09
+  "start": 29.111,
+  "end": 29.389
  },
  {
   "text": "sab",
-  "start": 31.11,
-  "end": 31.3
+  "start": 29.407,
+  "end": 29.583
  },
  {
   "text": "humein",
-  "start": 31.32,
-  "end": 31.85,
+  "start": 29.602,
+  "end": 30.093,
   "br": true
  },
  {
   "text": "laaya",
-  "start": 31.87,
-  "end": 32.14
+  "start": 30.111,
+  "end": 30.361
  },
  {
   "text": "kidhar",
-  "start": 32.16,
-  "end": 32.72,
+  "start": 30.38,
+  "end": 30.898,
   "emph": true
  },
  {
   "text": "hai?",
-  "start": 32.74,
-  "end": 32.98,
+  "start": 30.917,
+  "end": 31.139,
   "br": true
  },
  {
   "text": "aur",
-  "start": 33.21,
-  "end": 33.38
+  "start": 31.352,
+  "end": 31.509
  },
  {
   "text": "jab",
-  "start": 33.4,
-  "end": 33.6
+  "start": 31.528,
+  "end": 31.713
  },
  {
   "text": "saans",
-  "start": 33.62,
-  "end": 33.85,
+  "start": 31.731,
+  "end": 31.944,
   "emph": true
  },
  {
   "text": "lene",
-  "start": 33.87,
-  "end": 34.19
+  "start": 31.963,
+  "end": 32.259
  },
  {
   "text": "ki",
-  "start": 34.21,
-  "end": 34.29,
+  "start": 32.278,
+  "end": 32.352,
   "br": true
  },
  {
   "text": "jagah",
-  "start": 34.26,
-  "end": 34.69
+  "start": 32.324,
+  "end": 32.722
  },
  {
   "text": "chahiye",
-  "start": 34.71,
-  "end": 35.04
+  "start": 32.741,
+  "end": 33.046
  },
  {
   "text": "ho,",
-  "start": 35.06,
-  "end": 35.26,
+  "start": 33.065,
+  "end": 33.25,
   "br": true
  },
  {
   "text": "main",
-  "start": 35.81,
-  "end": 36.01
+  "start": 33.759,
+  "end": 33.944
  },
  {
   "text": "jungle",
-  "start": 36.03,
-  "end": 36.23,
+  "start": 33.963,
+  "end": 34.148,
   "emph": true
  },
  {
   "text": "jaati",
-  "start": 36.25,
-  "end": 36.62
+  "start": 34.167,
+  "end": 34.509
  },
  {
   "text": "hoon,",
-  "start": 36.64,
-  "end": 36.88,
+  "start": 34.528,
+  "end": 34.75,
   "br": true
  },
  {
   "text": "Lost",
-  "start": 37.43,
-  "end": 37.62,
+  "start": 35.259,
+  "end": 35.435,
   "emph": true
  },
  {
   "text": "&",
-  "start": 37.64,
-  "end": 37.72,
+  "start": 35.454,
+  "end": 35.528,
   "emph": true
  },
  {
   "text": "Free",
-  "start": 37.74,
-  "end": 37.89,
+  "start": 35.546,
+  "end": 35.685,
   "emph": true
  },
  {
   "text": "Safaris",
-  "start": 37.91,
-  "end": 38.12,
+  "start": 35.704,
+  "end": 35.898,
   "br": true,
   "emph": true
  },
  {
   "text": "ke",
-  "start": 38.2,
-  "end": 38.33
+  "start": 35.972,
+  "end": 36.093
  },
  {
   "text": "saath,",
-  "start": 38.35,
-  "end": 38.51,
+  "start": 36.111,
+  "end": 36.259,
   "br": true
  },
  {
   "text": "aap",
-  "start": 38.77,
-  "end": 38.92
+  "start": 36.5,
+  "end": 36.639
  },
  {
   "text": "bhi",
-  "start": 38.94,
-  "end": 39.11
+  "start": 36.657,
+  "end": 36.815
  },
  {
   "text": "chalna?",
-  "start": 39.13,
-  "end": 39.46,
+  "start": 36.833,
+  "end": 37.139,
   "br": true,
   "emph": true
  },
  {
   "text": "details",
-  "start": 39.88,
-  "end": 40.34
+  "start": 37.528,
+  "end": 37.954
  },
  {
   "text": "coming",
-  "start": 40.36,
-  "end": 40.77
+  "start": 37.972,
+  "end": 38.352
  },
  {
   "text": "out",
-  "start": 40.79,
-  "end": 40.9
+  "start": 38.37,
+  "end": 38.472
  },
  {
   "text": "soon.",
-  "start": 40.92,
-  "end": 41.19,
+  "start": 38.491,
+  "end": 38.741,
   "br": true,
   "emph": true
  },
  {
   "text": "main",
-  "start": 41.46,
-  "end": 41.63
+  "start": 38.991,
+  "end": 39.148
  },
  {
   "text": "har",
-  "start": 41.65,
-  "end": 41.81
+  "start": 39.167,
+  "end": 39.315
  },
  {
   "text": "roz",
-  "start": 41.83,
-  "end": 41.91
+  "start": 39.333,
+  "end": 39.407
  },
  {
   "text": "uthke…",
-  "start": 41.93,
-  "end": 42.2,
+  "start": 39.426,
+  "end": 39.676,
   "br": true
  }
 ]
