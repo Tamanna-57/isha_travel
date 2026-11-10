@@ -43,6 +43,6 @@ python pipeline/isha.py render projects/leave_mumbai/edit.json --stage finish
 | 6–7 | LM_05 | 1.25–7.98 | mangroves are being cut … hi nahi karta hai yaar |
 | 8 | LM_06 | 5.86–9.10 | aur har Diwali pollution aur bhi zyada badh jaata hai |
 | 9 | LM_07 | 18.45–22.55 | 13 out of the world's 20 most polluted cities are in India |
-| 10–12 | LM_11 | 15.75–17.93 (take 3), 4.55–6.97 (take 1), 20.89–23.42 (take 3, starts on "aur"; its "kya hai" is 20.58–20.86) | toh is saal meri sirf ek request hai · itna socho ki humne exactly kiya kya hai · aur ye sab humein laaya kidhar hai |
+| 10–12 | LM_11 / LM_10 | LM_11 15.75–17.93 (take 3) · **LM_10 3.27–6.07 (take 4: the clear "kiya kya hai"; takes 1 and 3 sound like "kiya kahan hai")** · LM_11 20.89–23.42 (take 3, starts on "aur") | toh is saal meri sirf ek request hai · bas itna socho ki, humne kiya kya hai · aur ye sab humein laaya kidhar hai |
 | 13–16 | LM_12 | 6.27–11.82, 12.50–15.20 | aur jab saans lene ki jagah chahiye ho, main jungle jaati hoon, Lost & Free ke saath, aap bhi chalna? details coming out soon |
 | 17 | LM_02 | 19.03–19.92 | main har roz uthke… |

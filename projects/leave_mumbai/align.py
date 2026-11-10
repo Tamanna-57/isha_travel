@@ -24,7 +24,8 @@ SCRIPT = {
               ("aajkal koi | kisi cheez ki *respect* | hi nahi karta hai yaar. |", 4.81, 7.84)],
     "LM_06": [("aur har *Diwali,* | *pollution* aur bhi | zyada badh jaata hai. |", 5.97, 8.98)],
     "LM_07": [("*13* out of | the world's *20* | most *polluted* cities | are in *India.* |", 18.56, 22.40)],
-    "LM_11": [("itna socho ki, | humne *exactly* kiya kya hai. |", 18.62, 20.86),     # take 3 (client: "kiya kya hai")
+    "LM_10": [("bas itna *socho* ki, | humne kiya kya hai. |", 3.33, 6.03)],     # take 4: the clear "kiya kya hai"
+    "LM_11": [
               ("toh is saal, | meri sirf ek *request* hai. |", 15.85, 17.85),
               ("aur ye sab humein | laaya *kidhar* hai? |", 20.93, 23.31)],     # take 3 after "kya hai" (20.58-20.86)
     "LM_12": [("aur jab *saans* lene ki | jagah chahiye ho, |", 6.37, 8.44), ("main *jungle* jaati hoon, |", 8.97, 10.06),

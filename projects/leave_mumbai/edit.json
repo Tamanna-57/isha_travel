@@ -85,11 +85,11 @@
       "speed": 1.08
     },
     {
-      "src": "../../inbox/leave_mumbai/LM_11.MOV",
-      "in": 18.52,
-      "out": 20.89,
+      "src": "../../inbox/leave_mumbai/LM_10.MOV",
+      "in": 3.27,
+      "out": 6.07,
       "punch": 1.08,
-      "_say": "itna socho ki humne exactly kiya kya hai (take 3: 'kya hai', client ask)",
+      "_say": "bas itna socho ki, humne kiya kya hai (take 4, LM_10: the clear 'kiya kya hai', client ask)",
       "speed": 1.08
     },
     {
@@ -179,7 +179,7 @@
     },
     {
       "src": "build/logo.mov",
-      "at": 34.42,
+      "at": 34.819,
       "x": 106,
       "y": 171
     }
@@ -187,7 +187,7 @@
   "sfx": [
     {
       "src": "../../sfx_library/msg_soft_pop.mp3",
-      "at": 34.42,
+      "at": 34.819,
       "gain_db": -14
     },
     {
@@ -222,12 +222,12 @@
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 30.431,
+      "at": 30.829,
       "gain_db": -21
     },
     {
       "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
-      "at": 38.07,
+      "at": 38.468,
       "gain_db": -21
     }
   ],

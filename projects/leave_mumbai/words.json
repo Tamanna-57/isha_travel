@@ -483,245 +483,245 @@
   "br": true
  },
  {
+  "text": "bas",
+  "start": 26.13,
+  "end": 26.37
+ },
+ {
   "text": "itna",
-  "start": 26.167,
-  "end": 26.38
+  "start": 26.389,
+  "end": 26.843
  },
  {
   "text": "socho",
-  "start": 26.398,
-  "end": 26.778
+  "start": 26.861,
+  "end": 27.231,
+  "emph": true
  },
  {
   "text": "ki,",
-  "start": 26.796,
-  "end": 26.944,
+  "start": 27.25,
+  "end": 27.454,
   "br": true
  },
  {
   "text": "humne",
-  "start": 26.963,
-  "end": 27.167
- },
- {
-  "text": "exactly",
-  "start": 27.185,
-  "end": 27.611,
-  "emph": true
+  "start": 27.472,
+  "end": 27.833
  },
  {
   "text": "kiya",
-  "start": 27.63,
-  "end": 27.852
+  "start": 27.852,
+  "end": 28.139
  },
  {
   "text": "kya",
-  "start": 27.87,
-  "end": 27.991
+  "start": 28.157,
+  "end": 28.352
  },
  {
   "text": "hai.",
-  "start": 28.009,
-  "end": 28.222,
+  "start": 28.37,
+  "end": 28.611,
   "br": true
  },
  {
   "text": "aur",
-  "start": 28.306,
-  "end": 28.444
+  "start": 28.704,
+  "end": 28.843
  },
  {
   "text": "ye",
-  "start": 28.463,
-  "end": 28.741
+  "start": 28.861,
+  "end": 29.139
  },
  {
   "text": "sab",
-  "start": 28.759,
-  "end": 28.935
+  "start": 29.157,
+  "end": 29.333
  },
  {
   "text": "humein",
-  "start": 28.954,
-  "end": 29.444,
+  "start": 29.352,
+  "end": 29.843,
   "br": true
  },
  {
   "text": "laaya",
-  "start": 29.463,
-  "end": 29.713
+  "start": 29.861,
+  "end": 30.111
  },
  {
   "text": "kidhar",
-  "start": 29.731,
-  "end": 30.25,
+  "start": 30.13,
+  "end": 30.648,
   "emph": true
  },
  {
   "text": "hai?",
-  "start": 30.269,
-  "end": 30.491,
+  "start": 30.667,
+  "end": 30.889,
   "br": true
  },
  {
   "text": "aur",
-  "start": 30.704,
-  "end": 30.861
+  "start": 31.102,
+  "end": 31.259
  },
  {
   "text": "jab",
-  "start": 30.88,
-  "end": 31.065
+  "start": 31.278,
+  "end": 31.463
  },
  {
   "text": "saans",
-  "start": 31.083,
-  "end": 31.296,
+  "start": 31.481,
+  "end": 31.694,
   "emph": true
  },
  {
   "text": "lene",
-  "start": 31.315,
-  "end": 31.611
+  "start": 31.713,
+  "end": 32.009
  },
  {
   "text": "ki",
-  "start": 31.63,
-  "end": 31.704,
+  "start": 32.028,
+  "end": 32.102,
   "br": true
  },
  {
   "text": "jagah",
-  "start": 31.676,
-  "end": 32.074
+  "start": 32.074,
+  "end": 32.472
  },
  {
   "text": "chahiye",
-  "start": 32.093,
-  "end": 32.398
+  "start": 32.491,
+  "end": 32.796
  },
  {
   "text": "ho,",
-  "start": 32.417,
-  "end": 32.602,
+  "start": 32.815,
+  "end": 33.0,
   "br": true
  },
  {
   "text": "main",
-  "start": 33.111,
-  "end": 33.296
+  "start": 33.509,
+  "end": 33.694
  },
  {
   "text": "jungle",
-  "start": 33.315,
-  "end": 33.5,
+  "start": 33.713,
+  "end": 33.898,
   "emph": true
  },
  {
   "text": "jaati",
-  "start": 33.519,
-  "end": 33.861
+  "start": 33.917,
+  "end": 34.259
  },
  {
   "text": "hoon,",
-  "start": 33.88,
-  "end": 34.102,
+  "start": 34.278,
+  "end": 34.5,
   "br": true
  },
  {
   "text": "Lost",
-  "start": 34.611,
-  "end": 34.787,
+  "start": 35.009,
+  "end": 35.185,
   "emph": true
  },
  {
   "text": "&",
-  "start": 34.806,
-  "end": 34.88,
+  "start": 35.204,
+  "end": 35.278,
   "emph": true
  },
  {
   "text": "Free",
-  "start": 34.898,
-  "end": 35.037,
+  "start": 35.296,
+  "end": 35.435,
   "emph": true
  },
  {
   "text": "Safaris",
-  "start": 35.056,
-  "end": 35.25,
+  "start": 35.454,
+  "end": 35.648,
   "br": true,
   "emph": true
  },
  {
   "text": "ke",
-  "start": 35.324,
-  "end": 35.444
+  "start": 35.722,
+  "end": 35.843
  },
  {
   "text": "saath,",
-  "start": 35.463,
-  "end": 35.611,
+  "start": 35.861,
+  "end": 36.009,
   "br": true
  },
  {
   "text": "aap",
-  "start": 35.852,
-  "end": 35.991
+  "start": 36.25,
+  "end": 36.389
  },
  {
   "text": "bhi",
-  "start": 36.009,
-  "end": 36.167
+  "start": 36.407,
+  "end": 36.565
  },
  {
   "text": "chalna?",
-  "start": 36.185,
-  "end": 36.491,
+  "start": 36.583,
+  "end": 36.889,
   "br": true,
   "emph": true
  },
  {
   "text": "details",
-  "start": 36.88,
-  "end": 37.306
- },
- {
-  "text": "coming",
-  "start": 37.324,
+  "start": 37.278,
   "end": 37.704
  },
  {
-  "text": "out",
+  "text": "coming",
   "start": 37.722,
-  "end": 37.824
+  "end": 38.102
+ },
+ {
+  "text": "out",
+  "start": 38.12,
+  "end": 38.222
  },
  {
   "text": "soon.",
-  "start": 37.843,
-  "end": 38.093,
+  "start": 38.241,
+  "end": 38.491,
   "br": true,
   "emph": true
  },
  {
   "text": "main",
-  "start": 38.343,
-  "end": 38.5
+  "start": 38.741,
+  "end": 38.898
  },
  {
   "text": "har",
-  "start": 38.519,
-  "end": 38.667
+  "start": 38.917,
+  "end": 39.065
  },
  {
   "text": "roz",
-  "start": 38.685,
-  "end": 38.759
+  "start": 39.083,
+  "end": 39.157
  },
  {
   "text": "uthke…",
-  "start": 38.778,
-  "end": 39.028,
+  "start": 39.176,
+  "end": 39.426,
   "br": true
  }
 ]
