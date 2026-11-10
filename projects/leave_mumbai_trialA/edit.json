@@ -172,5 +172,66 @@
     "start": 0,
     "gain_db": -15,
     "duck": true
-  }
+  },
+  "overlays": [
+    {
+      "src": "build/chart.mov",
+      "at": 20.339,
+      "x": 121,
+      "y": 146
+    },
+    {
+      "src": "build/logo.mov",
+      "at": 35.069,
+      "x": 106,
+      "y": 171
+    }
+  ],
+  "sfx": [
+    {
+      "src": "../../sfx_library/msg_soft_pop.mp3",
+      "at": 35.069,
+      "gain_db": -14
+    },
+    {
+      "src": "../../sfx_library/msg_soft_pop.mp3",
+      "at": 20.339,
+      "gain_db": -16
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 3.19,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 7.561,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 10.848,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 17.079,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 20.079,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 31.079,
+      "gain_db": -21
+    },
+    {
+      "src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3",
+      "at": 38.718,
+      "gain_db": -21
+    }
+  ]
 }
