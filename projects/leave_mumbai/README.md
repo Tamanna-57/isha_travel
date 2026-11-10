@@ -1,6 +1,6 @@
 # Leave Mumbai reel (R1) — rebuilt from Isha's raw clips
 
-**Final:** `out/leave_mumbai.mp4` (42.0 s, 1080×1920, 30 fps, −14 LUFS) + `_clean.mp4`, `.srt`, `_cover.png`.
+**Final:** `out/leave_mumbai.mp4` (39.1 s at 1.08×, 1080×1920, 30 fps, −12 LUFS) + `_clean.mp4`, `.srt`, `_cover.png`.
 
 Raw clips: the client's Google Photos album → `inbox/leave_mumbai/LM_01–12.MOV` (4K HDR, 60 fps; not in git).
 Target edit: `bhai dooj/R1_LeaveMumbai_C_captions_sfx_transitions_original_color.mp4`, used only as the
