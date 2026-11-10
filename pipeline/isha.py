@@ -792,6 +792,9 @@ def finish(edit, proj, build, assembled):
     mix = build / "mix.wav"
     voice = ("highpass=f=80,afftdn=nf=-25,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2"
              if edit.get("voice", {}).get("clean", True) else "anull")
+    if edit.get("voice", {}).get("clarity"):          # lift soft word endings + a little presence, so every word
+        voice += (",dynaudnorm=f=150:g=9:p=0.9:m=8,"   # stays on top of the music
+                  "equalizer=f=3000:t=q:w=1.2:g=3,equalizer=f=250:t=q:w=1:g=-2")
     m = edit.get("music")
     if m and m.get("src"):
         msrc = (proj / m["src"]).resolve()

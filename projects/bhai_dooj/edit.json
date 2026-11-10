@@ -9,7 +9,8 @@
       "in": 0.0,
       "out": 1.04,
       "grade": "indoor",
-      "_say": "Aaj Bhai Dooj,"
+      "_say": "Aaj Bhai Dooj,",
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2418.MOV",
@@ -17,7 +18,8 @@
       "out": 3.9,
       "grade": "indoor",
       "punch": 1.1,
-      "_say": "aur mere paas ek nahi, bahut saare bhai."
+      "_say": "aur mere paas ek nahi, bahut saare bhai.",
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2419.MOV",
@@ -29,12 +31,13 @@
         {
           "src": "../../inbox/bhai_dooj_extra/TRAVEL_swap.MOV",
           "in": 21.0,
-          "at": 0.9,
-          "dur": 1.34,
+          "at": 0.833,
+          "dur": 1.241,
           "grade": "natural",
           "_what": "Isha at the bus window, hand out in the breeze, mountains (client's clip)"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2420.MOV",
@@ -47,12 +50,13 @@
         {
           "src": "../../bhai dooj/IMG_0551.MOV",
           "in": 5.5,
-          "at": 1.45,
-          "dur": 2.09,
+          "at": 1.343,
+          "dur": 1.935,
           "grade": "natural",
           "_what": "Isha walking in under the blossom tree, snowy peaks behind (the pahadon shot)"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2421.MOV",
@@ -64,11 +68,12 @@
         {
           "src": "../../inbox/lakshadweep_part2/IMG_3971.MOV",
           "in": 0.3,
-          "at": 0.4,
-          "dur": 0.88,
+          "at": 0.37,
+          "dur": 0.815,
           "grade": "natural"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2421.MOV",
@@ -81,19 +86,21 @@
         {
           "src": "../../inbox/bhai_dooj_extra/UW_12m.MOV",
           "in": 27.9,
-          "at": 1.0,
-          "dur": 2.02,
+          "at": 0.926,
+          "dur": 1.87,
           "grade": "natural",
           "_what": "instructor bringing Isha toward the camera at 12 m (client's clip)"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2421.MOV",
       "in": 4.66,
       "out": 5.74,
       "grade": "indoor",
-      "_say": "kuch nahi hone diya."
+      "_say": "kuch nahi hone diya.",
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2422.MOV",
@@ -101,7 +108,8 @@
       "out": 1.4,
       "grade": "indoor",
       "punch": 1.1,
-      "_say": "Aur mere safari guide,"
+      "_say": "Aur mere safari guide,",
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2422.MOV",
@@ -114,17 +122,18 @@
           "src": "build/broll/jeep_tiger.mp4",
           "in": 0.0,
           "at": 0.0,
-          "dur": 2.0,
+          "dur": 1.852,
           "grade": "none"
         },
         {
           "src": "build/broll/tiger_road.mp4",
           "in": 0.0,
-          "at": 2.95,
-          "dur": 1.53,
+          "at": 2.731,
+          "dur": 1.417,
           "grade": "none"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2423.MOV",
@@ -138,10 +147,11 @@
           "src": "../../inbox/lakshadweep_part2/IMG_3979.MP4",
           "in": 0.4,
           "at": 0.0,
-          "dur": 1.5,
+          "dur": 1.389,
           "grade": "natural"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2423.MOV",
@@ -154,17 +164,19 @@
           "src": "../../inbox/lakshadweep_part2/IMG_3981.MOV",
           "in": 12.0,
           "at": 0.0,
-          "dur": 1.34,
+          "dur": 1.241,
           "grade": "natural"
         }
-      ]
+      ],
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2423.MOV",
       "in": 6.02,
       "out": 7.1,
       "grade": "indoor",
-      "_say": "kuch nahi hone diya."
+      "_say": "kuch nahi hone diya.",
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2424.MOV",
@@ -172,14 +184,16 @@
       "out": 4.86,
       "grade": "indoor",
       "punch": 1.1,
-      "_say": "Thank you for keeping me safe when I was far away from home. (the first 'Thank you.' is cut for length)"
+      "_say": "Thank you for keeping me safe when I was far away from home. (the first 'Thank you.' is cut for length)",
+      "speed": 1.08
     },
     {
       "src": "../../bhai dooj/IMG_2425.MOV",
       "in": 0.92,
       "out": 2.23,
       "grade": "indoor",
-      "_say": "Happy Bhai Dooj! + tika finger to the lens (fades to black)"
+      "_say": "Happy Bhai Dooj! + tika finger to the lens (fades to black)",
+      "speed": 1.08
     },
     {
       "src": "build/broll/black.mp4",
@@ -195,7 +209,7 @@
   "captions": {
     "style": "karaoke",
     "words": "words.json",
-    "until": 31.25,
+    "until": 28.91,
     "keywords": false
   },
   "titles": [
@@ -204,39 +218,39 @@
       "text": "Happy Bhai Dooj",
       "script": "to my road bhais",
       "start": 0.0,
-      "end": 2.6,
+      "end": 2.41,
       "y": 330,
       "color": "sindoor"
     },
     {
       "type": "label",
       "text": "My *scuba* instructors",
-      "start": 9.88,
-      "end": 13.78,
-      "y": 1060,
+      "start": 9.15,
+      "end": 12.76,
+      "y": 1440,
       "_label": "one label per person; add the real name when Isha confirms it"
     },
     {
       "type": "label",
       "text": "My *safari* guide",
-      "start": 14.95,
-      "end": 20.67,
-      "y": 1060,
+      "start": 13.84,
+      "end": 19.14,
+      "y": 1440,
       "_label": "one label per person; add the real name when Isha confirms it"
     },
     {
       "type": "label",
       "text": "*Travel* friends · Lakshadweep",
-      "start": 20.67,
-      "end": 22.17,
-      "y": 1060,
+      "start": 19.14,
+      "end": 20.53,
+      "y": 1440,
       "_label": "one label per person; add the real name when Isha confirms it"
     },
     {
       "type": "hook",
       "text": "TAG YOUR ROAD WALA BHAI",
-      "start": 31.46,
-      "end": 33.15,
+      "start": 29.12,
+      "end": 30.81,
       "y": 960,
       "_timing": "set by align.py: from the end of 'Dooj!' to the end"
     }
@@ -244,7 +258,11 @@
   "music": {
     "src": "build/music.wav",
     "start": 0,
-    "gain_db": -21,
+    "gain_db": -26,
     "duck": true
-  }
+  },
+  "voice": {
+    "clean": false
+  },
+  "lufs": -12
 }

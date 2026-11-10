@@ -91,7 +91,7 @@ def main():
                 if c["in"] <= mid < c["out"]:
                     ww = {"text": w["text"],
                           "start": round(acc + max(0.0, w["start"] - c["in"]) / sp, 3),
-                          "end": round(acc + min(c["out"], w["end"]) - c["in"], 3) if sp == 1 else None}
+                          "end": round(acc + (min(c["out"], w["end"]) - c["in"]) / sp, 3)}
                     if w["text"] in EMPH:
                         ww["emph"] = True
                     words.append(ww)
