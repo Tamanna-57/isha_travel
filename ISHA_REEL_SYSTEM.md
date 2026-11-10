@@ -16,7 +16,8 @@ What they share: **Indian travel & lifestyle storytelling, creator on camera, Hi
 | Grade looks as LUTs | [`luts/`](luts/) `Isha_Natural/Golden/Indoor/Film.cube` (33-pt) + `_64.cube` | CapCut "Adjust → LUT", Premiere Lumetri "Creative → Look", Resolve |
 | Safe-zone overlay | [`brand/safe_zone_overlay_1080x1920.png`](brand/safe_zone_overlay_1080x1920.png) | top layer while editing, delete before export |
 | Visual boards | [`brand/`](brand/) 01–05 | what every font, caption, title, colour and grade looks like |
-| Edit templates | [`templates/`](templates/) A–D | starting `edit.json` per format |
+| Edit templates | [`templates/`](templates/) A–E | starting `edit.json` per format (**E = client-approved look, use by default**) |
+| **Client-approved look** | [`brand/06_client_approved_look.png`](brand/06_client_approved_look.png), [`projects/bhai_dooj/REEL_SPEC.md`](projects/bhai_dooj/REEL_SPEC.md) | the reel the client loved: copy this look (§0.1) |
 | Pipeline | [`pipeline/`](pipeline/) | cut, grade, caption, mix, QA, export |
 
 ---
@@ -34,6 +35,28 @@ What they share: **Indian travel & lifestyle storytelling, creator on camera, Hi
 9. **Safe zones:** no text below y = 1536 (bottom 20%), right of x = 950, or above y = 150 on a 1080×1920 frame.
 10. **End on a payoff line**, not "follow for more". The last 1–2 s should make people replay or comment.
 
+### 0.1 Client-approved look (default since Nov 2026)
+
+![client-approved look](brand/06_client_approved_look.png)
+
+The client loved the **Bhai Dooj reel** (captions, bold text, the whole feel). **Start every new reel from this look**
+(`templates/E_client_approved.edit.json`) unless she asks for something else. Full spec with every value:
+[`projects/bhai_dooj/REEL_SPEC.md`](projects/bhai_dooj/REEL_SPEC.md).
+
+| Element | Use | Exact spec |
+|---|---|---|
+| Captions | `karaoke` | Poppins SemiBold 115, words grey `#9A9A9A` → **white** as spoken, centre y 1340, ≤ 4 words/page |
+| Opening title | `chapter` | Anton caps **sindoor `#D7263D`** + Allura script line in white, y 330, first 2.5 s |
+| Person/place labels | `label` | **Playfair Display Bold 70, white, hard drop shadow (5 px, 85% black, no blur), NO box**, `*keyword*` marigold `#F6C445`, y 1060 |
+| End card | `hook` | Poppins Bold 96 white, centre y 960, **on black** after the fade |
+| Ending | last clip → black | the payoff clip **fades to black** (0.45 s `dissolve` into a black clip); captions cut off with `"until"` |
+| Grade | `indoor` / `natural` | `indoor` for home talking heads, `natural` for travel B-roll, `none` for her photos |
+| Cutting | jump cuts | hard cut per sentence, punch-in 1.08–1.10 on every 2nd cut, B-roll **under her voice** when she names a person/place |
+| Music | original, −17 dB, ducked | warm/festive bed; pull it back on the emotional line; resolve with a bell/strum at the end |
+
+What she liked, in her words: **bold text, no black box behind text, hard shadows, smooth captions, a smooth fade at
+the end**, a basic edit that keeps the emotion (not over-"picturesque").
+
 ---
 
 ## 1. Choose the format (one per reel)
@@ -44,8 +67,9 @@ What they share: **Indian travel & lifestyle storytelling, creator on camera, Hi
 | **B. SIT-DOWN STORYTIME** | Isha at home/desk telling a story + travel B-roll | brinda orca Pt 2, brinda IndiGo, brinda "song" (7.4M) | 40–60 s | 1.1–2 s | `templates/B_storytime.edit.json` |
 | **C. CINEMATIC / MOOD** | beautiful B-roll, little or no talking, one song carries it | bary letterbox lyric, sayannath Kyrgyzstan (10.3M), ronnie single shot, sailing anniversary (21M) | 12–35 s | 0.8–1.5 s (beat-cut) | `templates/C_cinematic.edit.json` |
 | **D. POV / THRILL** | one adrenaline/wow moment (height, water, wildlife) | sayannath cliff walk (11.9M) | 10–25 s | long takes | `templates/D_pov.edit.json` |
+| **E. CLIENT-APPROVED** (default) | Isha talking (home or location) + her travel B-roll; thank-you / story / festival reels | Isha's Bhai Dooj reel (Nov 2026) | 25–40 s | 1.5–2.5 s | `templates/E_client_approved.edit.json` |
 
-If unsure, use **A**. No usable dialogue → **C**. Brand deal → **A** or **B** with the **Top Sans + Italic** captions (§3.4).
+If unsure, use **E** (the client-approved look, §0.1); **A** when she walks and talks at locations. No usable dialogue → **C**. Brand deal → **A** or **B** with the **Top Sans + Italic** captions (§3.4).
 
 ### A. STORY WALK
 ```

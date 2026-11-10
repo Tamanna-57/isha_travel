@@ -1,5 +1,7 @@
 # Bhai Dooj reel (R3 "To all the bhais I found on the road") — first draft
 
+**Client-approved.** Full look spec (fonts, colours, sizes, music, structure): [`REEL_SPEC.md`](REEL_SPEC.md).
+
 Clips: `bhai dooj/IMG_2418–2425.MOV` (Isha at home with the tika thali, in her recorded order) + her own
 B-roll: Lakshadweep (`inbox/lakshadweep_part2`: boat, scuba instructor, dive, friends, fish) and two of her
 safari photos from the archive zip (tiger past the jeeps, tiger on the road).

@@ -6,13 +6,14 @@ Shared workspace for Isha's Instagram Reels: the house style, the editing pipeli
 - **`ISHA_REEL_SYSTEM.md`**: the rulebook for formats, captions, titles, grade, audio, export and QA.
 - **`REFERENCE_LIBRARY.md`**: what each reference reel does, with measurements (the evidence behind the rules).
 - **`pipeline/README.md`**: how to run `pipeline/isha.py` (probe, sheet, render, transcribe, qa).
+- **`projects/bhai_dooj/REEL_SPEC.md`**: the reel the client loved. Its look (fonts, colours, captions, ending, music) is the default for new reels; picture in `brand/06_client_approved_look.png`.
 
 ## Layout
 ```
 brand/         visual boards (type, palette, captions, titles, grades) + safe-zone overlay
 fonts/         static TTFs used by the captions (OFL licences in fonts/licenses/)
 luts/          grade looks as .cube
-templates/     starting edit.json for formats A–D
+templates/     starting edit.json for formats A–E (E = client-approved look)
 sfx_library/   sound effects used in the reels
 pipeline/      isha.py and helper scripts
 projects/<reel>/   per-reel scripts (make.py etc.)

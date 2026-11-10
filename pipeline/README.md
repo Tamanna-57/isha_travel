@@ -13,7 +13,7 @@ isha/
     _variable_sources/    original variable fonts (static weights are cut from these)
   luts/                   Isha_Natural/Golden/Indoor/Film .cube (33-pt) + _64.cube
   models/ggml-small.bin   whisper.cpp model for transcription (multilingual)
-  templates/              starting edit.json for formats A–D
+  templates/              starting edit.json for formats A–E (E = client-approved look)
   inbox/<reel>/           raw clips land here
   projects/<reel>/        edit.json, words.json, build/ (intermediates), out/ (deliverables)
   pipeline/

@@ -1,0 +1,29 @@
+{
+  "_format": "E — CLIENT-APPROVED LOOK (default since Nov 2026). Isha talking at home/location + her travel B-roll under her voice. Built from the Bhai Dooj reel the client loved: projects/bhai_dooj/REEL_SPEC.md, brand/06_client_approved_look.png.",
+  "_how": "Jump cut on every sentence (punch 1.08–1.10 on every 2nd cut). When she names a person/place, put that B-roll under her voice (broll). One bold label per person. Emotional line on her face with the music pulled back. Payoff line -> fade to black -> call-to-action card on black. Grade: 'indoor' for home talking, 'natural' for travel B-roll.",
+  "name": "REEL-NAME",
+  "format": "B",
+  "grade": "natural",
+  "clips": [
+    {"src": "../../inbox/REEL/TALK1.MOV", "in": 0.0, "out": 1.2, "grade": "indoor", "_purpose": "HOOK line (title on top)"},
+    {"src": "../../inbox/REEL/TALK1.MOV", "in": 1.4, "out": 3.9, "grade": "indoor", "punch": 1.10, "_purpose": "rest of the hook sentence (jump cut)"},
+    {"src": "../../inbox/REEL/TALK2.MOV", "in": 0.1, "out": 3.6, "grade": "indoor", "_purpose": "names a person/place -> their B-roll under her voice",
+     "broll": [{"src": "../../inbox/REEL/BROLL1.MOV", "in": 0.0, "at": 1.0, "dur": 1.8, "grade": "natural"}]},
+    {"src": "../../inbox/REEL/TALK3.MOV", "in": 0.1, "out": 3.2, "grade": "indoor", "punch": 1.08, "_purpose": "emotional line, stay on her face"},
+    {"src": "../../inbox/REEL/TALK4.MOV", "in": 0.8, "out": 2.2, "grade": "indoor", "_purpose": "PAYOFF line; the clip runs into the fade"},
+    {"src": "build/broll/black.mp4", "in": 0.0, "out": 2.0, "audio": false, "grade": "none", "transition": "dissolve", "transition_dur": 0.45,
+     "_purpose": "fade to black + end card (make the black clip like projects/bhai_dooj/prep.py)"}
+  ],
+  "captions": {"style": "karaoke", "words": "words.json", "until": null,
+               "_note": "Poppins SemiBold 115, grey -> white as spoken, y 1340. Set 'until' to the fade start so no caption sits on the black."},
+  "titles": [
+    {"type": "chapter", "text": "TITLE", "script": "script line", "start": 0.0, "end": 2.6, "y": 330, "color": "sindoor",
+     "_note": "Anton sindoor + Allura white. One per reel."},
+    {"type": "label", "text": "My *role* · Place", "start": 4.7, "end": 6.5, "y": 1060,
+     "_note": "Playfair Bold 70 white, hard 5 px shadow, NO box, *keyword* marigold. One per person, while their B-roll is up."},
+    {"type": "hook", "text": "CALL TO ACTION", "start": 0, "end": 0, "y": 960,
+     "_note": "end card on black, Poppins Bold 96 white: from just after the fade starts to the end"}
+  ],
+  "music": {"src": "build/music.wav", "start": 0, "gain_db": -17, "duck": true,
+            "_note": "festive/warm bed under the voice; drop it back on the emotional line, resolve at the end (see projects/bhai_dooj/synth.py)"}
+}
