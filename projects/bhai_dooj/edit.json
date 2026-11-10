@@ -41,7 +41,17 @@
       "out": 3.64,
       "grade": "indoor",
       "punch": 1.08,
-      "_say": "Mere woh bhai, jinhone mujhe pahadon mein ekdum safe rakha hai."
+      "_say": "Mere woh bhai, jinhone mujhe pahadon mein ekdum safe rakha hai.",
+      "broll": [
+        {
+          "src": "../../bhai dooj/IMG_0551.MOV",
+          "in": 5.5,
+          "at": 1.45,
+          "dur": 2.09,
+          "grade": "natural",
+          "_what": "Isha walking in under the blossom tree, snowy peaks behind (the pahadon shot)"
+        }
+      ]
     },
     {
       "src": "../../bhai dooj/IMG_2421.MOV",

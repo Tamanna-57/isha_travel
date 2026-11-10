@@ -25,10 +25,10 @@ kuch nahi hone diya. (Thank you.) Thank you for keeping me safe when I was far a
 - Names for the labels (brief: name + place). Labels now say only the role; add names in `edit.json` titles.
 - OK from the people on screen (scuba instructor on the boat, divers, Lakshadweep friends) before posting.
 - Length 32.7 s vs the brief's 25–30 s: every line she recorded is in. To get under 30 s, drop one line
-  (e.g. "Aur mujhe ye sab travel karte hue mile" or the pahadon line, which has no mountain footage).
+  (e.g. "Aur mujhe ye sab travel karte hue mile").
 - Words to double-check by ear: "safe rakha hai", "Aur aise bahut saare log", "aise crazy jagahon pe".
 - Labels use the `label` title type (bold, hard shadow, no box). Ending: her last clip fades to black as the
   tika finger reaches the lens; end card on black; music ends on one santoor strum + bell.
-- Waiting on: Isha's clip for after the pahadon line (goes after clip 3 in edit.json).
+- Pahadon line: B-roll from `bhai dooj/IMG_0551.MOV` 5.5–7.6 s (Isha walking in, snowy peaks).
 - Music is an original synth bed (synth.py: santoor, dholak, manjira, tanpura, temple bell). Swap for a
   trending Instagram sound if preferred: post `bhai_dooj_clean.mp4`-style without music or lower `gain_db`.
