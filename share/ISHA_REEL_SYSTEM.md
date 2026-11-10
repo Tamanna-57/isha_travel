@@ -45,7 +45,7 @@ The client loved the **Bhai Dooj reel** (captions, bold text, the whole feel). *
 
 | Element | Use | Exact spec |
 |---|---|---|
-| Captions | `karaoke` | Poppins SemiBold 115, words grey `#9A9A9A` → **white** as spoken, centre y 1340, ≤ 4 words/page |
+| Captions | `karaoke` | Poppins SemiBold 115, words grey `#9A9A9A` → **white** as spoken, centre y 1340, ≤ 4 words/page. **Keywords** (`"emph": true`, one per page): **Playfair Display Bold Italic 124, marigold** (client ask, Leave Mumbai). Hand-set page breaks with `"br": true` |
 | Opening title | `chapter` | Anton caps **sindoor `#D7263D`** + Allura script line in white, y 330, first 2.5 s |
 | Person/place labels | `label` | **Playfair Display Bold 70, white, hard drop shadow (5 px, 85% black, no blur), NO box**, `*keyword*` marigold `#F6C445`, y 1060 |
 | End card | `hook` | Poppins Bold 96 white, centre y 960, **on black** after the fade |

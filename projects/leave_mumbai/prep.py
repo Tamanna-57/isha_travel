@@ -170,7 +170,23 @@ def music(path, dur, t_lift):
                 pl = (np.sin(2 * np.pi * f(m) * tt2) + 0.3 * np.sin(4 * np.pi * f(m) * tt2)) * np.exp(-tt2 / 0.35) * 0.09
                 L = min(L, n - i0); out[0, i0:i0 + L] += pl[:L] * 0.8; out[1, i0:i0 + L] += pl[:L]
         t0 += bar; k += 1
-    out = sosfilt(butter(2, [60, 9000], "bandpass", fs=SR, output="sos"), out, axis=1)
+    # soft pulse so the bed doesn't feel flat: gentle kick on beats 1 and 3, a light shaker on the 8ths
+    beat = 60 / 76
+    kick_t = np.arange(int(0.35 * SR)) / SR
+    kick = np.sin(2 * np.pi * np.cumsum(55 + 70 * np.exp(-kick_t / 0.03)) / SR) * np.exp(-kick_t / 0.12) * 0.22
+    sh_n = int(0.08 * SR)
+    shaker = sosfilt(butter(2, 6500, "highpass", fs=SR, output="sos"), rng.standard_normal(sh_n)) * np.exp(-np.arange(sh_n) / SR / 0.02) * 0.035
+    tb = 0.0; kb = 0
+    while tb < dur - 0.4:
+        i0 = int(tb * SR)
+        if kb % 2 == 0:
+            L = min(len(kick), n - i0); out[:, i0:i0 + L] += kick[:L]
+        for half in (0, 0.5):
+            j0 = int((tb + half * beat) * SR); L = min(sh_n, n - j0)
+            if L > 0:
+                out[0, j0:j0 + L] += shaker[:L] * (0.7 if half else 0.5); out[1, j0:j0 + L] += shaker[:L] * (0.5 if half else 0.7)
+        tb += beat; kb += 1
+    out = sosfilt(butter(2, [45, 9000], "bandpass", fs=SR, output="sos"), out, axis=1)
     lift = np.clip((t - t_lift) / 1.5, 0, 1) * 0.35 + 0.65                                # louder after the lift
     out *= lift
     out /= np.abs(out).max() + 1e-9; out *= 0.8
@@ -192,7 +208,13 @@ def main():
     # write the overlay/sfx timing back into edit.json
     edit["overlays"] = [{"src": "build/chart.mov", "at": round(CH_IN, 3), "x": CH_X - 4, "y": CH_Y - 4},
                         {"src": "build/logo.mov", "at": round(POP_IN, 3), "x": CARD_X - 4, "y": CARD_Y - 4}]
-    edit["sfx"] = [{"src": "../../sfx_library/msg_soft_pop.mp3", "at": round(POP_IN, 3), "gain_db": -14}]
+    sfx = [{"src": "../../sfx_library/msg_soft_pop.mp3", "at": round(POP_IN, 3), "gain_db": -14},
+           {"src": "../../sfx_library/msg_soft_pop.mp3", "at": round(CH_IN, 3), "gain_db": -16}]
+    for i, c in enumerate(edit["clips"]):              # a quiet air whoosh where the room/setting changes
+        if c.get("_whoosh") and starts[i] > 0.3:
+            sfx.append({"src": "../../sfx_library/dl_2026_11/swoosh_short_wind.mp3", "at": round(starts[i] - 0.18, 3),
+                        "gain_db": -21})
+    edit["sfx"] = sfx
     (P / "edit.json").write_text(json.dumps(edit, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"reel {acc:.2f}s · chart {CH_IN:.2f}-{CH_OUT:.2f} · logo {POP_IN:.2f}-{POP_OUT:.2f} · lift {cue['lift']:.2f}")
 

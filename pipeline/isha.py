@@ -465,6 +465,7 @@ SIZE = {
     "serif_key": 103, "serif_small": 60,        # iffy: "Pakistan-Occupied" = 59% width (fillers 58%)
     "sans_key": 128, "sans_small": 73,          # brinda orca: "Expensive" = 35% (fillers 57%)
     "karaoke": 115,                             # brinda 7.4M: "Trip pe Jaane se" = 50%
+    "karaoke_key": 124,                         # keyword (emph) in karaoke: Playfair Bold Italic marigold
     "caps": 77,                                 # brinda Japan: "MAI HU ABHI AAJ" = 49%
     "top": 68, "top_accent": 86,                # brinda IndiGo: "I booked my flights" = 34%
     "mono": 49,                                 # sailing 21M: "we started sailing from" = 47%
@@ -608,7 +609,12 @@ def caption_events(words, style, y=None, until=None):
             body = []
             for w in page:
                 dt = int((w["start"] - start) * 1000)
-                body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
+                if w.get("emph"):                     # keyword: Playfair Bold Italic, marigold, a touch bigger
+                    body.append(f"{{{fn_tag('serif_bold')}\\i1\\fs{SIZE['karaoke_key']}\\1c{C['grey']}\\alpha&H30&"
+                                f"\\t({dt},{dt + 120},\\1c{C['marigold']}\\alpha&H00&)}}{ass_escape(w['text'])}"
+                                f"{{{fn_tag('sans_semi')}\\i0\\fs{SIZE['karaoke']}}} ")
+                else:
+                    body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
             evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{y or 1340})\\fad(40,0)}}" + "".join(body).rstrip()))
         elif style == "caps":
             txt = " ".join(ass_escape(w["text"]).upper() for w in page)
