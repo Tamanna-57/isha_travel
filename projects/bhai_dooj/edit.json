@@ -225,6 +225,15 @@
     },
     {
       "type": "label",
+      "text": "My *pahadon* wale bhai",
+      "start": 5.57,
+      "end": 8.84,
+      "y": 1418,
+      "soft": true,
+      "_label": "one label per person; add the real name when Isha confirms it"
+    },
+    {
+      "type": "label",
       "text": "My *scuba* instructors",
       "start": 9.15,
       "end": 12.76,
