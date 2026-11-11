@@ -659,7 +659,7 @@ def caption_events(words, style, y=None, until=None, key_color=None, key_font=No
             if (opts or {}).get("tight_lines") and text_width(page) > 820 and len(page) > 1:
                 cut = min(range(1, len(page)), key=lambda k: max(text_width(page[:k]), text_width(page[k:])))
                 lines = [page[:cut], page[cut:]]
-            pitch = int(SIZE["karaoke"] * 0.86)       # tight line spacing; extra lines grow UPWARD from the caption line
+            pitch = int(SIZE["karaoke"] * 0.80)       # tight line spacing; extra lines grow UPWARD from the caption line
             for li, ln in enumerate(lines):
                 ly = yy - pitch * (len(lines) - 1 - li)
                 evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{ly})\\q2\\fad(40,0)}}" + " ".join(kword(w) for w in ln)))
