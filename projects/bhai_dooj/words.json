@@ -451,18 +451,21 @@
  {
   "text": "Happy",
   "start": 28.139,
-  "end": 28.509
+  "end": 28.509,
+  "festive": true
  },
  {
   "text": "Bhai",
   "start": 28.528,
   "end": 28.602,
-  "emph": true
+  "emph": true,
+  "festive": true
  },
  {
   "text": "Dooj!",
   "start": 28.611,
   "end": 28.87,
-  "emph": true
+  "emph": true,
+  "festive": true
  }
 ]

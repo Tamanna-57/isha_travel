@@ -96,6 +96,9 @@ def main():
                         ww["emph"] = True
                     words.append(ww)
         acc += dur
+    for k in range(len(words) - 3, len(words)):        # closing "Happy Bhai Dooj!" in a festive font
+        if k >= 0 and words[-1]["text"] == "Dooj!":
+            words[k]["festive"] = True
     (P / "words.json").write_text(json.dumps(words, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(" ".join(f"{w['text']}@{w['start']:.2f}" for w in words))
     # last clip = black; the clip before fades into it. Captions clear when the fade starts,

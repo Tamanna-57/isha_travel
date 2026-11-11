@@ -480,6 +480,8 @@ SIZE = {
     "serif_key": 103, "serif_small": 60,        # iffy: "Pakistan-Occupied" = 59% width (fillers 58%)
     "sans_key": 128, "sans_small": 73,          # brinda orca: "Expensive" = 35% (fillers 57%)
     "karaoke": 115,                             # brinda 7.4M: "Trip pe Jaane se" = 50%
+    "karaoke_festive": 132,                     # festive closing line in karaoke (Playfair Bold Italic marigold)
+    "label_soft": 62,                           # "soft" label: Poppins ExtraBold + spread soft shadow
     "karaoke_key": 124,                         # keyword (emph) in karaoke: Playfair Bold Italic marigold
     "pop": 84, "pop_key": 96,                   # "pop" captions: Montserrat Bold caps, words pop in as spoken
     "build_key": 100, "build_small": 64,        # "build" captions (brindasharma ref): yellow heavy keys, small white fillers
@@ -597,7 +599,18 @@ def pick_emphasis(page):
         pick.add(cands[1][1])
     return pick
 
-def caption_events(words, style, y=None, until=None, key_color=None, key_font=None, hook_until=None):
+_TW = {}
+def text_width(page, fs=None):
+    """rendered width (px) of a karaoke page in Poppins SemiBold at the caption size (libass sizing)"""
+    from PIL import ImageFont
+    fs = fs or SIZE["karaoke"]
+    if fs not in _TW:
+        f = ImageFont.truetype(str(FONTS / "Poppins-SemiBold.ttf"), 100)
+        a, d = f.getmetrics()
+        _TW[fs] = ImageFont.truetype(str(FONTS / "Poppins-SemiBold.ttf"), int(round(fs * 100 / (a + d))))
+    return _TW[fs].getlength(" ".join(w["text"] for w in page))
+
+def caption_events(words, style, y=None, until=None, key_color=None, key_font=None, hook_until=None, opts=None):
     evs = []
     pages = paginate(words, style)
     for pi, page in enumerate(pages):
@@ -628,18 +641,28 @@ def caption_events(words, style, y=None, until=None, key_color=None, key_font=No
                     lines.append(f"{{{fn_tag('sans_light')}\\fs{SIZE['sans_small']}\\1c{C['ivory']}}}{t}")
             evs.append(ev(start, end, "Sans", f"{{\\an4\\pos(120,{y or 1150}){POP}}}" + r"\N".join(lines)))
         elif style == "karaoke":                      # whole page visible, grey -> white as each word is spoken
-            body = []
-            for w in page:
+            def kword(w):
                 dt = int((w["start"] - start) * 1000)
+                if w.get("festive"):                  # a festive line (e.g. "Happy Bhai Dooj!"): Playfair Bold Italic marigold
+                    return (f"{{{fn_tag('serif_bold')}\\i1\\fs{SIZE['karaoke_festive']}\\1c{C['grey']}\\alpha&H30&"
+                            f"\\t({dt},{dt + 120},\\1c{C['marigold']}\\alpha&H00&)}}{ass_escape(w['text'])}"
+                            f"{{{fn_tag('sans_semi')}\\i0\\fs{SIZE['karaoke']}}}")
                 if w.get("emph"):                     # keyword: Playfair Bold Italic, marigold, a touch bigger
                     kf = key_font or "serif_bold"
-                    body.append(f"{{{fn_tag(kf)}\\i{1 if kf.startswith('serif') else 0}\\fs{SIZE['karaoke_key']}"
-                                f"\\1c{C['grey']}\\alpha&H30&"
-                                f"\\t({dt},{dt + 120},\\1c{ass_color(key_color, 'marigold')}\\alpha&H00&)}}{ass_escape(w['text'])}"
-                                f"{{{fn_tag('sans_semi')}\\i0\\fs{SIZE['karaoke']}}} ")
-                else:
-                    body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
-            evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{y or 1340})\\fad(40,0)}}" + "".join(body).rstrip()))
+                    return (f"{{{fn_tag(kf)}\\i{1 if kf.startswith('serif') else 0}\\fs{SIZE['karaoke_key']}"
+                            f"\\1c{C['grey']}\\alpha&H30&"
+                            f"\\t({dt},{dt + 120},\\1c{ass_color(key_color, 'marigold')}\\alpha&H00&)}}{ass_escape(w['text'])}"
+                            f"{{{fn_tag('sans_semi')}\\i0\\fs{SIZE['karaoke']}}}")
+                return f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])}"
+            yy = y or 1340
+            lines = [page]
+            if (opts or {}).get("tight_lines") and text_width(page) > 820 and len(page) > 1:
+                cut = min(range(1, len(page)), key=lambda k: max(text_width(page[:k]), text_width(page[k:])))
+                lines = [page[:cut], page[cut:]]
+            pitch = int(SIZE["karaoke"] * 0.86)       # tight line spacing; extra lines grow UPWARD from the caption line
+            for li, ln in enumerate(lines):
+                ly = yy - pitch * (len(lines) - 1 - li)
+                evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{ly})\\q2\\fad(40,0)}}" + " ".join(kword(w) for w in ln)))
         elif style == "build":                        # reference style (brindasharma "Auraton" reel): the line builds
             # word by word as spoken; content words heavy rounded sans in yellow, filler words small white, upper third
             yy = y or 490
@@ -737,7 +760,14 @@ def title_events(titles, top_captions=False):
             acc = ass_color(t.get("accent"), "marigold")
             txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{acc}}}{m.group(1)}{{\\1c{C['chalk']}}}",
                          ass_escape(t["text"]))
-            evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{t.get('y', 1090)}){POP_T}}}{txt}", 2))
+            if t.get("soft"):                     # heavy bold sans + a soft, spread-out shadow (glow layer underneath)
+                ly = t.get("y", 1090); fs = SIZE["label_soft"]
+                plain = re.sub(r"\*(.+?)\*", r"\1", ass_escape(t["text"]))
+                evs.append(ev(s, e, "Label", f"{{\\an5\\pos(543,{ly + 5}){fn_tag('sans_xbold')}\\fs{fs}\\1c&H000000&"
+                                             f"\\3c&H000000&\\bord7\\shad0\\blur14\\1a&H50&\\3a&H78&{POP_T}}}{plain}", 1))
+                evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{ly}){fn_tag('sans_xbold')}\\fs{fs}\\bord0\\shad0{POP_T}}}{txt}", 2))
+            else:
+                evs.append(ev(s, e, "Label", f"{{\\an5\\pos(540,{t.get('y', 1090)}){POP_T}}}{txt}", 2))
         elif typ == "hook":
             evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)})\\fad(60,100)}}{ass_escape(t['text'])}", 4))
         elif typ == "fact":                       # sits just above the caption band so both can be on screen
@@ -765,7 +795,7 @@ def write_ass(path, words, cap_cfg, titles):
         words = [{k: v for k, v in w.items() if k != "emph"} for w in words]
     if words and cap_cfg.get("enabled", True):
         evs += caption_events(words, style, cap_cfg.get("y"), cap_cfg.get("until"),
-                              cap_cfg.get("key_color"), cap_cfg.get("key_font"), cap_cfg.get("hook_until"))
+                              cap_cfg.get("key_color"), cap_cfg.get("key_font"), cap_cfg.get("hook_until"), cap_cfg)
     evs += title_events(titles or [], top_captions=bool(words) and cap_cfg.get("enabled", True) and style == "top")
     Path(path).write_text(ass_header() + "\n".join(evs) + "\n", encoding="utf-8")
 

@@ -210,7 +210,8 @@
     "style": "karaoke",
     "words": "words.json",
     "until": 28.91,
-    "keywords": false
+    "keywords": false,
+    "tight_lines": true
   },
   "titles": [
     {
@@ -227,24 +228,27 @@
       "text": "My *scuba* instructors",
       "start": 9.15,
       "end": 12.76,
-      "y": 1440,
-      "_label": "one label per person; add the real name when Isha confirms it"
+      "y": 1450,
+      "_label": "one label per person; add the real name when Isha confirms it",
+      "soft": true
     },
     {
       "type": "label",
       "text": "My *safari* guide",
       "start": 13.84,
       "end": 19.14,
-      "y": 1440,
-      "_label": "one label per person; add the real name when Isha confirms it"
+      "y": 1450,
+      "_label": "one label per person; add the real name when Isha confirms it",
+      "soft": true
     },
     {
       "type": "label",
       "text": "*Travel* friends · Lakshadweep",
       "start": 19.14,
       "end": 20.53,
-      "y": 1440,
-      "_label": "one label per person; add the real name when Isha confirms it"
+      "y": 1450,
+      "_label": "one label per person; add the real name when Isha confirms it",
+      "soft": true
     },
     {
       "type": "hook",
