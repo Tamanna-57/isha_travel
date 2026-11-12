@@ -4,27 +4,29 @@
 **Design:** full-bleed photo + text in the upper third (the `anton.cltx` reference style), Isha type system
 (Anton titles, Playfair serif lines, **Caveat** handwritten notes in marigold), natural grade, text inside the 4:5 safe area.
 
-The proof in `out/contact.png` is rendered with the **real brand fonts** but with **placeholder backgrounds**,
-because the Google Photos links don't open from this workspace. Each placeholder prints the photo it needs,
-so this file + the proof double as the shot list. Drop the 9 photos in `photos/` and re-render — that's it.
+**Status: photos are in place.** All 9 are Isha's own photos, pulled from the three shared Google Photos
+albums and saved in `photos/`. The rendered slides are in `out/slide_01.png … slide_09.png`; `out/contact.png`
+is the 3×3 proof. Video items and screen-grabs in the albums were skipped (they carry a ▶ play button / phone
+bars). To swap any photo, drop a new file over the matching name in `photos/` and re-run `make.py`.
 
 ---
 
-## The 9 photos needed (put in `projects/himachal_carousel/photos/`)
+## Photos used (Isha's own, from the 3 albums)
 
-| File | Slide | What it should be |
+| File | Slide | What it is |
 |---|---|---|
-| `kalpa_1.jpg`   | 1 (cover) | Best **wide** mountain photo **with Isha in it**, Kinnaur Kailash behind, morning. This is the post thumbnail. |
-| `kalpa_2.jpg`   | 2 | Kinnaur Kailash peaks at **sunrise** (golden glow), or Isha looking out at them. |
-| `kalpa_3.jpg`   | 3 | Old Kalpa character: apple orchard, old wooden houses, the monastery/temple, or the Roghi road. |
-| `chitkul_1.jpg` | 4 | **Wide** Baspa valley + Chitkul's wooden houses (Isha in frame if you have one). |
-| `chitkul_2.jpg` | 5 | The Baspa river, or Isha by the river / in the potato fields. |
-| `chitkul_3.jpg` | 6 | The 'Last Dhaba of Hindustan' board, the Mathi Devi wooden temple, or food by the river. |
-| `tosh_1.jpg`    | 7 | **Wide** Tosh on the slope with the snow peaks at the head of Parvati valley. |
-| `tosh_2.jpg`    | 8 | Cafe/balcony view over the valley, chai or maggi in hand, snow peaks behind. |
-| `tosh_3.jpg`    | 9 | Strong **closing wide** — Isha with the valley behind her, or peaks at golden hour. |
+| `kalpa_1.jpg`   | 1 (cover) | Isha under the bare tree, Kinnaur Kailash range behind — the post thumbnail. |
+| `kalpa_2.jpg`   | 2 | The golden Kinner Kailash spire at last light (shot through the window). |
+| `kalpa_3.jpg`   | 3 | The railing viewpoint over the valley — fits the Roghi / "Suicide Point" tip. |
+| `chitkul_1.jpg` | 4 | Chitkul village street, wooden houses under the big snow massif. |
+| `chitkul_2.jpg` | 5 | Isha on a boulder by the Baspa river. |
+| `chitkul_3.jpg` | 6 | Green-roof homestay/cafe with the blue chairs at golden hour. |
+| `tosh_1.jpg`    | 7 | Tosh village on the slope, Parvati valley and peaks. |
+| `tosh_2.jpg`    | 8 | Hand with the cafe menu on a balcony, snow peaks behind. |
+| `tosh_3.jpg`    | 9 | Golden alpenglow on the peaks — the closing wide. |
 
-Portrait/vertical photos frame best, but any orientation works (the renderer center-crops to 4:5).
+The Tosh album only had 4 usable images, so those three are the strongest of them. If you have a wide Tosh
+shot *with you in it*, send it and I'll use it on slide 7 or 9.
 
 ---
 

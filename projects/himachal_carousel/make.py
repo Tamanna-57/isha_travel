@@ -152,11 +152,9 @@ def fit_font(d, text, maker, max_w, start, lo=24):
         s -= 2
     return maker(lo)
 
-def shadow_text(d, xy, s, f, fill, anchor="mm", sh=(0, 0, 0, 150), off=3, blur=True):
-    # soft shadow via a separate layer keeps edges clean on photos
-    x, y = xy
-    d.text((x + off, y + off), s, font=f, fill=sh, anchor=anchor)
-    d.text((x, y), s, font=f, fill=fill, anchor=anchor)
+def shadow_text(d, xy, s, f, fill, anchor="mm", sh=None, off=3, blur=True):
+    # legibility halo is applied globally per slide; here just draw the glyph
+    d.text(xy, s, font=f, fill=fill, anchor=anchor)
 
 def _wrap_lines(d, text, f, max_w):
     words = text.split(); lines = []; cur = ""
@@ -178,10 +176,7 @@ def _wrapped(d, text, f, max_w, xy, fill, anchor="ma", leading=1.28, center=True
     for i, ln in enumerate(lines):
         ly = y + i * lh
         a = "ma" if center else "la"
-        lx = x if center else x
-        if shadow:
-            d.text((lx + 3, ly + 3), ln, font=f, fill=(0, 0, 0, 150), anchor=a)
-        d.text((lx, ly), ln, font=f, fill=fill, anchor=a)
+        d.text((x, ly), ln, font=f, fill=fill, anchor=a)
     return y + len(lines) * lh
 
 def tracked_caps(d, text, f, xy, fill, tracking=8, anchor_center=True, shadow=True):
@@ -190,8 +185,6 @@ def tracked_caps(d, text, f, xy, fill, tracking=8, anchor_center=True, shadow=Tr
     x = xy[0] - total / 2 if anchor_center else xy[0]
     y = xy[1]
     for ch in text:
-        if shadow:
-            d.text((x + 2, y + 2), ch, font=f, fill=(0, 0, 0, 150), anchor="lm")
         d.text((x, y), ch, font=f, fill=fill, anchor="lm")
         x += _measure(d, ch, f)[0] + tracking
 
@@ -221,13 +214,9 @@ def draw_arrow(d, x, y, size, col, shadow=True):
     hw = size * 0.34  # head half-width
     hl = size * 0.42  # head length
     th = max(3, round(size * 0.14))
-    def stroke(dx, dy):
-        d.line([(x + dx, y + dy), (x + dx + L, y + dy)], fill=(r, g, b), width=th)
-        d.line([(x + dx + L, y + dy), (x + dx + L - hl, y + dy - hw)], fill=(r, g, b), width=th)
-        d.line([(x + dx + L, y + dy), (x + dx + L - hl, y + dy + hw)], fill=(r, g, b), width=th)
-    if shadow:
-        d.line([(x + 2, y + 2), (x + 2 + L, y + 2)], fill=(0, 0, 0, 150), width=th)
-    stroke(0, 0)
+    d.line([(x, y), (x + L, y)], fill=(r, g, b), width=th)
+    d.line([(x + L, y), (x + L - hl, y - hw)], fill=(r, g, b), width=th)
+    d.line([(x + L, y), (x + L - hl, y + hw)], fill=(r, g, b), width=th)
     return x + L + hl
 
 def caveat_block(d, text, label, cx, y, maxw, size=66, rot_label=-5):
@@ -244,10 +233,22 @@ def caveat_block(d, text, label, cx, y, maxw, size=66, rot_label=-5):
 # =========================================================================
 # layouts
 # =========================================================================
+def composite_with_halo(im, txt):
+    """Put a soft dark halo behind everything on the text layer, then the crisp text.
+    Mirrors the house 'shadow 45% + outline' rule, and keeps text legible on any photo."""
+    alpha = txt.split()[3]
+    glow = alpha.filter(ImageFilter.GaussianBlur(7))
+    black = Image.new("RGBA", (W, H), (0, 0, 0, 255))
+    black.putalpha(glow.point(lambda a: int(min(255, a * 1.6))))
+    out = Image.alpha_composite(im.convert("RGBA"), black)   # halo pass 1
+    out = Image.alpha_composite(out, black)                  # pass 2 -> denser core
+    return Image.alpha_composite(out, txt)
+
 def render_slide(sp, total):
     bg, has_photo = load_background(sp)
     im = add_scrims(bg, sp.get("layout", "hero"))
-    d = ImageDraw.Draw(im, "RGBA")
+    txt = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(txt, "RGBA")
     layout = sp.get("layout", "hero")
     cx = W / 2
 
@@ -260,12 +261,12 @@ def render_slide(sp, total):
         accent_rule(d, cx, 548, 150)
         if sp.get("note"):
             # "start here" + a hand-drawn arrow (Caveat has no clean arrow glyph)
-            txt = sp["note"].replace("→", "").strip()
+            note_txt = sp["note"].replace("→", "").strip()
             cf = F["caveat"](72)
-            tw = _measure(d, txt, cf)[0]
+            tw = _measure(d, note_txt, cf)[0]
             ax = 44  # arrow + gap allowance
             x0 = cx - (tw + ax) / 2
-            d.text((x0, 610), txt, font=cf, fill=C["marigold"], anchor="lm")
+            d.text((x0, 610), note_txt, font=cf, fill=C["marigold"], anchor="lm")
             draw_arrow(d, x0 + tw + 20, 612, 30, C["marigold"])
         footer(d, sp["n"], total, cover=True)
 
@@ -306,7 +307,7 @@ def render_slide(sp, total):
                          tracking=3)
         footer(d, sp["n"], total)
 
-    return im.convert("RGB"), has_photo
+    return composite_with_halo(im, txt).convert("RGB"), has_photo
 
 # =========================================================================
 def main():
