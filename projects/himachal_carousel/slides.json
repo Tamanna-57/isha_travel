@@ -3,105 +3,76 @@
   "size": [1080, 1350],
   "handle": "@travelwithisha",
   "grade": "natural",
-  "accent": "marigold",
+  "style_note": "anton.cltx reference: minimal serif text in the TOP ~22% only, photo stays dominant, white or near-black text chosen for contrast, no accent colour, no chrome.",
   "slides": [
     {
       "n": 1,
       "village": "KALPA",
-      "layout": "cover",
       "photo": "kalpa_1.jpg",
-      "photo_brief": "Best WIDE mountain photo with Isha IN it. Kinnaur Kailash range behind her, morning light. This is the thumbnail of the whole post.",
-      "kicker": "3 Himachal villages that feel like another planet",
-      "title": "KALPA",
-      "note": "start here →",
-      "confirm": null
+      "title": "3 Himachal villages that feel like another planet",
+      "body": "swipe for the ones that made me forget what day it was",
+      "body_italic": true,
+      "swipe": true
     },
     {
       "n": 2,
       "village": "KALPA",
-      "layout": "feeling",
       "photo": "kalpa_2.jpg",
-      "photo_brief": "The Kinnaur Kailash peaks at sunrise (golden glow), OR Isha looking out at them. Vertical if possible.",
-      "eyebrow": "THE VIEW",
-      "line": "I woke up to the whole Kinnaur Kailash range turning gold — straight from the window, no filter, no crowd.",
-      "note": "that tall one is Kinner Kailash, ~6,050 m",
-      "confirm": null
+      "title": "Kalpa",
+      "body": "Wake up to the Kinnaur Kailash range turning gold, right from your window."
     },
     {
       "n": 3,
       "village": "KALPA",
-      "layout": "tip",
       "photo": "kalpa_3.jpg",
-      "photo_brief": "Old Kalpa character shot — apple orchard, old wooden houses, the monastery/temple, or the road to Roghi village.",
-      "eyebrow": "IF YOU GO",
-      "note_label": "isha's tip",
-      "note": "Stay up in old Kalpa, not down in Reckong Peo. Walk to Roghi village for the view they call 'Suicide Point' — the drop is unreal. Mornings in Apr–Jun give the clearest peaks.",
-      "confirm": "Where exactly did you stay in Kalpa? Swap the stay line for the real name/area if you want to name it."
+      "kicker": "if you go",
+      "body": "Stay up in old Kalpa, and walk to Roghi for the viewpoint they call ‘Suicide Point’."
     },
     {
       "n": 4,
       "village": "CHITKUL",
-      "layout": "hero",
       "photo": "chitkul_1.jpg",
-      "photo_brief": "Wide Baspa valley shot with the wooden houses of Chitkul, Isha in frame if you have one.",
-      "title": "CHITKUL",
-      "line": "the last inhabited village before the Indo–Tibet border",
-      "confirm": null
+      "title": "Chitkul",
+      "body": "the last inhabited village before the Indo–Tibet border",
+      "body_italic": true
     },
     {
       "n": 5,
       "village": "CHITKUL",
-      "layout": "feeling",
       "photo": "chitkul_2.jpg",
-      "photo_brief": "The Baspa river, or Isha by the river / in the potato fields. Cold, clean, blue-grey light.",
-      "eyebrow": "WHY IT STAYS WITH YOU",
-      "line": "The Baspa running ice-cold, the cleanest air I’ve ever breathed, and a silence that makes you forget your phone exists.",
-      "note": "3,450 m · end of the old trade route",
-      "confirm": null
+      "kicker": "the Baspa valley",
+      "body": "The cleanest air I’ve ever breathed, and a silence that makes you forget your phone exists."
     },
     {
       "n": 6,
       "village": "CHITKUL",
-      "layout": "tip",
       "photo": "chitkul_3.jpg",
-      "photo_brief": "The 'Last Dhaba of Hindustan' board, the Mathi Devi wooden temple, or a plate of food by the river.",
-      "eyebrow": "IF YOU GO",
-      "note_label": "isha's tip",
-      "note": "Eat at the 'Hindustan ka Aakhri Dhaba', sit by the Baspa with chai, and come May–October — the road shuts with the first snow.",
-      "confirm": "Did you actually eat at the last dhaba? If not, I'll soften this to a general 'don't skip' line."
+      "kicker": "if you go",
+      "body": "Eat at the last dhaba of Hindustan, and come May–October, before the snow shuts the road."
     },
     {
       "n": 7,
       "village": "TOSH",
-      "layout": "hero",
       "photo": "tosh_1.jpg",
-      "photo_brief": "Tosh village on the slope with the snow peaks at the head of Parvati valley. Wide.",
-      "title": "TOSH",
-      "line": "where Parvati valley simply runs out of road",
-      "confirm": null
+      "title": "Tosh",
+      "body": "where Parvati valley simply runs out of road",
+      "body_italic": true
     },
     {
       "n": 8,
       "village": "TOSH",
-      "layout": "feeling",
       "photo": "tosh_2.jpg",
-      "photo_brief": "Cafe / balcony view over the valley, chai or maggi in hand, snow peaks in the distance.",
-      "eyebrow": "THE MOOD",
-      "line": "Slow mornings, chai with a snow-peak view, and nowhere you have to be. Tosh is the full stop at the end of the valley.",
-      "note": "park at Barshaini, walk up the last bit",
-      "confirm": null
+      "kicker": "the mood",
+      "body": "Slow mornings, chai with a snow-peak view, and nowhere you have to be."
     },
     {
       "n": 9,
       "village": "TOSH",
-      "layout": "end",
       "photo": "tosh_3.jpg",
-      "photo_brief": "A strong closing wide — Isha with the valley behind her, or the peaks at golden hour.",
-      "note_label": "isha's tip",
-      "note": "Stay a night higher up for sunrise on the peaks, and walk to Kutla for an even quieter view.",
-      "cta": "Which one are you saving for 2027?",
-      "cta_sub": "save this · comment the one you’d pick first",
-      "confirm": null
+      "title": "Which one are you saving for 2027?",
+      "body": "tell me below — and save this for the trip",
+      "body_italic": true,
+      "handle": true
     }
   ]
 }
