@@ -139,18 +139,11 @@ def arrow(d, x, y, size, col):
 # -------------------------------------------------------------------------
 def render_slide(sp):
     photo, ok = load_photo(sp["photo"])
-    hue, strength = accent_hue(photo)
-    p70 = band_luma(photo)
-    bright = p70 >= 162            # bright band -> dark text + deep accent
-
-    if bright:
-        accent = hsv(hue, min(0.9, 0.55 + strength * 0.4), 0.52)
-        body_col = (34, 28, 22)
-        shadow = (255, 255, 255, 150)
-    else:
-        accent = hsv(hue, min(0.78, 0.5 + strength * 0.4), 0.98)
-        body_col = (255, 247, 236)
-        shadow = (0, 0, 0, 165)
+    warm_hue, _ = accent_hue(photo)
+    # BRIGHT yellow accent everywhere (no dull/olive); lean a touch warmer on golden skies.
+    # A strong dark shadow (below) keeps it readable even on bright backgrounds.
+    accent = hsv(44, 0.98, 1.0) if warm_hue < 30 else hsv(49, 0.95, 1.0)
+    body_col = (255, 248, 238)
 
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer, "RGBA")
@@ -184,12 +177,13 @@ def render_slide(sp):
         hf = F("sb", 28)
         tracked(d, sp.get("handle_text", "@travelwithisha"), hf, MARGIN, H - 92, hfill, 2)
 
-    # soft shadow for legibility (keeps the colour readable on any photo)
+    # strong dark drop-shadow so the bright yellow + white pop on any photo
     alpha = layer.split()[3]
-    glow = alpha.filter(ImageFilter.GaussianBlur(5))
-    sh = Image.new("RGBA", (W, H), shadow[:3] + (255,))
-    sh.putalpha(glow.point(lambda a: int(a * (shadow[3] / 255.0))))
+    glow = alpha.filter(ImageFilter.GaussianBlur(6))
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 255))
+    sh.putalpha(glow.point(lambda a: int(min(255, a * 0.95))))
     out = Image.alpha_composite(photo.convert("RGBA"), sh)
+    out = Image.alpha_composite(out, sh)      # second pass -> denser, readable shadow
     out = Image.alpha_composite(out, layer)
     return out.convert("RGB"), ok
 
@@ -203,10 +197,11 @@ def main():
         im.save(fn)
         print("wrote", os.path.relpath(fn, ROOT), "" if ok else "(photo missing)")
         t = im.copy(); t.thumbnail((360, 450), Image.LANCZOS); thumbs.append(t)
-    pad, tw, th = 18, 360, 450
-    sheet = Image.new("RGB", (3 * tw + 4 * pad, 3 * th + 4 * pad), (14, 14, 14))
+    pad, tw, th, cols = 18, 360, 450, 3
+    rows = (len(thumbs) + cols - 1) // cols
+    sheet = Image.new("RGB", (cols * tw + (cols + 1) * pad, rows * th + (rows + 1) * pad), (14, 14, 14))
     for i, t in enumerate(thumbs):
-        r, c = divmod(i, 3)
+        r, c = divmod(i, cols)
         sheet.paste(t, (pad + c * (tw + pad), pad + r * (th + pad)))
     sheet.save(os.path.join(OUT, "contact.png"))
     print("wrote", os.path.relpath(os.path.join(OUT, "contact.png"), ROOT))

@@ -3,14 +3,14 @@
 **Account:** @travelwithisha · **Post:** Tue, 7:00 PM IST · **Format:** 9-slide carousel, 3 slides per village
 
 ## Design — v2 (bolder, swarikaandaditya reference)
-- Full-bleed photo, natural grade, **photo stays dominant**.
+- Full-bleed photo, natural grade, **photo stays dominant**. **10 slides** (Tosh has 4, incl. stargazing).
 - **Bold Poppins display type**, text anchored **top-left**, minimal.
-- A **warm gold → terracotta accent** (Isha's marigold family) on the title + kicker, its exact shade
-  picked per photo so it complements the picture; clean body text beneath (white, or dark on bright slides).
-- No handle bar / counter / "swipe" chrome. Only slide 9 carries a small `@travelwithisha`.
+- **Bright yellow accent** on the title + kicker (leans a touch warmer/gold on golden skies), with a
+  strong dark drop-shadow so it pops on any photo; clean white body beneath.
+- No handle bar / counter / "swipe" chrome. Only the end slide carries a small `@travelwithisha`.
 - (v1 — the thinner Playfair serif, centred, white/black — is kept in git history if we want it back.)
 
-Rendered slides: `out/slide_01.png … slide_09.png`. Proof: `out/contact.png`. Photos are Isha's own.
+Rendered slides: `out/slide_01.png … slide_10.png`. Proof: `out/contact.png`. Photos are Isha's own.
 
 ## Copy, slide by slide (v2, in Isha's voice)
 1. **Kalpa (cover)** — *himachal, india · 3 villages that feel like another planet* · "the ones that made me forget the sea — swipe"
@@ -18,10 +18,11 @@ Rendered slides: `out/slide_01.png … slide_09.png`. Proof: `out/contact.png`. 
 3. **Kalpa** — *if you're going* · "Stay up in old Kalpa, not Reckong Peo. Walk to Roghi for the viewpoint — knees shaking, so worth it."
 4. **Chitkul** — *Chitkul* · "the last village before the Indo–Tibet border. The road literally just ends here."
 5. **Chitkul** — *what stayed with me* · "Cleanest air I've ever breathed, the Baspa roaring, and the kind of quiet that makes you put the phone down."
-6. **Chitkul** — *if you're going* · "Chai at the last dhaba of Hindustan, feet by the river. Go May–October, before the snow shuts the road."
+6. **Chitkul** — *where to stay* · "Grab a riverside camp right on the Baspa. Falling asleep to the river rushing past is the whole point."
 7. **Tosh** — *Tosh* · "where Parvati valley runs out of road and you finally just… stop."
 8. **Tosh** — *the whole mood* · "Slow mornings, chai with a snow-peak in your face, nowhere to be. Didn't check the time once."
-9. **Tosh (end)** — *Which one are you saving for 2027?* · "tell me below, and save this — future you will thank you." · @travelwithisha
+9. **Tosh (stargazing)** — *don't sleep early* · "Lights out and the whole Milky Way just shows up. Tosh has some of the clearest night skies I've ever seen."
+10. **Tosh (end)** — *Which one are you saving for 2027?* · "tell me below, and save this — future you will thank you." · @travelwithisha
 
 ### Confirm in your own words if you have them (I kept these factual, not invented)
 - **Slide 3:** where you actually stayed in Kalpa.
@@ -35,10 +36,11 @@ Rendered slides: `out/slide_01.png … slide_09.png`. Proof: `out/contact.png`. 
 | `kalpa_3.jpg`   | 3 | Railing viewpoint over the valley |
 | `chitkul_1.jpg` | 4 | Chitkul village street under the snow massif |
 | `chitkul_2.jpg` | 5 | Isha on a boulder by the Baspa |
-| `chitkul_3.jpg` | 6 | Green-roof homestay / cafe |
+| `chitkul_3.jpg` | 6 | Riverside camp / stay on the Baspa |
 | `tosh_1.jpg`    | 7 | Tosh village on the slope |
 | `tosh_2.jpg`    | 8 | Cafe menu, snow-peak balcony |
-| `tosh_3.jpg`    | 9 | Golden alpenglow peak |
+| `tosh_4.jpg`    | 9 | Milky Way night sky (stargazing) |
+| `tosh_3.jpg`    | 10 | Golden alpenglow peak (end card) |
 
 ## Post caption
 > Not everything I love is underwater 🏔️

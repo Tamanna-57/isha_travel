@@ -4,7 +4,7 @@
   "handle": "@travelwithisha",
   "grade": "natural",
   "style": "v2",
-  "style_note": "swarikaandaditya reference: bold Poppins display, text top-LEFT, a per-photo accent colour pulled from the image on the title/kicker, clean body beneath. Isha's voice. Photo stays dominant.",
+  "style_note": "swarikaandaditya reference: bold Poppins display, text top-LEFT, BRIGHT yellow accent with a strong shadow on the title/kicker, clean white body. Isha's voice. 10 slides (Tosh has 4, incl. stargazing).",
   "slides": [
     {
       "n": 1,
@@ -47,8 +47,8 @@
       "n": 6,
       "village": "CHITKUL",
       "photo": "chitkul_3.jpg",
-      "kicker": "if you're going",
-      "body": "Chai at the last dhaba of Hindustan, feet by the river. Go May–October, before the snow shuts the road."
+      "kicker": "where to stay",
+      "body": "Grab a riverside camp right on the Baspa. Falling asleep to the river rushing past is the whole point."
     },
     {
       "n": 7,
@@ -66,6 +66,13 @@
     },
     {
       "n": 9,
+      "village": "TOSH",
+      "photo": "tosh_4.jpg",
+      "kicker": "don't sleep early",
+      "body": "Lights out and the whole Milky Way just shows up. Tosh has some of the clearest night skies I’ve ever seen."
+    },
+    {
+      "n": 10,
       "village": "TOSH",
       "photo": "tosh_3.jpg",
       "title": "Which one are you saving for 2027?",
