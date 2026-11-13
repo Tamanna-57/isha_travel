@@ -2,27 +2,26 @@
 
 **Account:** @travelwithisha · **Post:** Tue, 7:00 PM IST · **Format:** 9-slide carousel, 3 slides per village
 
-## Design (matches the `anton.cltx` reference)
+## Design — v2 (bolder, swarikaandaditya reference)
 - Full-bleed photo, natural grade, **photo stays dominant**.
-- **Minimal serif text in the top ~22% only** — the rest of the frame is clean.
-- **One font**, Playfair Display: upright for titles/body, italic for kickers & subtitles.
-- **Two colours only** — white or near-black, chosen per slide for contrast with the sky.
-- No accent colour, no handwriting, no handle bar / counter / "swipe" chrome. Only slide 9 carries a
-  small centred `@travelwithisha`, like the reference end card.
+- **Bold Poppins display type**, text anchored **top-left**, minimal.
+- A **warm gold → terracotta accent** (Isha's marigold family) on the title + kicker, its exact shade
+  picked per photo so it complements the picture; clean body text beneath (white, or dark on bright slides).
+- No handle bar / counter / "swipe" chrome. Only slide 9 carries a small `@travelwithisha`.
+- (v1 — the thinner Playfair serif, centred, white/black — is kept in git history if we want it back.)
 
-Rendered slides: `out/slide_01.png … slide_09.png`. Proof: `out/contact.png`. All photos are Isha's own,
-pulled from the three shared albums (video stills and screen-grabs were skipped).
+Rendered slides: `out/slide_01.png … slide_09.png`. Proof: `out/contact.png`. Photos are Isha's own.
 
-## Copy, slide by slide
-1. **Kalpa (cover)** — *3 Himachal villages that feel like another planet* · "swipe for the ones that made me forget what day it was →"
-2. **Kalpa** — *Kalpa* · "Wake up to the Kinnaur Kailash range turning gold, right from your window."
-3. **Kalpa** — *if you go* · "Stay up in old Kalpa, and walk to Roghi for the viewpoint they call 'Suicide Point'."
-4. **Chitkul** — *Chitkul* · "the last inhabited village before the Indo–Tibet border"
-5. **Chitkul** — *the Baspa valley* · "The cleanest air I've ever breathed, and a silence that makes you forget your phone exists."
-6. **Chitkul** — *if you go* · "Eat at the last dhaba of Hindustan, and come May–October, before the snow shuts the road."
-7. **Tosh** — *Tosh* · "where Parvati valley simply runs out of road"
-8. **Tosh** — *the mood* · "Slow mornings, chai with a snow-peak view, and nowhere you have to be."
-9. **Tosh (end)** — *Which one are you saving for 2027?* · "tell me below — and save this for the trip" · @travelwithisha
+## Copy, slide by slide (v2, in Isha's voice)
+1. **Kalpa (cover)** — *himachal, india · 3 villages that feel like another planet* · "the ones that made me forget the sea — swipe"
+2. **Kalpa** — *Kalpa* · "Opened my window and the whole Kinnaur Kailash range was gold. Still not over that morning."
+3. **Kalpa** — *if you're going* · "Stay up in old Kalpa, not Reckong Peo. Walk to Roghi for the viewpoint — knees shaking, so worth it."
+4. **Chitkul** — *Chitkul* · "the last village before the Indo–Tibet border. The road literally just ends here."
+5. **Chitkul** — *what stayed with me* · "Cleanest air I've ever breathed, the Baspa roaring, and the kind of quiet that makes you put the phone down."
+6. **Chitkul** — *if you're going* · "Chai at the last dhaba of Hindustan, feet by the river. Go May–October, before the snow shuts the road."
+7. **Tosh** — *Tosh* · "where Parvati valley runs out of road and you finally just… stop."
+8. **Tosh** — *the whole mood* · "Slow mornings, chai with a snow-peak in your face, nowhere to be. Didn't check the time once."
+9. **Tosh (end)** — *Which one are you saving for 2027?* · "tell me below, and save this — future you will thank you." · @travelwithisha
 
 ### Confirm in your own words if you have them (I kept these factual, not invented)
 - **Slide 3:** where you actually stayed in Kalpa.

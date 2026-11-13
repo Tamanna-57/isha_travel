@@ -2,19 +2,19 @@
 """
 Himachal 3-villages carousel (Kalpa / Chitkul / Tosh) for @travelwithisha.
 
-Design follows the anton.cltx reference carousel the client sent:
+v2 design (swarikaandaditya reference):
   - full-bleed photo, natural grade, photo stays dominant
-  - minimal text in the TOP band only (~top 22%), centred
-  - ONE serif family (Playfair Display): upright for titles/body, italic for kickers/subtitles
-  - two colours only: white OR near-black, chosen per slide for contrast with the sky
-  - no accent colour, no handwriting, no handle bar / counter / swipe chrome
-    (only slide 9 carries a small centred handle, like the reference end card)
+  - bold Poppins display type, text anchored TOP-LEFT (minimal, upper band)
+  - a per-photo ACCENT colour pulled from the image, on the kicker + title,
+    so the type complements each picture; clean body text beneath
+  - light/dark variants chosen from the band behind the text for contrast
+  - no handle bar / counter / swipe chrome (only slide 9 carries a small handle)
 
     python projects/himachal_carousel/make.py   # -> out/slide_01.png .. 09 + out/contact.png
 
 Deps: Pillow, numpy.
 """
-import json, os
+import json, os, colorsys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 import numpy as np
 
@@ -26,20 +26,15 @@ OUT = os.path.join(HERE, "out")
 os.makedirs(OUT, exist_ok=True)
 
 W, H = 1080, 1350
-INK = (26, 24, 22)          # near-black text
-CHALK = (255, 255, 255)     # white text
+MARGIN = 74
 
 def font(fname, size):
     return ImageFont.truetype(os.path.join(FONTS, fname), size)
 
 def F(role, size):
-    return font({"reg": "PlayfairDisplay-Regular.ttf",
-                 "it":  "PlayfairDisplay-Italic.ttf",
-                 "med": "PlayfairDisplay-Medium.ttf" if os.path.exists(os.path.join(FONTS, "PlayfairDisplay-Medium.ttf"))
-                        else "PlayfairDisplay-Regular.ttf"}[role], size)
+    return font({"xb": "Poppins-ExtraBold.ttf", "b": "Poppins-Bold.ttf",
+                 "sb": "Poppins-SemiBold.ttf", "med": "Poppins-Medium.ttf"}[role], size)
 
-# -------------------------------------------------------------------------
-# photo: natural grade + 4:5 cover-fit
 # -------------------------------------------------------------------------
 def natural_grade(im):
     a = np.asarray(im).astype(np.float32) / 255.0
@@ -67,29 +62,34 @@ def load_photo(name):
     return natural_grade(cover_fit(Image.open(p), W, H)), True
 
 # -------------------------------------------------------------------------
-# contrast: sample the band behind the text, pick white or dark + a whisper scrim
+# accent colour pulled from the photo's vivid pixels (circular-mean hue)
 # -------------------------------------------------------------------------
-def top_band_luma(im, y0=90, y1=470):
+def accent_hue(im, y0=70, y1=470):
+    """Pick a warm, on-brand accent (Isha's marigold family) that complements the
+    band behind the text. Cool / blue bands -> gold; warm golden bands -> terracotta
+    so the type still contrasts and reads. Stays in a cohesive warm range (no pinks)."""
+    hsv = np.asarray(im.crop((0, y0, W, y1)).resize((96, 72)).convert("HSV")).astype(np.float32)
+    Hh = hsv[..., 0] * 360 / 255.0
+    Ss = hsv[..., 1] / 255.0
+    Vv = hsv[..., 2] / 255.0
+    w = (Ss ** 1.5) * ((Vv > 0.15) & (Vv < 0.98))
+    if w.sum() < 20:
+        return 42.0, 0.6
+    ang = np.deg2rad(Hh)
+    mh = np.arctan2((np.sin(ang) * w).sum(), (np.cos(ang) * w).sum())
+    bhue = (np.degrees(mh)) % 360
+    bsat = float(np.average(Ss, weights=w + 1e-6))
+    warm_band = bsat > 0.14 and (bhue <= 60 or bhue >= 330)   # golden / sunset sky
+    return (15.0 if warm_band else 42.0), bsat
+
+def band_luma(im, y0=70, y1=470):
     a = np.asarray(im.crop((0, y0, W, y1)).convert("L")).astype(np.float32)
-    return float(a.mean()), float(np.percentile(a, 70))
+    return float(np.percentile(a, 70))
 
-def apply_scrim(im, mode):
-    """A very light top gradient so text reads without hiding the photo.
-    mode 'dark'  -> faint dark veil under white text
-    mode 'light' -> faint light veil under near-black text
-    Both fade out by ~42% height."""
-    ys = np.linspace(0, 1, H)[:, None]
-    fall = np.clip((0.44 - ys) / 0.44, 0, 1) ** 1.35
-    ov = np.zeros((H, W, 4), np.float32)
-    if mode == "dark":
-        ov[..., 3] = (fall * 115) * np.ones((1, W))
-    else:
-        ov[..., :3] = 255.0
-        ov[..., 3] = (fall * 95) * np.ones((1, W))
-    return Image.alpha_composite(im.convert("RGBA"), Image.fromarray(ov.astype(np.uint8)))
+def hsv(h, s, v):
+    r, g, b = colorsys.hsv_to_rgb((h % 360) / 360.0, s, v)
+    return (int(r * 255), int(g * 255), int(b * 255))
 
-# -------------------------------------------------------------------------
-# text
 # -------------------------------------------------------------------------
 def measure(d, s, f):
     b = d.textbbox((0, 0), s, font=f); return b[2] - b[0], b[3] - b[1]
@@ -106,7 +106,7 @@ def wrap(d, text, f, max_w):
         lines.append(cur)
     return lines
 
-def fit_title(d, text, max_w, start, lo, max_lines, role="reg"):
+def fit(d, text, role, start, lo, max_w, max_lines):
     s = start
     while s > lo:
         f = F(role, s)
@@ -117,25 +117,21 @@ def fit_title(d, text, max_w, start, lo, max_lines, role="reg"):
     f = F(role, lo)
     return f, wrap(d, text, f, max_w)
 
-def draw_center(d, lines, f, cx, y, fill, leading, soft):
+def draw_left(d, lines, f, x, y, fill, leading):
     asc, desc = f.getmetrics(); lh = (asc + desc) * leading
     for i, ln in enumerate(lines):
-        yy = y + i * lh
-        if soft:
-            d.text((cx, yy), ln, font=f, fill=soft, anchor="ma")  # handled on shadow layer
-        d.text((cx, yy), ln, font=f, fill=fill, anchor="ma")
+        d.text((x, y + i * lh), ln, font=f, fill=fill, anchor="la")
     return y + len(lines) * lh
 
-def small_caps_spacing(d, text, f, cx, y, fill, tracking):
+def tracked(d, text, f, x, y, fill, tr):
     text = text.upper()
-    total = sum(measure(d, ch, f)[0] + tracking for ch in text) - tracking
-    x = cx - total / 2
     for ch in text:
         d.text((x, y), ch, font=f, fill=fill, anchor="la")
-        x += measure(d, ch, f)[0] + tracking
+        x += measure(d, ch, f)[0] + tr
+    return x
 
 def arrow(d, x, y, size, col):
-    th = max(3, round(size * 0.12))
+    th = max(4, round(size * 0.13))
     d.line([(x, y), (x + size, y)], fill=col, width=th)
     d.line([(x + size, y), (x + size - size * 0.4, y - size * 0.32)], fill=col, width=th)
     d.line([(x + size, y), (x + size - size * 0.4, y + size * 0.32)], fill=col, width=th)
@@ -143,66 +139,57 @@ def arrow(d, x, y, size, col):
 # -------------------------------------------------------------------------
 def render_slide(sp):
     photo, ok = load_photo(sp["photo"])
-    mean, p70 = top_band_luma(photo)
-    dark_text = p70 >= 165          # bright sky -> near-black text (elegant, reference-style)
-    fill = INK if dark_text else CHALK
-    im = apply_scrim(photo, "light" if dark_text else "dark")
+    hue, strength = accent_hue(photo)
+    p70 = band_luma(photo)
+    bright = p70 >= 162            # bright band -> dark text + deep accent
 
-    # text on its own layer, with a faint matching halo for safety on busy photos
+    if bright:
+        accent = hsv(hue, min(0.9, 0.55 + strength * 0.4), 0.52)
+        body_col = (34, 28, 22)
+        shadow = (255, 255, 255, 150)
+    else:
+        accent = hsv(hue, min(0.78, 0.5 + strength * 0.4), 0.98)
+        body_col = (255, 247, 236)
+        shadow = (0, 0, 0, 165)
+
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer, "RGBA")
-    cx = W / 2
-    maxw = int(W * 0.84)
-    y = 150
+    x = MARGIN
+    y = 118
+    maxw = W - MARGIN - 60
 
     if sp.get("kicker"):
-        kf = F("it", 40)
-        d.text((cx, y), sp["kicker"], font=kf, fill=fill, anchor="ma")
-        y += kf.getmetrics()[0] + kf.getmetrics()[1] + 18
+        kf = F("sb", 30)
+        tracked(d, sp["kicker"], kf, x, y, accent, 3)
+        y += kf.getmetrics()[0] + kf.getmetrics()[1] + 16
 
     if sp.get("title"):
-        role = "it" if sp.get("title_italic") else "reg"
-        # village names get bigger presence; long lines shrink to fit <=3 lines
         short = len(sp["title"]) <= 14
-        tf, tlines = fit_title(d, sp["title"], maxw,
-                               start=104 if short else 62, lo=44,
-                               max_lines=1 if short else 3, role=role)
-        yb = draw_center(d, tlines, tf, cx, y, fill, 1.08, None)
-        # cover swipe arrow sits inline after a one-line title is uncommon; put it with body
-        y = yb + 24
+        tf, tlines = fit(d, sp["title"], "xb",
+                         start=132 if short else 72, lo=48,
+                         max_w=maxw, max_lines=1 if short else 3)
+        y = draw_left(d, tlines, tf, x, y, accent, 1.02) + 22
 
     if sp.get("body"):
-        role = "it" if sp.get("body_italic") else "reg"
-        bf = F(role, 37)
-        blines = wrap(d, sp["body"], bf, int(W * 0.80))
-        yb = draw_center(d, blines, bf, cx, y, fill, 1.34, None)
+        bf = F("med", 37)
+        blines = wrap(d, sp["body"], bf, int(W * 0.72))
+        yb = draw_left(d, blines, bf, x, y, body_col, 1.3)
         if sp.get("swipe"):
-            # a small arrow centred under the subtitle
-            arrow(d, cx - 16, yb + 30, 34, fill)
+            arrow(d, x + 2, yb + 34, 40, accent)
         y = yb
 
     if sp.get("handle"):
-        # the end-card handle sits at the bottom; pick its colour from the bottom band
         bmean = float(np.asarray(photo.crop((0, H - 150, W, H - 40)).convert("L")).mean())
-        hfill = INK if bmean >= 150 else CHALK
-        hf = F("it", 32)
-        hx, hy = cx, H - 86
-        # its own soft shadow so it reads regardless of the global halo colour
-        hs = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        ImageDraw.Draw(hs).text((hx, hy), sp.get("handle_text", "@travelwithisha"),
-                                font=hf, fill=(0, 0, 0, 160) if hfill == CHALK else (255, 255, 255, 160),
-                                anchor="ma")
-        hs = hs.filter(ImageFilter.GaussianBlur(4))
-        layer.alpha_composite(hs)
-        d.text((hx, hy), sp.get("handle_text", "@travelwithisha"), font=hf, fill=hfill, anchor="ma")
+        hfill = (34, 28, 22) if bmean >= 150 else (255, 247, 236)
+        hf = F("sb", 28)
+        tracked(d, sp.get("handle_text", "@travelwithisha"), hf, MARGIN, H - 92, hfill, 2)
 
-    # subtle halo: blur the text alpha, tint opposite of text, composite under text
+    # soft shadow for legibility (keeps the colour readable on any photo)
     alpha = layer.split()[3]
     glow = alpha.filter(ImageFilter.GaussianBlur(5))
-    halo_col = (255, 255, 255, 255) if dark_text else (0, 0, 0, 255)
-    halo = Image.new("RGBA", (W, H), halo_col)
-    halo.putalpha(glow.point(lambda a: int(a * (0.45 if dark_text else 0.62))))
-    out = Image.alpha_composite(im, halo)
+    sh = Image.new("RGBA", (W, H), shadow[:3] + (255,))
+    sh.putalpha(glow.point(lambda a: int(a * (shadow[3] / 255.0))))
+    out = Image.alpha_composite(photo.convert("RGBA"), sh)
     out = Image.alpha_composite(out, layer)
     return out.convert("RGB"), ok
 

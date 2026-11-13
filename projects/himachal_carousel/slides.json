@@ -3,15 +3,16 @@
   "size": [1080, 1350],
   "handle": "@travelwithisha",
   "grade": "natural",
-  "style_note": "anton.cltx reference: minimal serif text in the TOP ~22% only, photo stays dominant, white or near-black text chosen for contrast, no accent colour, no chrome.",
+  "style": "v2",
+  "style_note": "swarikaandaditya reference: bold Poppins display, text top-LEFT, a per-photo accent colour pulled from the image on the title/kicker, clean body beneath. Isha's voice. Photo stays dominant.",
   "slides": [
     {
       "n": 1,
       "village": "KALPA",
       "photo": "kalpa_1.jpg",
-      "title": "3 Himachal villages that feel like another planet",
-      "body": "swipe for the ones that made me forget what day it was",
-      "body_italic": true,
+      "kicker": "himachal, india",
+      "title": "3 villages that feel like another planet",
+      "body": "the ones that made me forget the sea — swipe",
       "swipe": true
     },
     {
@@ -19,59 +20,56 @@
       "village": "KALPA",
       "photo": "kalpa_2.jpg",
       "title": "Kalpa",
-      "body": "Wake up to the Kinnaur Kailash range turning gold, right from your window."
+      "body": "Opened my window and the whole Kinnaur Kailash range was gold. Still not over that morning."
     },
     {
       "n": 3,
       "village": "KALPA",
       "photo": "kalpa_3.jpg",
-      "kicker": "if you go",
-      "body": "Stay up in old Kalpa, and walk to Roghi for the viewpoint they call ‘Suicide Point’."
+      "kicker": "if you're going",
+      "body": "Stay up in old Kalpa, not Reckong Peo. Walk to Roghi for the viewpoint — knees shaking, so worth it."
     },
     {
       "n": 4,
       "village": "CHITKUL",
       "photo": "chitkul_1.jpg",
       "title": "Chitkul",
-      "body": "the last inhabited village before the Indo–Tibet border",
-      "body_italic": true
+      "body": "the last village before the Indo–Tibet border. The road literally just ends here."
     },
     {
       "n": 5,
       "village": "CHITKUL",
       "photo": "chitkul_2.jpg",
-      "kicker": "the Baspa valley",
-      "body": "The cleanest air I’ve ever breathed, and a silence that makes you forget your phone exists."
+      "kicker": "what stayed with me",
+      "body": "Cleanest air I’ve ever breathed, the Baspa roaring, and the kind of quiet that makes you put the phone down."
     },
     {
       "n": 6,
       "village": "CHITKUL",
       "photo": "chitkul_3.jpg",
-      "kicker": "if you go",
-      "body": "Eat at the last dhaba of Hindustan, and come May–October, before the snow shuts the road."
+      "kicker": "if you're going",
+      "body": "Chai at the last dhaba of Hindustan, feet by the river. Go May–October, before the snow shuts the road."
     },
     {
       "n": 7,
       "village": "TOSH",
       "photo": "tosh_1.jpg",
       "title": "Tosh",
-      "body": "where Parvati valley simply runs out of road",
-      "body_italic": true
+      "body": "where Parvati valley runs out of road and you finally just… stop."
     },
     {
       "n": 8,
       "village": "TOSH",
       "photo": "tosh_2.jpg",
-      "kicker": "the mood",
-      "body": "Slow mornings, chai with a snow-peak view, and nowhere you have to be."
+      "kicker": "the whole mood",
+      "body": "Slow mornings, chai with a snow-peak in your face, nowhere to be. Didn’t check the time once."
     },
     {
       "n": 9,
       "village": "TOSH",
       "photo": "tosh_3.jpg",
       "title": "Which one are you saving for 2027?",
-      "body": "tell me below — and save this for the trip",
-      "body_italic": true,
+      "body": "tell me below, and save this — future you will thank you.",
       "handle": true
     }
   ]
