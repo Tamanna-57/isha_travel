@@ -35,3 +35,7 @@ desktop.ini
 # ---- Raw clips we DO share (stored with Git LFS, see .gitattributes) ----
 !inbox/lakshadweep_part2/
 !inbox/lakshadweep_part2/*
+
+# diwali_v2 reel intermediates/renders
+projects/safari/diwali_v2/build/
+projects/safari/diwali_v2/out/
