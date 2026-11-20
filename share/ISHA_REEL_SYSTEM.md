@@ -341,3 +341,31 @@ Shoot vertical 4K or 1080p at **30 fps** (or 60 fps for slow-mo B-roll). Turn HD
 - [ ] −14 LUFS ±1, true peak ≤ −1.5 dBTP, voice always intelligible over music
 - [ ] 1080×1920, 30 fps CFR, BT.709, plays in a phone preview
 - [ ] Clean version + SRT + cover exported
+
+---
+
+## 15. Working with Isha's raw iPhone clips (gotchas that have bitten us)
+
+These are practical lessons from real edits. They are easy to miss and each one has caused a bad deliverable.
+
+### 15.1 The audio track trap (this is the "glitchy audio")
+Isha's recent iPhone (15/16) `.MOV` clips carry **two audio streams**:
+- **stream `a:0` = Apple spatial audio ("APAC")** — ffmpeg ≤ 7.x and most editors **cannot decode it**. If you use it the voice comes out garbled / robotic / flickering. *This is the "glitchy audio" the client keeps reporting.*
+- **stream `a:1` = normal AAC stereo** — clean, use this one.
+
+Always take the stereo track: in the pipeline `-map 0:a:1`; in CapCut/Premiere, if her voice sounds robotic, **detach audio and switch to the second audio track**. Check with `ffprobe -show_entries stream=index,codec_name,channels` — APAC shows as `apac`/`unknown`, 5 channels; AAC shows as `aac`, 2 channels.
+
+### 15.2 HDR, rotation, saturation
+Recent clips are **HEVC 10-bit HLG (BT.2020)**, shot vertical with a **90° rotation flag**.
+- **Tone-map HLG → SDR BT.709** or colours wash out and skin over-saturates (the client reads her desk clips as "too much saturation"). Pipeline recipe: `zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable,zscale=t=bt709:m=bt709:r=tv,format=yuv420p`, then pull saturation to **~0.86** and a touch of contrast. In CapCut: turn HDR **off** and drop saturation a few points.
+- ffmpeg **auto-rotates** the 90° flag; confirm the output is **1080×1920 portrait**, not landscape.
+
+### 15.3 Never try to "fix" a flattened/delivered MP4
+On a finished render the **captions, titles, logo and the mixed audio are baked into the pixels/track**. You cannot:
+- swap the audio cleanly — the finished timeline no longer matches any raw take (pauses were cut), so clean audio drifts out of lip-sync;
+- move or remove a baked logo that sits over her **moving hair** — there is no clean background to paint back.
+
+For any change to **audio, fonts, captions or logo position, rebuild from the raw take.** Only pixel-local, overlay-on-top changes (adding music, fading to black, covering a static-background area, replacing an opening shot) are safe to do on a delivered file.
+
+### 15.4 Pop-up card variant (talking-head + B-roll without cutting away)
+A client-preferred way to show B-roll in a talking-head reel: keep Isha on camera and drop the photo as a **rounded card over her torso (below the face)** while she keeps talking — instead of cutting to a full-screen B-roll. Match each card to the word she's saying (e.g. a deer with its ears up on "kaan"). The **Lost & Free logo** can ride the same bottom-card slot at the CTA rather than sitting top-left over her head. Reference implementation: `projects/safari/diwali_v2/make.py`.

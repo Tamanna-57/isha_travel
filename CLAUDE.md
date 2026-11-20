@@ -18,3 +18,8 @@ Workflow every time:
 
 Rules: hard cuts by default, at most one special transition, captions always on (1–4 words, two-tier),
 one chapter title, natural grade, −14 LUFS, safe zones (no text below y=1536 or right of x=950).
+
+Raw-clip gotchas (see `ISHA_REEL_SYSTEM.md` §15): her iPhone `.MOV` has **two audio tracks** — use the clean
+AAC stereo one (`-map 0:a:1`), never the Apple spatial/APAC track (`a:0`), which is the "glitchy audio". Clips are
+**10-bit HLG HDR** — tone-map to SDR BT.709 and pull saturation (~0.86) or skin over-saturates. Never try to re-sync
+audio or move a baked logo on a finished/flattened MP4 — rebuild from the raw take.
