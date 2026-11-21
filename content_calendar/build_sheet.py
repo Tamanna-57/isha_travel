@@ -8,7 +8,7 @@ from posts import P as ALL, TH, TH_OUT, VO, FLAT, ARCH
 
 # Run ends Wed 2 Dec 2026 (contract review that day). Week 2 keeps Mon-Wed: the FAQ carousel, the sea-vs-jungle reel,
 # and the price breakdown (moved from Fri 4 Dec to Wed 2 Dec because it converts; the guide reel needs LAF to film first).
-KEEP = ["W1-L1", "W1-T1", "W1-L2", "W1-L3", "W1-T2", "W2-L1", "W2-T1", "W2-L3"]
+KEEP = ["W1-L1", "W1-T1", "W1-L2", "W1-L3", "W1-T2b", "W2-L1", "W2-T1", "W2-L3"]
 P = [dict(p) for k in KEEP for p in ALL if p["id"] == k]
 for p in P:
     if p["id"] == "W2-L3":
@@ -63,7 +63,7 @@ readme = [
     [""],
     ["MAIN GOAL", "Safari sign-ups from Instagram (50/50 deal). Every sign-up must come through the keyword SAFARI (comment → auto-DM) or Isha's tracked link, so it's counted."],
     ["HOW THE 10 DAYS WORK", "Mon 23 - Sun 29 Nov, LAUNCH + TRUST: real details, day-by-day itinerary, a shareable 5:30 AM POV, Isha as a wildlife photographer, solo-travel trust.\nMon 30 Nov - Wed 2 Dec, OBJECTIONS + CONVERT: FAQ (safety, fitness, tiger odds), sea vs jungle reach reel, what the price actually covers."],
-    ["ROLE OF EACH ACCOUNT", "@lostandfree (3/week) carries the sign-ups: almost every post is a COLLAB with @travelwithisha so it lands on both grids, and every post ends on 'Comment SAFARI'.\n@travelwithisha (2/week) stays a travel account (sea, mountains, stories, money, photography) with a soft safari line in the caption + stories. This keeps her reach growing instead of turning her feed into an ad."],
+    ["AIM (till Wed 2 Dec)", "Promote the safari and Lost & Free. Every one of the 8 posts points to the safari.\n@lostandfree (3/week): all safari posts, mostly COLLABS with @travelwithisha so they land on both grids, each ending on 'Comment SAFARI'.\n@travelwithisha (2/week): either promotes the safari directly or continues the series she's already posting (e.g. Lakshadweep Part 2), always with a safari hand-off: end card, caption line + link sticker in stories."],
     ["TABS", "Calendar = the overview (date, time, account, type, title).\nPost briefs = full script, screenplay (second-by-second), on-screen text, edit notes, caption, what's blocking.\nShots for Isha = every shot she has to send, with how to shoot it and the deadline. Isha: start here every Saturday.\nHow to shoot = the rules for every shoot (light, framing, sound, files).\nIsha's style = what Isha likes and dislikes, from her feedback so far. The edit follows these.\nNeeded from Lost & Free = details we must get before posts can go out.\nBacklog (after 2 Dec) = ideas already worked out, only used if the engagement continues."],
     ["{{ }} PLACEHOLDERS", "Anything in {{double brackets}} (dates, price, seats, location…) must be filled with Lost & Free's real details. Never post with a {{ }} left in, and only post a seat count if it's true that day."],
     ["SHOOT DAYS", "Sat 21 / Sun 22 Nov for week 1, Sat 28 Nov for 30 Nov - 2 Dec (see 'Isha shoots by' in Calendar)."],

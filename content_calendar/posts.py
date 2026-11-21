@@ -842,3 +842,24 @@ add(id="W8-T2", week=8, date="Sat 16 Jan 2027", day="Sat", time="7:00 PM", acct=
     edit="Loop like R1: last line cuts back into the first. Original colour.",
     caption=("I said I'd leave Mumbai. I didn't say I'd go alone 🐅💛\n\nThank you to everyone coming. Next batch? Comment NEXT.\n\n#travelwithisha #lostandfree #safari"),
     deps="If the safari date is later than 16 Jan, move this to the departure day and post 'last call' content until then.")
+
+# ---- replacement for Sat 28 Nov (aim: TWI promotes the safari OR her existing series) ----
+add(id="W1-T2b", week=1, date="Sat 28 Nov 2026", day="Sat", time="7:00 PM", acct="@travelwithisha", collab="—",
+    type="Reel", fmt="Existing series · Lakshadweep Part 2 + safari end card (≈40 s)",
+    title="\"Lakshadweep Part 2: what happened 12 metres down\"",
+    goal="Pays off Part 1's cliffhanger ('…woh Part 2 mein'), so her own followers come back, then hands them to the safari with a 4-sec end card.",
+    cta="Save · 'Part 3? Jungle.' → comment SAFARI / link in bio",
+    script=(
+        "Part 2 voiceover is already recorded and edited (inbox/lakshadweep_part2/lakshadweep_reel_part2_no_music.mp4).\n"
+        "NEW end line, to camera (4 sec): \"Paani ho gaya. Part 3? Jungle. {{dates}}, Lost & Free ke saath. Comment SAFARI.\""),
+    screenplay=(
+        "0-36s   Part 2 as edited (dive at 12 m, the night with friends). Open on the strongest underwater frame with 'PART 2' so Part-1 viewers recognise it.\n"
+        "36-40s  Hard cut to Isha talking head for the new end line; text PART 3: JUNGLE 🐅 + Comment SAFARI; bubbles SFX → bird call on the cut."),
+    onscreen="PART 2 · (existing captions) · PART 3: JUNGLE · Comment SAFARI",
+    shots=[("End line to camera, 3 takes (same top/room as Part 1 if possible, so it feels like the series)", TH)],
+    source="Existing Part 2 render in the repo + 1 new 4-sec line",
+    shoot_by="Sat 28 Nov (morning)",
+    edit="Reuse the Part 2 edit as it is (same captions and handle style as Part 1). Only append the end card. Add music in Instagram (render has no music).",
+    caption=("Part 2 🌊 what happened 12 m down, and the night after.\n\nPart 3 is the jungle 🐅 {{dates}} with @lostandfree. Comment SAFARI for the link.\n\n"
+             "#lakshadweep #scubadiving #travelwithisha #lostandfree #safari"),
+    deps="Confirm Part 2 isn't posted yet. If it is, use the backlog's 'solo travel' carousel with a safari last slide instead.")
