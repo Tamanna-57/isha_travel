@@ -14,6 +14,9 @@ for p in P:
     if p["id"] == "W2-L3":
         p.update(date="Wed 2 Dec 2026", day="Wed")
 BACKLOG = [p for p in ALL if p["id"] not in KEEP]
+from posts_v2 import V2          # v2: scripts, beats, hooks, captions, hashtags rewritten with the social-media skills
+for p in P:
+    p.update(V2[p["id"]])
 
 OUT = Path(__file__).parent / "Isha_Safari_Content_Calendar.xlsx"
 GREEN, GOLD, CREAM, SKY = "2E5B3B", "F6C445", "F7F3EA", "E3EEF7"
@@ -65,6 +68,8 @@ readme = [
     ["HOW THE 10 DAYS WORK", "Mon 23 - Sun 29 Nov, LAUNCH + TRUST: real details, day-by-day itinerary, a shareable 5:30 AM POV, Isha as a wildlife photographer, solo-travel trust.\nMon 30 Nov - Wed 2 Dec, OBJECTIONS + CONVERT: FAQ (safety, fitness, tiger odds), sea vs jungle reach reel, what the price actually covers."],
     ["AIM (till Wed 2 Dec)", "Promote the safari and Lost & Free. Every one of the 8 posts points to the safari.\n@lostandfree (3/week): all safari posts, mostly COLLABS with @travelwithisha so they land on both grids, each ending on 'Comment SAFARI'.\n@travelwithisha (2/week): either promotes the safari directly or continues the series she's already posting (e.g. Lakshadweep Part 2), always with a safari hand-off: end card, caption line + link sticker in stories."],
     ["TABS", "Calendar = the overview (date, time, account, type, title).\nPost briefs = full script, screenplay (second-by-second), on-screen text, edit notes, caption, what's blocking.\nShots for Isha = every shot she has to send, with how to shoot it and the deadline. Isha: start here every Saturday.\nHow to shoot = the rules for every shoot (light, framing, sound, files).\nIsha's style = what Isha likes and dislikes, from her feedback so far. The edit follows these.\nNeeded from Lost & Free = details we must get before posts can go out.\nBacklog (after 2 Dec) = ideas already worked out, only used if the engagement continues."],
+    ["REACH RULES (every post)", "1. Hook in the first 3 sec on all three channels at once: striking first frame + bold on-screen text + first spoken line. No intro, no 'hi guys', no logo.\n2. Muted-first: the on-screen text tells the whole story (most people watch without sound).\n3. Search keyword: said in the first 3 sec, shown on screen, and in the caption's first line.\n4. A new visual every 2-4 sec; reels 15-35 sec; one call to action; the last shot loops back into the first.\n5. Captions: first line under 125 characters earns the '...more' tap; max 5 hashtags (Instagram's cap): topic + niche + #JungleWithIsha.\n6. Post hook #1. Test hook #2 as an Instagram Trial Reel (shown to non-followers first) and keep the winner for the next post.\n7. Judge posts on 3-sec hold, average watch time, shares/sends and saves, not likes."],
+    ["CAMPAIGN HASHTAG", "#JungleWithIsha on every post of both accounts, in bio and stories. Check on Instagram that the tag is unused before the first post."],
     ["{{ }} PLACEHOLDERS", "Anything in {{double brackets}} (dates, price, seats, location…) must be filled with Lost & Free's real details. Never post with a {{ }} left in, and only post a seat count if it's true that day."],
     ["SHOOT DAYS", "Sat 21 / Sun 22 Nov for week 1, Sat 28 Nov for 30 Nov - 2 Dec (see 'Isha shoots by' in Calendar)."],
     ["WED 2 DEC · REVIEW", "This calendar ends on Wed 2 Dec, the day the engagement is reviewed. Bring: reach, saves, shares and SAFARI comments per post (Insights at 24 h, and 7 days where a post is old enough), link taps, follower change on both accounts, and Lost & Free's sign-up count by keyword/link. The 'Backlog' tab has the ideas ready for after 2 Dec if the work continues."],
@@ -91,15 +96,16 @@ sheet("Calendar",
       cal_rows, [8, 6, 16, 16, 6, 12, 16, 22, 20, 26, 40, 45, 32, 16, 34, 40, 12], row_fill=acct_fill)
 
 # ---------------- 3. Post briefs ----------------
-brief_rows = [[p["id"], p["date"], p["time"] + " IST", p["acct"], p["type"], p["title"],
-               p["script"], p["screenplay"], p["onscreen"],
+brief_rows = [[p["id"], p["date"], p["time"] + " IST", p["acct"], p["type"], p["title"], p["keyword"], p["hooks"],
+               p["script"], p["screenplay"], p["onscreen"], p["cover"], p["sends"],
                "\n".join(f"{i}. {s}" for i, (s, _) in enumerate(p["shots"], 1)),
                p["edit"], p["caption"], p["deps"]] for p in P]
 sheet("Post briefs",
-      ["ID", "Date", "Time", "Account", "Type", "Title / hook", "Script (Hinglish, say it your way)",
-       "Screenplay (second by second)", "On-screen text", "Shots Isha sends (details in 'Shots for Isha')",
-       "Edit notes", "Caption + hashtags", "Blocking / needs"],
-      brief_rows, [8, 15, 10, 15, 16, 30, 60, 60, 35, 45, 45, 50, 35],
+      ["ID", "Date", "Time", "Account", "Type", "Title / hook", "Search keyword (say it in 0-3 s, show it, put it in caption line 1)",
+       "Hook options (use #1; test #2 as a Trial Reel)", "Script: what Isha says (Hinglish, say it your way)",
+       "Screenplay: beat by beat (SHOT | on-screen TEXT | SAYS)", "On-screen text", "Cover", "Who would send this to whom",
+       "Shots Isha sends (details in 'Shots for Isha')", "Edit notes", "Caption + hashtags (max 5)", "Blocking / needs"],
+      brief_rows, [8, 15, 10, 15, 14, 28, 24, 50, 50, 75, 35, 32, 30, 40, 40, 50, 30],
       row_fill=lambda row: CREAM if row[3].value == "@lostandfree" else SKY)
 
 # ---------------- 4. Shots for Isha ----------------
