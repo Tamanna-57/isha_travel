@@ -8,6 +8,8 @@
 #   carousel-writer : cover = hook + promise, one idea per slide, payoff slide then CTA slide
 # Campaign tag: #JungleWithIsha (check on Instagram that it's unused before the first post).
 
+from posts import TH
+
 V2 = {}
 
 V2["W1-L1"] = dict(
@@ -71,27 +73,50 @@ V2["W1-T1"] = dict(
 )
 
 V2["W1-L2"] = dict(
-    keyword="{{park}} safari itinerary",
-    hooks=("Cover options:\n1. PROMISE (recommended): '{{N}} DAYS IN {{PARK}}: THE FULL PLAN →'\n2. CURIOSITY: 'What actually happens on a {{N}}-day tiger safari →'\n"
-           "3. SPECIFIC: '5:30 AM to campfire: our safari, hour by hour'\n4. IDENTITY: 'First safari? Here's exactly what your days look like'\n5. TIMELINESS: '{{dates}}: the plan is final →'"),
-    script=("S1 COVER (Isha + binoculars): {{N}} DAYS IN {{PARK}}: THE FULL PLAN → · small: our {{dates}} tiger safari\n"
-            "S2 DAY 1 · ARRIVE: {{check-in time}} · {{evening walk / welcome dinner}} · 'phones down from tonight'\n"
-            "S3 DAY 2 · 5:30 AM: open-jeep safari #1 → breakfast in the forest → {{afternoon safari}}\n"
-            "S4 DAY {{3}} · {{…}} (one slide per real day; delete extras)\n"
-            "S5 THE QUIET HOUR: why every safari has a few minutes with the engine off\n"
-            "S6 INCLUDED: stay · all meals · {{N}} jeep safaris · naturalist · {{transfers}}\n"
-            "S7 NOT INCLUDED (we'd rather say it now): {{travel to {{park}}, camera fee, tips}}\n"
-            "S8 PAYOFF: ₹{{price}} · {{seats}} seats · closes {{date}} — 'Isha's going. Are you?'\n"
-            "S9 CTA: Comment SAFARI and we'll DM you the link · save this for later"),
-    screenplay="Carousel order above. One idea per slide; headline ≤8 words + one short line. Swipe arrow on S1-S8. Photos change type every slide (landscape → animal → people → food → jeep).",
-    onscreen="As per slides.",
-    cover="Isha in safari outfit with binoculars looking left; headline in gold serif on the lower third, legible at thumbnail size.",
-    sends="Sent to the friend/partner you'd book with ('this is the plan, you in?').",
-    caption=("{{park}} safari itinerary: every day of our {{dates}} trip, from the 5:30 AM jeep to the last campfire 🐅\n\n"
-             "Swipe for the full plan, what's included, what's not (we'd rather say it now) and the price.\n\n"
-             "{{seats}} seats · ₹{{price}} · travelling with @travelwithisha\n\n"
-             "Comment SAFARI and we'll DM you the sign-up link.\n\n"
-             "#tigersafari #{{park}}safari #wildlifeindia #lostandfree #JungleWithIsha"),
+    # Isha (21 Nov): the day-by-day itinerary isn't fixed yet -> a REEL listing the activities, no days or times.
+    time="7:30 PM", type="Reel", fmt="A · numbered list, talking head + B-roll (25-30 s)",
+    title="\"Tiger safari is just the start: everything we'll do in the jungle\"",
+    goal="CONVERT people who watched Monday's reel: shows what the trip actually feels like without committing to a day-by-day plan.",
+    cta="Comment SAFARI → link in DMs",
+    keyword="things to do on a jungle safari",
+    hooks=("1. LIST (recommended): Isha holds up 6 fingers · TEXT '6 THINGS WE'LL DO IN THE JUNGLE (ONLY ONE IS THE TIGER)' · SAYS 'Jungle safari pe sirf tiger nahi dekhte.'\n"
+           "2. CONTRARIAN (Trial Reel): TEXT 'THE TIGER IS THE LEAST OF IT' · SAYS 'Honestly, tiger toh bonus hai.'\n"
+           "3. CURIOSITY: TEXT 'WHAT DO YOU EVEN DO ON A JUNGLE SAFARI?'\n"
+           "4. IDENTITY: TEXT 'NOT A WILDLIFE PERSON? YOU'LL STILL LOVE #4'\n"
+           "5. PAYOFF: first frame = bonfire under stars · TEXT 'THIS IS ALSO A SAFARI'"),
+    script=("Jungle safari pe sirf tiger nahi dekhte. Ye sab karoge. "
+            "Ek: subah open jeep, jab jungle jaag raha hota hai. "
+            "Do: shaam ki safari, golden light mein. "
+            "Teen: naturalist ke saath walk, pugmarks aur birds dhundhna. "
+            "Chaar: bonfire aur jungle ki kahaaniyan. "
+            "Paanch: raat ko taare, network zero. "
+            "Chhe: mere saath wildlife photography, phone se bhi. "
+            "Kaunsa sabse pehle karoge? Comment SAFARI, link bhejti hoon.  (≈60 words)\n"
+            "Keep only the activities Lost & Free confirms; swap or drop the rest (a 4- or 5-item list works the same way)."),
+    screenplay=(
+        "0-2s   SHOT Isha to lens, holds up 6 fingers | TEXT 6 THINGS WE'LL DO IN THE JUNGLE (ONLY ONE IS THE TIGER) | SAYS 'Jungle safari pe sirf tiger nahi dekhte. Ye sab karoge.'\n"
+        "2-5s   SHOT LAF open jeep at dawn | TEXT 01 · MORNING OPEN-JEEP SAFARI | SAYS 'Ek: subah open jeep…'\n"
+        "5-8s   SHOT LAF evening safari, golden light | TEXT 02 · EVENING SAFARI | SAYS 'Do: shaam ki safari…'\n"
+        "8-12s  SHOT LAF guide pointing at pugmarks / binoculars on a bird | TEXT 03 · NATURE WALK WITH A NATURALIST | SAYS 'Teen: naturalist ke saath walk…'\n"
+        "12-15s SHOT LAF bonfire, people laughing | TEXT 04 · BONFIRE + JUNGLE STORIES | SAYS 'Chaar: bonfire…'\n"
+        "15-18s SHOT night sky / torchlit camp | TEXT 05 · STARS. ZERO NETWORK. | SAYS 'Paanch: raat ko taare…'\n"
+        "18-22s SHOT Isha with camera, showing her phone screen to someone | TEXT 06 · WILDLIFE PHOTOGRAPHY WITH ME | SAYS 'Chhe: mere saath wildlife photography…'\n"
+        "22-27s SHOT Isha to lens, leans in | TEXT WHICH ONE FIRST? · COMMENT \"SAFARI\" | SAYS 'Kaunsa sabse pehle karoge? Comment SAFARI…'\n"
+        "27-28s SHOT Isha raises 6 fingers again → LOOPS to 0s"),
+    onscreen="6 THINGS WE'LL DO IN THE JUNGLE (ONLY ONE IS THE TIGER) · 01 MORNING OPEN-JEEP SAFARI · 02 EVENING SAFARI · 03 NATURE WALK WITH A NATURALIST · 04 BONFIRE + JUNGLE STORIES · 05 STARS. ZERO NETWORK. · 06 WILDLIFE PHOTOGRAPHY WITH ME · COMMENT \"SAFARI\"",
+    cover="Isha holding up 6 fingers, text 6 THINGS WE'LL DO IN THE JUNGLE centred in the 4:5 area.",
+    sends="Sent to the friend who says 'safari is boring, it's just animals'.",
+    shots=[("Talking head: opening line (holding up 6 fingers) + closing line, 3 takes each. Outfit different from Monday's reel", TH),
+           ("Optional: one short talking-head line per activity, so your face comes back between the B-roll (\"Ek: subah open jeep…\" etc.)", TH),
+           ("You with your camera, showing the screen to someone off-camera (4 sec) for #6", "Setup A light, phone on tripod at chest height, side-on to the window; a friend's hand comes in to look at the screen.")],
+    source="Isha shoot + LAF footage/photos for each activity (morning jeep, evening safari, walk, bonfire, night sky)",
+    shoot_by="Sun 22 Nov",
+    edit="Format A numbered list (same card style as the 'How to see a tiger' reel). Cut back to Isha's face every 2 activities. One sound per card (tick). Original colour.",
+    caption=("Things to do on a jungle safari, besides the tiger 🐅🔥✨\n\n"
+             "Morning open-jeep safari · evening safari in golden light · a nature walk with a naturalist · bonfire + jungle stories · stars with zero network · wildlife photography with @travelwithisha\n\n"
+             "Which one would you do first? Comment SAFARI and we'll DM you the link for our {{dates}} trip.\n\n"
+             "#junglesafari #tigersafari #wildlifeindia #lostandfree #JungleWithIsha"),
+    deps="Lost & Free confirms which of the 6 activities are on the trip (drop the rest); LAF B-roll/photos for each activity. No days or times needed.",
 )
 
 V2["W1-L3"] = dict(
@@ -137,6 +162,7 @@ V2["W1-T2b"] = dict(
 )
 
 V2["W2-L1"] = dict(
+    deps="Questions: written (below). Answers: from Lost & Free by Sat 28 Nov. Isha: run a story question box Mon 23-Thu 26 Nov and send the most-asked real questions.",
     keyword="tiger safari for solo female travellers",
     hooks=("Cover options:\n1. QUESTION (recommended): 'IS A TIGER SAFARI SAFE FOR A SOLO GIRL? Honest answers →'\n"
            "2. LIST: 'The 6 questions everyone DMs us before a safari →'\n3. CONTRARIAN: 'We won't promise you a tiger. Here's why →'\n"
@@ -149,7 +175,9 @@ V2["W2-L1"] = dict(
             "S6 WHO ELSE IS COMING? {{age range · solo + friends · first-timers}}\n"
             "S7 PAYOFF: 'Most people who ask these come back as the calmest person in the jeep.' ({{only if LAF says so; else cut}})\n"
             "S8 CTA: Still unsure? Ask below, we answer every one · Ready? Comment SAFARI"),
-    screenplay="Q headline in gold serif, answer ≤20 words in white. Honest tone; the 'no tiger promise' slide is the trust slide, don't cut it.",
+    screenplay="Q headline in gold serif, answer ≤20 words in white. Honest tone; the 'no tiger promise' slide is the trust slide, don't cut it.\n"
+               "WHO WRITES WHAT: the questions are already written (Isha doesn't need to make them). The ANSWERS come from Lost & Free (safety, fitness, network/food, group). "
+               "Isha checks they sound true to her and adds 1 line in her own voice on S2. Better still: post a question box in stories Mon 23-Thu 26 Nov and swap in any real question asked more than once.",
     onscreen="As per slides.",
     cover="Isha on her phone, laughing; headline over the lower third.",
     sends="Sent by girls to the friend/parent who worries ('see, it's safe').",

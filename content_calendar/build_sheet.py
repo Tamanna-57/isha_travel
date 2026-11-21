@@ -178,7 +178,7 @@ need = [
     ["SAFARI keyword auto-DM switched on (ManyChat or Meta automation) on BOTH accounts", "Before Mon 23 Nov", "Every post", "Open"],
     ["Which handle to tag: @lostandfree or @lostandfreesafaris (their carousel says @lostandfreesafaris)", "Before Mon 23 Nov", "Every post", "Open"],
     ["Safari footage + photos with permission: jeep POV (6+ s unbroken), dawn forest, alarm-call deer, guide, camp, tiger", "Before Sun 22 Nov", "W1-L1, W1-L3, W2-T1, W2-L3", "Open"],
-    ["Full day-by-day itinerary", "Before Tue 24 Nov", "W1-L2", "Open"],
+    ["Which activities are on the trip (morning + evening safari, nature walk, bonfire, stargazing, photography with Isha) + B-roll/photos of each. No day-by-day plan needed yet", "Before Sun 22 Nov", "W1-L2", "Open"],
     ["Answers to FAQ: solo women safety, fitness, tiger odds, network, food, who's in the group", "Before Sat 28 Nov", "W2-L1", "Open"],
     ["Honest cost breakdown (stay, food, safaris, permits, transfers)", "Before Mon 30 Nov", "W2-L3", "Open"],
     ["Sign-up report by link/keyword (for the Wed 2 Dec review)", "Sun 29 Nov + Wed 2 Dec", "Review", "Open"],
