@@ -646,7 +646,8 @@ def title_events(titles, top_captions=False):
             txt = re.sub(r"\*(.+?)\*", lambda m: f"{{\\1c{C['sindoor']}}}{m.group(1)}{{\\1c{C['chalk']}}}", ass_escape(t["text"]))
             evs.append(ev(s, e, "Pill", f"{{\\an8\\pos(540,{t.get('y', 300 + bump)})\\fad(80,80)}}{txt}", 4))
         elif typ == "hook":
-            evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)})\\fad(60,100)}}{ass_escape(t['text'])}", 4))
+            fs = f"\\fs{int(t['size'])}" if t.get("size") else ""      # optional per-title size (default SIZE['hook'])
+            evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)}){fs}\\fad(60,100)}}{ass_escape(t['text'])}", 4))
         elif typ == "fact":                       # sits just above the caption band so both can be on screen
             evs.append(ev(s, e, "Fact", f"{{\\an5\\pos(540,{t.get('y', 1090)})\\1c{ass_color(t.get('color'), 'marigold')}"
                                         f"{POP_T}}}{ass_escape(t['text'])}", 2))

@@ -1,0 +1,187 @@
+{
+ "name": "w1_l1_details_out",
+ "format": "B",
+ "grade": "none",
+ "clips": [
+  {
+   "src": "../../inbox/r1/r1_clip01.mov",
+   "in": 19.62,
+   "out": 22.5,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "none",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r1/r1_clip02.mov",
+   "in": 2.82,
+   "out": 8.1,
+   "speed": 1.1,
+   "punch": 1.08,
+   "grade": "none",
+   "broll": [
+    {
+     "src": "broll/corbett_road.mp4",
+     "in": 0,
+     "at": 0.35,
+     "dur": 2.9,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r1/r1_clip03.mov",
+   "in": 2.58,
+   "out": 9.6,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "none",
+   "broll": [
+    {
+     "src": "broll/dawn_road.mp4",
+     "in": 0,
+     "at": 0.45,
+     "dur": 1.55,
+     "grade": "none"
+    },
+    {
+     "src": "broll/corbett_jeep.mp4",
+     "in": 0,
+     "at": 2.0,
+     "dur": 1.1,
+     "grade": "none"
+    },
+    {
+     "src": "broll/sal_forest.mp4",
+     "in": 0,
+     "at": 3.1,
+     "dur": 1.95,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r1/r1_clip04.mov",
+   "in": 19.55,
+   "out": 25.4,
+   "speed": 1.1,
+   "punch": 1.1,
+   "grade": "none",
+   "broll": [
+    {
+     "src": "broll/tiger_road.mp4",
+     "in": 0,
+     "at": 2.35,
+     "dur": 1.45,
+     "grade": "none"
+    },
+    {
+     "src": "broll/jeep_wait.mp4",
+     "in": 0,
+     "at": 3.95,
+     "dur": 1.4,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r1/r1_clip05.mov",
+   "in": 12.74,
+   "out": 16.5,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "none",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r1/r1_clip06.mov",
+   "in": 12.45,
+   "out": 15.45,
+   "speed": 1.1,
+   "punch": 1.08,
+   "grade": "none",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r1/r1_clip07.mov",
+   "in": 3.92,
+   "out": 6.8,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "none",
+   "broll": []
+  }
+ ],
+ "captions": {
+  "style": "karaoke",
+  "words": "words.json",
+  "y": 1420
+ },
+ "titles": [
+  {
+   "type": "hook",
+   "text": "TIGER SAFARI: DETAILS ARE OUT",
+   "size": 140,
+   "start": 0.0,
+   "end": 2.6181818181818173
+  },
+  {
+   "type": "landmark",
+   "text": "JIM CORBETT",
+   "sub": "4 NIGHTS · 5 DAYS · LOST & FREE SAFARIS",
+   "start": 2.8681818181818173,
+   "end": 7.418181818181816
+  },
+  {
+   "type": "hook",
+   "text": "5:30 AM · OPEN JEEP",
+   "size": 120,
+   "start": 7.818181818181817,
+   "end": 10.418181818181816
+  },
+  {
+   "type": "hook",
+   "text": "ENGINE OFF. SILENCE.",
+   "size": 120,
+   "start": 10.518181818181816,
+   "end": 13.799999999999997
+  },
+  {
+   "type": "hook",
+   "text": "WE DON'T CHASE. WE WAIT.",
+   "size": 120,
+   "start": 16.099999999999998,
+   "end": 19.118181818181814
+  },
+  {
+   "type": "hook",
+   "text": "ONLY 4 SEATS · ONE PRICE · ALL INCLUDED",
+   "size": 120,
+   "start": 19.118181818181814,
+   "end": 22.53636363636363
+  },
+  {
+   "type": "hook",
+   "text": "COMMENT \"SAFARI\" FOR THE LINK",
+   "size": 120,
+   "start": 22.53636363636363,
+   "end": 25.26363636363636
+  },
+  {
+   "type": "hook",
+   "text": "MY BAG IS READY. YOURS?",
+   "size": 120,
+   "start": 25.26363636363636,
+   "end": 27.881818181818176
+  }
+ ],
+ "voice": {
+  "clean": true
+ },
+ "music": {
+  "src": "sfx_bed.wav",
+  "start": 0,
+  "gain_db": 0,
+  "duck": false
+ }
+}
