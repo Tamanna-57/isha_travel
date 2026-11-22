@@ -2,7 +2,8 @@
  {
   "text": "Safari",
   "start": 0.164,
-  "end": 1.273
+  "end": 1.273,
+  "emph": true
  },
  {
   "text": "ki",
@@ -33,12 +34,14 @@
  {
   "text": "Four",
   "start": 2.618,
-  "end": 2.982
+  "end": 2.982,
+  "emph": true
  },
  {
   "text": "nights",
   "start": 2.982,
-  "end": 3.291
+  "end": 3.291,
+  "emph": true
  },
  {
   "text": "and",
@@ -48,12 +51,14 @@
  {
   "text": "five",
   "start": 3.6,
-  "end": 3.927
+  "end": 3.927,
+  "emph": true
  },
  {
   "text": "days",
   "start": 3.927,
-  "end": 4.327
+  "end": 4.327,
+  "emph": true
  },
  {
   "text": "in",
@@ -63,7 +68,8 @@
  {
   "text": "Jim",
   "start": 4.673,
-  "end": 4.855
+  "end": 4.855,
+  "emph": true
  },
  {
   "text": "Corbett",
@@ -84,22 +90,26 @@
  {
   "text": "Lost",
   "start": 6.055,
-  "end": 6.273
+  "end": 6.273,
+  "emph": true
  },
  {
   "text": "&",
   "start": 6.273,
-  "end": 6.491
+  "end": 6.491,
+  "emph": true
  },
  {
   "text": "Free",
   "start": 6.491,
-  "end": 6.6
+  "end": 6.6,
+  "emph": true
  },
  {
   "text": "Safaris",
   "start": 6.6,
-  "end": 7.036
+  "end": 7.036,
+  "emph": true
  },
  {
   "text": "ke",
@@ -119,37 +129,44 @@
  {
   "text": "saade",
   "start": 8.018,
-  "end": 8.418
+  "end": 8.418,
+  "emph": true
  },
  {
   "text": "paanch",
   "start": 8.418,
-  "end": 8.709
+  "end": 8.709,
+  "emph": true
  },
  {
   "text": "baje",
   "start": 8.709,
-  "end": 9.273
+  "end": 9.273,
+  "emph": true
  },
  {
   "text": "open",
   "start": 9.545,
-  "end": 9.927
+  "end": 9.927,
+  "emph": true
  },
  {
   "text": "jeep",
   "start": 9.927,
-  "end": 10.582
+  "end": 10.582,
+  "emph": true
  },
  {
   "text": "engine",
   "start": 10.582,
-  "end": 10.945
+  "end": 10.945,
+  "emph": true
  },
  {
   "text": "band",
   "start": 10.945,
-  "end": 11.291
+  "end": 11.291,
+  "emph": true
  },
  {
   "text": "aur",
@@ -164,7 +181,8 @@
  {
   "text": "jungle",
   "start": 12.145,
-  "end": 12.673
+  "end": 12.673,
+  "emph": true
  },
  {
   "text": "chup",
@@ -174,233 +192,241 @@
  },
  {
   "text": "Main",
-  "start": 14.082,
-  "end": 14.33
+  "start": 13.8,
+  "end": 14.082
  },
  {
   "text": "inke",
-  "start": 14.33,
-  "end": 14.577
+  "start": 14.082,
+  "end": 14.373
  },
  {
   "text": "saath",
-  "start": 14.577,
-  "end": 14.887
+  "start": 14.373,
+  "end": 14.573
  },
  {
   "text": "isi",
-  "start": 14.887,
-  "end": 15.073
+  "start": 14.573,
+  "end": 14.882
  },
  {
   "text": "liye",
-  "start": 15.073,
-  "end": 15.321
+  "start": 14.882,
+  "end": 15.027
  },
  {
   "text": "jaati",
-  "start": 15.321,
-  "end": 15.631
+  "start": 15.027,
+  "end": 15.409
  },
  {
   "text": "hoon",
-  "start": 15.631,
-  "end": 15.878
+  "start": 15.409,
+  "end": 15.5
  },
  {
   "text": "kyunki",
-  "start": 15.878,
-  "end": 16.25
+  "start": 15.5,
+  "end": 15.755
  },
  {
   "text": "ye",
-  "start": 16.25,
-  "end": 16.374
+  "start": 15.755,
+  "end": 15.9
  },
  {
   "text": "animals",
-  "start": 16.374,
-  "end": 16.808
+  "start": 15.9,
+  "end": 16.391
  },
  {
   "text": "ko",
-  "start": 16.808,
-  "end": 16.932
+  "start": 16.391,
+  "end": 16.482
  },
  {
   "text": "chase",
-  "start": 16.932,
-  "end": 17.241,
+  "start": 16.482,
+  "end": 16.791,
   "emph": true
  },
  {
   "text": "nahi",
-  "start": 17.241,
-  "end": 17.489
+  "start": 16.791,
+  "end": 17.027
  },
  {
   "text": "karte",
-  "start": 17.489,
-  "end": 17.799
+  "start": 17.027,
+  "end": 17.391
  },
  {
   "text": "hain",
-  "start": 17.799,
-  "end": 18.109
+  "start": 17.391,
+  "end": 17.436
  },
  {
   "text": "Ye",
-  "start": 18.109,
-  "end": 18.233
+  "start": 17.527,
+  "end": 17.673
  },
  {
   "text": "wait",
-  "start": 18.233,
-  "end": 18.48,
+  "start": 17.673,
+  "end": 18.036,
   "emph": true
  },
  {
   "text": "karte",
-  "start": 18.48,
-  "end": 18.79
+  "start": 18.036,
+  "end": 18.418
  },
  {
   "text": "hain",
-  "start": 18.79,
-  "end": 19.1
+  "start": 18.418,
+  "end": 18.618
  },
  {
   "text": "Only",
-  "start": 19.409,
-  "end": 19.753
+  "start": 18.927,
+  "end": 19.271,
+  "emph": true
  },
  {
   "text": "4",
-  "start": 19.753,
-  "end": 19.838,
+  "start": 19.271,
+  "end": 19.357,
   "emph": true
  },
  {
   "text": "seats",
-  "start": 19.838,
-  "end": 20.268
+  "start": 19.357,
+  "end": 19.786,
+  "emph": true
  },
  {
   "text": "aur",
-  "start": 20.268,
-  "end": 20.525
+  "start": 19.786,
+  "end": 20.043
  },
  {
   "text": "ek",
-  "start": 20.525,
-  "end": 20.697
+  "start": 20.043,
+  "end": 20.215
  },
  {
   "text": "price",
-  "start": 20.697,
-  "end": 21.126
+  "start": 20.215,
+  "end": 20.644,
+  "emph": true
  },
  {
   "text": "mein",
-  "start": 21.126,
-  "end": 21.47
+  "start": 20.644,
+  "end": 20.988
  },
  {
   "text": "sab",
-  "start": 21.47,
-  "end": 21.727
+  "start": 20.988,
+  "end": 21.245,
+  "emph": true
  },
  {
   "text": "included",
-  "start": 21.727,
-  "end": 22.5,
+  "start": 21.245,
+  "end": 22.018,
   "emph": true
  },
  {
   "text": "Comment",
-  "start": 22.982,
-  "end": 23.337
+  "start": 22.5,
+  "end": 22.855,
+  "emph": true
  },
  {
   "text": "karo",
-  "start": 23.337,
-  "end": 23.54
+  "start": 22.855,
+  "end": 23.058
  },
  {
   "text": "SAFARI",
-  "start": 23.54,
-  "end": 23.895,
+  "start": 23.058,
+  "end": 23.413,
   "emph": true
  },
  {
   "text": "tab",
-  "start": 23.895,
-  "end": 24.047
+  "start": 23.413,
+  "end": 23.565
  },
  {
   "text": "tak",
-  "start": 24.047,
-  "end": 24.199
+  "start": 23.565,
+  "end": 23.717
  },
  {
   "text": "main",
-  "start": 24.199,
-  "end": 24.402
+  "start": 23.717,
+  "end": 23.92
  },
  {
   "text": "link",
-  "start": 24.402,
-  "end": 24.604
+  "start": 23.92,
+  "end": 24.123,
+  "emph": true
  },
  {
   "text": "bhej",
-  "start": 24.604,
-  "end": 24.807
+  "start": 24.123,
+  "end": 24.325
  },
  {
   "text": "deti",
-  "start": 24.807,
-  "end": 25.01
+  "start": 24.325,
+  "end": 24.528
  },
  {
   "text": "hoon",
-  "start": 25.01,
-  "end": 25.264
+  "start": 24.528,
+  "end": 24.782
  },
  {
   "text": "Mera",
-  "start": 25.3,
-  "end": 25.755
+  "start": 24.818,
+  "end": 25.273
  },
  {
   "text": "toh",
-  "start": 25.755,
-  "end": 25.864
+  "start": 25.273,
+  "end": 25.382
  },
  {
   "text": "bag",
-  "start": 25.864,
-  "end": 26.082
+  "start": 25.382,
+  "end": 25.6,
+  "emph": true
  },
  {
   "text": "ready",
-  "start": 26.082,
-  "end": 26.264,
+  "start": 25.6,
+  "end": 25.782,
   "emph": true
  },
  {
   "text": "hai",
-  "start": 26.264,
-  "end": 26.5
+  "start": 25.782,
+  "end": 26.018
  },
  {
   "text": "aur",
-  "start": 26.5,
-  "end": 26.918
+  "start": 26.018,
+  "end": 26.436
  },
  {
   "text": "tumhara?",
-  "start": 26.918,
-  "end": 27.373
+  "start": 26.436,
+  "end": 26.891,
+  "emph": true
  }
 ]

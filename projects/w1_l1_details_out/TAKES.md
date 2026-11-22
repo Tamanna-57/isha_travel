@@ -14,3 +14,10 @@ Edit: 1.1x speed, tight cuts, punch-ins on alternate shots, original iPhone colo
 karaoke captions (Poppins, centred below her face), big white titles, one marigold JIM CORBETT title, SFX bed (sfx.py),
 no music (add in Instagram). B-roll: CC-licensed Wikimedia photos from projects/safari/assets (credits in CREDITS.txt).
 Rebuild: `python sfx.py && python make.py`
+
+## v2 · Isha's feedback (22 Nov)
+1. **Gap between "chase" and "wait" removed:** clip 4 split at the 0.53 s pause (23.55-24.08); "chase" and "wait" photos now run back to back, no face flash between them.
+2. **Important words highlighted:** karaoke captions now show key words (4 nights, 5 days, Jim Corbett, Lost & Free, 5:30, open jeep, engine band, jungle chup, chase, wait, 4 seats, price, sab included, SAFARI, link, bag ready…) in marigold, 12% bigger.
+3. **Opening title bolder + different font:** Anton (condensed heavy), "TIGER SAFARI" marigold over "DETAILS ARE OUT" white.
+4. **Her own photos:** all B-roll is now from her archive (tiger on road, misty forest tiger, jeeps + tiger, kingfisher on moss, tiger walking, tiger looking up). No stock photos left.
+5. **Colour corrected:** house "natural" grade on her clips (+contrast, warmer skin, richer greens) after the HLG→SDR tone-map.

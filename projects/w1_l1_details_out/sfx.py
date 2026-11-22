@@ -7,20 +7,20 @@ L = P.parent.parent / "sfx_library"
 D = L / "dl_2026_11"
 words = json.loads((P / "words.json").read_text())
 at = lambda w, n=0: [x["start"] for x in words if x["text"] == w][n]
-DUR = 27.88
+DUR = 30.0   # longer than the reel; the mix is trimmed to the video
 
 # (file, time on timeline, gain dB)
 HITS = [
     (D / "camera_shutter.mp3", 0.05, -10),                 # hook: camera at the lens
     (D / "pop_hard_click.mp3", 2.85, -14),                 # JIM CORBETT card
-    (D / "swoosh_short_wind.mp3", 2.95, -18),              # into Corbett road B-roll
+    (D / "swoosh_short_wind.mp3", 2.95, -18),              # into tiger-on-road B-roll
     (D / "swoosh_short_wind.mp3", 7.87, -18),              # dawn road
     (D / "sweep_fast_small.mp3", 9.42, -18),               # open jeep
     (D / "swoosh_cinematic_wind.mp3", 10.52, -20),         # sal forest (engine off)
-    (D / "impact_whoosh_deep.mp3", 16.15, -16),            # tiger on the road
+    (D / "impact_whoosh_deep.mp3", at("chase") - 0.25, -16),  # tiger walking (her photo)
     (D / "pop_hard_click.mp3", at("4"), -14),              # ONLY 4 SEATS
     (L / "msg_iphone_sent.mp3", at("SAFARI"), -12),        # comment SAFARI
-    (D / "swoosh_ending_wind.mp3", 25.3, -18),             # bag reveal / loop
+    (D / "swoosh_ending_wind.mp3", at("Mera"), -18),        # bag reveal / loop
 ]
 
 inp, fc = [], []

@@ -1,7 +1,7 @@
 {
  "name": "w1_l1_details_out",
  "format": "B",
- "grade": "none",
+ "grade": "natural",
  "clips": [
   {
    "src": "../../inbox/r1/r1_clip01.mov",
@@ -9,7 +9,7 @@
    "out": 22.5,
    "speed": 1.1,
    "punch": 1.0,
-   "grade": "none",
+   "grade": "natural",
    "broll": []
   },
   {
@@ -18,10 +18,10 @@
    "out": 8.1,
    "speed": 1.1,
    "punch": 1.08,
-   "grade": "none",
+   "grade": "natural",
    "broll": [
     {
-     "src": "broll/corbett_road.mp4",
+     "src": "broll/isha_tiger_road.mp4",
      "in": 0,
      "at": 0.35,
      "dur": 2.9,
@@ -35,24 +35,24 @@
    "out": 9.6,
    "speed": 1.1,
    "punch": 1.0,
-   "grade": "none",
+   "grade": "natural",
    "broll": [
     {
-     "src": "broll/dawn_road.mp4",
+     "src": "broll/isha_misty_tiger.mp4",
      "in": 0,
      "at": 0.45,
      "dur": 1.55,
      "grade": "none"
     },
     {
-     "src": "broll/corbett_jeep.mp4",
+     "src": "broll/isha_jeeps_tiger.mp4",
      "in": 0,
      "at": 2.0,
      "dur": 1.1,
      "grade": "none"
     },
     {
-     "src": "broll/sal_forest.mp4",
+     "src": "broll/isha_kingfisher_moss.mp4",
      "in": 0,
      "at": 3.1,
      "dur": 1.95,
@@ -63,23 +63,33 @@
   {
    "src": "../../inbox/r1/r1_clip04.mov",
    "in": 19.55,
-   "out": 25.4,
+   "out": 23.55,
    "speed": 1.1,
    "punch": 1.1,
-   "grade": "none",
+   "grade": "natural",
    "broll": [
     {
-     "src": "broll/tiger_road.mp4",
+     "src": "broll/isha_tiger_walk.mp4",
      "in": 0,
      "at": 2.35,
-     "dur": 1.45,
+     "dur": 1.3,
      "grade": "none"
-    },
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r1/r1_clip04.mov",
+   "in": 24.08,
+   "out": 25.4,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": [
     {
-     "src": "broll/jeep_wait.mp4",
+     "src": "broll/isha_tiger_lookup.mp4",
      "in": 0,
-     "at": 3.95,
-     "dur": 1.4,
+     "at": 0.0,
+     "dur": 1.21,
      "grade": "none"
     }
    ]
@@ -90,7 +100,7 @@
    "out": 16.5,
    "speed": 1.1,
    "punch": 1.0,
-   "grade": "none",
+   "grade": "natural",
    "broll": []
   },
   {
@@ -99,7 +109,7 @@
    "out": 15.45,
    "speed": 1.1,
    "punch": 1.08,
-   "grade": "none",
+   "grade": "natural",
    "broll": []
   },
   {
@@ -108,7 +118,7 @@
    "out": 6.8,
    "speed": 1.1,
    "punch": 1.0,
-   "grade": "none",
+   "grade": "natural",
    "broll": []
   }
  ],
@@ -120,8 +130,21 @@
  "titles": [
   {
    "type": "hook",
-   "text": "TIGER SAFARI: DETAILS ARE OUT",
-   "size": 140,
+   "text": "TIGER SAFARI",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 270,
+   "y": 110,
+   "start": 0.0,
+   "end": 2.6181818181818173
+  },
+  {
+   "type": "hook",
+   "text": "DETAILS ARE OUT",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 180,
+   "y": 400,
    "start": 0.0,
    "end": 2.6181818181818173
   },
@@ -151,28 +174,28 @@
    "text": "WE DON'T CHASE. WE WAIT.",
    "size": 120,
    "start": 16.099999999999998,
-   "end": 19.118181818181814
+   "end": 18.636363636363633
   },
   {
    "type": "hook",
    "text": "ONLY 4 SEATS · ONE PRICE · ALL INCLUDED",
    "size": 120,
-   "start": 19.118181818181814,
-   "end": 22.53636363636363
+   "start": 18.636363636363633,
+   "end": 22.05454545454545
   },
   {
    "type": "hook",
    "text": "COMMENT \"SAFARI\" FOR THE LINK",
    "size": 120,
-   "start": 22.53636363636363,
-   "end": 25.26363636363636
+   "start": 22.05454545454545,
+   "end": 24.781818181818178
   },
   {
    "type": "hook",
    "text": "MY BAG IS READY. YOURS?",
    "size": 120,
-   "start": 25.26363636363636,
-   "end": 27.881818181818176
+   "start": 24.781818181818178,
+   "end": 27.399999999999995
   }
  ],
  "voice": {

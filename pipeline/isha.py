@@ -587,9 +587,13 @@ def caption_events(words, style, y=None):
             evs.append(ev(start, end, "Sans", f"{{\\an4\\pos(120,{y or 1150}){POP}}}" + r"\N".join(lines)))
         elif style == "karaoke":                      # whole page visible, grey -> white as each word is spoken
             body = []
-            for w in page:
+            hl = any(w.get("emph") for w in page)      # words flagged "emph" in words.json -> marigold + 12% bigger
+            for i, w in enumerate(page):
                 dt = int((w["start"] - start) * 1000)
-                body.append(f"{{\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{C['chalk']}\\alpha&H00&)}}{ass_escape(w['text'])} ")
+                key = hl and i in emph
+                col = C['marigold'] if key else C['chalk']
+                fs = f"\\fs{int(SIZE['karaoke'] * 1.12)}" if key else f"\\fs{SIZE['karaoke']}"
+                body.append(f"{{{fs}\\1c{C['grey']}\\alpha&H30&\\t({dt},{dt + 1},\\1c{col}\\alpha&H00&)}}{ass_escape(w['text'])} ")
             evs.append(ev(start, end, "Sans", f"{{\\an5\\pos(540,{y or 1340})\\fad(40,0)}}" + "".join(body).rstrip()))
         elif style == "caps":
             txt = " ".join(ass_escape(w["text"]).upper() for w in page)
@@ -647,7 +651,9 @@ def title_events(titles, top_captions=False):
             evs.append(ev(s, e, "Pill", f"{{\\an8\\pos(540,{t.get('y', 300 + bump)})\\fad(80,80)}}{txt}", 4))
         elif typ == "hook":
             fs = f"\\fs{int(t['size'])}" if t.get("size") else ""      # optional per-title size (default SIZE['hook'])
-            evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)}){fs}\\fad(60,100)}}{ass_escape(t['text'])}", 4))
+            fo = fn_tag(t["font"]) if t.get("font") else ""                # optional font role, e.g. "condensed" (Anton)
+            co = f"\\1c{ass_color(t['color'], 'chalk')}" if t.get("color") else ""
+            evs.append(ev(s, e, "Hook", f"{{\\an8\\pos(540,{t.get('y', 260 + bump)}){fs}{fo}{co}\\fad(60,100)}}{ass_escape(t['text'])}", 4))
         elif typ == "fact":                       # sits just above the caption band so both can be on screen
             evs.append(ev(s, e, "Fact", f"{{\\an5\\pos(540,{t.get('y', 1090)})\\1c{ass_color(t.get('color'), 'marigold')}"
                                         f"{POP_T}}}{ass_escape(t['text'])}", 2))

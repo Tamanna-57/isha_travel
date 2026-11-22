@@ -26,21 +26,26 @@ TAKES = [
     (1, 19.62, 22.50, 1.00, "r1_clip01_hi", "Safari ki details aa chuki hain", []),
     (2, 2.82, 8.10, 1.08, "r1_clip02_en",
      "Four nights and five days in Jim Corbett National Park, Lost & Free Safaris ke saath.",
-     [("corbett_road", 0.35, 2.90)]),
+     [("isha_tiger_road", 0.35, 2.90)]),
     (3, 2.58, 9.60, 1.00, "r1_clip03_hi", "Subah saade paanch baje, open jeep, engine band aur poora jungle chup.",
-     [("dawn_road", 0.45, 1.55), ("corbett_jeep", 2.00, 1.10), ("sal_forest", 3.10, 1.95)]),
-    (4, 19.55, 25.40, 1.10, "r1_clip04_hiseg",
-     "Main inke saath isi liye jaati hoon kyunki ye animals ko chase nahi karte hain. Ye wait karte hain.",
-     [("tiger_road", 2.35, 1.45), ("jeep_wait", 3.95, 1.40)]),
+     [("isha_misty_tiger", 0.45, 1.55), ("isha_jeeps_tiger", 2.00, 1.10), ("isha_kingfisher_moss", 3.10, 1.95)]),
+    # Isha (22 Nov): cut the gap between "chase" and "wait" -> 0.53 s pause (23.55-24.08) removed, photos back to back
+    (4, 19.55, 23.55, 1.10, "r1_clip04_hiseg",
+     "Main inke saath isi liye jaati hoon kyunki ye animals ko chase nahi karte hain.",
+     [("isha_tiger_walk", 2.35, 1.30)]),
+    (4, 24.08, 25.40, 1.00, "r1_clip04_hiseg", "Ye wait karte hain.", [("isha_tiger_lookup", 0.0, 1.21)]),
     (5, 12.74, 16.50, 1.00, "r1_clip05_hi", "Only 4 seats aur ek price mein sab included.", []),
     (6, 12.45, 15.45, 1.08, "r1_clip06_hi", "Comment karo SAFARI, tab tak main link bhej deti hoon.", []),
     (7, 3.92, 6.80, 1.00, "r1_clip07_hi", "Mera toh bag ready hai, aur tumhara?", []),
 ]
-EMPH = {"details", "Corbett", "jeep", "chup.", "chase", "wait", "4", "included.", "SAFARI,", "ready"}
+# Isha (22 Nov): highlight the important words (marigold + bigger) -- matched lowercase, punctuation stripped
+EMPH = {"safari", "details", "four", "nights", "five", "days", "jim", "corbett", "lost", "&", "free", "safaris",
+        "saade", "paanch", "baje", "open", "jeep", "engine", "band", "jungle", "chup", "chase", "wait",
+        "only", "4", "seats", "price", "sab", "included", "comment", "link", "bag", "ready", "tumhara"}
 
 
 def take_words(key, t0, t1, roman):
-    ws = [w for s in W[key] for w in s["w"] if t0 - 0.3 <= w[0] <= t1]
+    ws = [w for s in W[key] for w in s["w"] if t0 - 0.4 <= w[0] <= t1]
     words = roman.split()
     if len(ws) == len(words):
         spans = [(max(t0, w[0]), min(t1, w[1])) for w in ws]
@@ -56,26 +61,28 @@ def build():
     clips, words, t_line = [], [], 0.0
     for c, a, b, punch, key, roman, brolls in TAKES:
         clips.append({"src": f"../../inbox/r1/r1_clip0{c}.mov", "in": a, "out": b, "speed": SPEED, "punch": punch,
-                      "grade": "none",
+                      "grade": "natural",       # Isha (22 Nov): colour-correct -> house natural grade on her clips
                       "broll": [{"src": f"broll/{n}.mp4", "in": 0, "at": at, "dur": d, "grade": "none"} for n, at, d in brolls]})
         for txt, (s, e) in take_words(key, a, b, roman):
             words.append({"text": txt.rstrip(",."), "start": round(t_line + (s - a) / SPEED, 3),
-                          "end": round(t_line + (e - a) / SPEED, 3), **({"emph": True} if txt in EMPH else {})})
+                          "end": round(t_line + (e - a) / SPEED, 3), **({"emph": True} if txt.strip(",.?").lower() in EMPH else {})})
         t_line += (b - a) / SPEED
     T = [0.0]
     for _, a, b, *_ in TAKES:
         T.append(T[-1] + (b - a) / SPEED)
     titles = [
-        {"type": "hook", "text": "TIGER SAFARI: DETAILS ARE OUT", "size": 140, "start": 0.0, "end": T[1]},
+        # Isha (22 Nov): opening title bolder + different font -> Anton, two lines, marigold over white
+        {"type": "hook", "text": "TIGER SAFARI", "font": "condensed", "color": "marigold", "size": 270, "y": 110, "start": 0.0, "end": T[1]},
+        {"type": "hook", "text": "DETAILS ARE OUT", "font": "condensed", "color": "chalk", "size": 180, "y": 400, "start": 0.0, "end": T[1]},
         {"type": "landmark", "text": "JIM CORBETT", "sub": "4 NIGHTS · 5 DAYS · LOST & FREE SAFARIS", "start": T[1] + 0.25, "end": T[2]},
         {"type": "hook", "text": "5:30 AM · OPEN JEEP", "size": 120, "start": T[2] + 0.4, "end": T[2] + 3.0},
         {"type": "hook", "text": "ENGINE OFF. SILENCE.", "size": 120, "start": T[2] + 3.1, "end": T[3]},
-        {"type": "hook", "text": "WE DON'T CHASE. WE WAIT.", "size": 120, "start": T[3] + 2.3, "end": T[4]},
-        {"type": "hook", "text": "ONLY 4 SEATS · ONE PRICE · ALL INCLUDED", "size": 120, "start": T[4], "end": T[5]},
-        {"type": "hook", "text": "COMMENT \"SAFARI\" FOR THE LINK", "size": 120, "start": T[5], "end": T[6]},
-        {"type": "hook", "text": "MY BAG IS READY. YOURS?", "size": 120, "start": T[6], "end": T[7]},
+        {"type": "hook", "text": "WE DON'T CHASE. WE WAIT.", "size": 120, "start": T[3] + 2.3, "end": T[5]},
+        {"type": "hook", "text": "ONLY 4 SEATS · ONE PRICE · ALL INCLUDED", "size": 120, "start": T[5], "end": T[6]},
+        {"type": "hook", "text": "COMMENT \"SAFARI\" FOR THE LINK", "size": 120, "start": T[6], "end": T[7]},
+        {"type": "hook", "text": "MY BAG IS READY. YOURS?", "size": 120, "start": T[7], "end": T[8]},
     ]
-    edit = {"name": "w1_l1_details_out", "format": "B", "grade": "none", "clips": clips,
+    edit = {"name": "w1_l1_details_out", "format": "B", "grade": "natural", "clips": clips,
             "captions": {"style": "karaoke", "words": "words.json", "y": 1420}, "titles": titles, "voice": {"clean": True}}
     if (P / "sfx_bed.wav").exists():
         edit["music"] = {"src": "sfx_bed.wav", "start": 0, "gain_db": 0, "duck": False}
