@@ -391,13 +391,18 @@ def build_segment(clip, i, proj, build, default_grade):
         for k, b in enumerate(brolls):
             bsrc = (proj / b["src"]).resolve(); binfo = clip_info(bsrc)
             at, bd = float(b.get("at", 0)), float(b.get("dur", 1.2))
-            inputs += ["-ss", f"{float(b.get('in', 0)):.3f}", "-t", f"{bd:.3f}", "-i", str(bsrc)]
+            # read 0.25 s more than shown: if the B-roll runs out a frame early, the A-roll flashes for 1 frame.
+            # The overlay's `enable` window below still decides exactly what is on screen.
+            inputs += ["-ss", f"{float(b.get('in', 0)):.3f}", "-t", f"{bd + 0.25:.3f}", "-i", str(bsrc)]
             bvf = ([HDR_TO_SDR] if binfo.get("hdr") else []) + [f"fps={FPS}"]
             bg = b.get("grade") or grade
             if bg and GRADES.get(bg):
                 bvf.append(GRADES[bg])
             bvf.append(f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,format=yuv420p")
-            fc += (f";[{n_in + k}:v]{','.join(bvf)},setpts=PTS-STARTPTS+{at:.3f}/TB[b{k}]"
+            # hold the first B-roll frame 0.2 s before `at` so the overlay always has a picture when it switches on
+            # (without it, a B-roll at the very start of a segment can miss frame 0 and flash the A-roll for 1 frame)
+            fc += (f";[{n_in + k}:v]{','.join(bvf)},tpad=start_duration=0.2:start_mode=clone,"
+                   f"setpts=PTS-STARTPTS+{at - 0.2:.3f}/TB[b{k}]"
                    f";[v{k}][b{k}]overlay=enable='between(t,{at:.3f},{at + bd:.3f})':eof_action=pass[v{k + 1}]")
         fc += f";[v{len(brolls)}]null[v]"
 

@@ -21,3 +21,8 @@ Rebuild: `python sfx.py && python make.py`
 3. **Opening title bolder + different font:** Anton (condensed heavy), "TIGER SAFARI" marigold over "DETAILS ARE OUT" white.
 4. **Her own photos:** all B-roll is now from her archive (tiger on road, misty forest tiger, jeeps + tiger, kingfisher on moss, tiger walking, tiger looking up). No stock photos left.
 5. **Colour corrected:** house "natural" grade on her clips (+contrast, warmer skin, richer greens) after the HLG→SDR tone-map.
+
+## v3 · Isha's feedback (22 Nov, 2nd round)
+1. **Glitch between the two tiger photos fixed:** the "chase" B-roll ran out ~1 frame before its segment ended, so Isha's face flashed for 1 frame. Pipeline now reads 0.25 s of extra B-roll and pre-rolls the first frame (pipeline/isha.py, build_segment). A full-reel frame scan found no other 1-frame flashes.
+2. **Her tiger-in-the-leaves photo** (IMG_4021, sent on WhatsApp) replaces the kingfisher on "engine band aur poora jungle chup".
+3. **"Wait" photo changed:** the tiger-looking-up shot was a near-duplicate of the leaves photo, so "ye wait karte hain" now uses her two dholes resting together.
