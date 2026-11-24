@@ -17,3 +17,7 @@
 - Frame-by-frame flash scan (qa_flash.py): no 1-3 frame flashes.
 - SFX: shutter per montage photo, synthesised alarm beeps on "alarm", ticks on the numbered titles, riser + deep whoosh into the tiger, soft swooshes.
 Rebuild: `python make.py --no-render && python sfx.py && python make.py`
+
+## v2 · Isha's feedback (24 Nov)
+1. **Less saturation:** her clips keep the natural grade, then saturation x0.85 (frame measure 0.30 → 0.27). Pipeline: clips take an optional "sat".
+2. **Kingfisher on moss no longer dark/dull:** the original photo is very dark (avg luma ~36/255) and our crop cut the bird at the edge. Re-cropped so the whole bird is centred and bigger, lifted (gamma 1.45, saturation 1.3) → luma ~89; encoded with BT.709 tags.

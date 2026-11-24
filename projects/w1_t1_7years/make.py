@@ -64,7 +64,7 @@ def build():
         c, a, b, punch, key, roman, brolls = s[:7]
         span = s[7] if len(s) > 7 else None
         clips.append({"src": f"../../inbox/r2/r2_clip0{c}.mp4", "in": a, "out": b, "speed": SPEED, "punch": punch,
-                      "grade": "natural",
+                      "grade": "natural", "sat": 0.85,   # Isha (24 Nov): a bit less saturation on her clips
                       "broll": [{"src": f"broll/isha_{n}.mp4", "in": bi, "at": at, "dur": d, "grade": "none"}
                                 for n, at, d, bi in brolls]})
         for txt, (ws, we) in seg_words(key, a, b, roman, span):

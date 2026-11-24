@@ -357,6 +357,8 @@ def build_segment(clip, i, proj, build, default_grade):
         vf.append("grayworld")
     if grade and GRADES.get(grade):
         vf.append(GRADES[grade])
+    if clip.get("sat") is not None:               # optional per-clip saturation trim after the look (1.0 = unchanged)
+        vf.append(f"eq=saturation={float(clip['sat']):.3f}")
 
     inputs = ["-ss", f"{t_in:.3f}", "-t", f"{dur_src:.3f}", "-i", str(src)]
     if frame == "fill":
