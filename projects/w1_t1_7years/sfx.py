@@ -16,9 +16,7 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=2000
                 str(alarm)], check=True)
 
 HITS = [
-    (D / "camera_shutter.mp3", T[2] + 0.00, -12),          # montage photo 1
-    (D / "camera_shutter.mp3", T[2] + 0.55, -12),          # photo 2
-    (D / "camera_shutter.mp3", T[2] + 1.08, -12),          # photo 3
+    *[(D / "camera_shutter.mp3", T[2] + k * 0.267, -13) for k in range(6)],   # 6-photo montage, one click each
     (alarm, at("alarm") - 0.05, -16),                      # "paanch baje ka ALARM"
     (D / "pop_hard_click.mp3", T[4] + 0.45, -15),          # 01 dholes
     (D / "pop_hard_click.mp3", T[5] + 0.80, -15),          # 02 jackal

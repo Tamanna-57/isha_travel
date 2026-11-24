@@ -36,21 +36,42 @@
      "src": "broll/isha_kingfisher_fish.mp4",
      "in": 0,
      "at": 0.0,
-     "dur": 0.55,
+     "dur": 0.267,
+     "grade": "none"
+    },
+    {
+     "src": "broll/isha_mongoose.mp4",
+     "in": 0,
+     "at": 0.267,
+     "dur": 0.267,
      "grade": "none"
     },
     {
      "src": "broll/isha_nightjar.mp4",
      "in": 0,
-     "at": 0.55,
-     "dur": 0.53,
+     "at": 0.533,
+     "dur": 0.267,
      "grade": "none"
     },
     {
-     "src": "broll/isha_kite.mp4",
+     "src": "broll/isha_harrier.mp4",
      "in": 0,
-     "at": 1.08,
-     "dur": 0.53,
+     "at": 0.8,
+     "dur": 0.267,
+     "grade": "none"
+    },
+    {
+     "src": "broll/isha_littlebird.mp4",
+     "in": 0,
+     "at": 1.067,
+     "dur": 0.267,
+     "grade": "none"
+    },
+    {
+     "src": "broll/isha_duck.mp4",
+     "in": 0,
+     "at": 1.333,
+     "dur": 0.27,
      "grade": "none"
     }
    ]

@@ -25,7 +25,9 @@ SEGS = [
     (1, 3.40, 5.47, 1.00, "r2_clip01_hi", "7 saal ki wildlife photography,", []),
     (1, 5.47, 6.88, 1.12, "r2_clip01_hi", "wo bhi ek hi reel mein,", []),
     (1, 7.22, 8.98, 1.08, "r2_clip01_hi", "aur har subah ka ek hi rule:",
-     [("kingfisher_fish", 0.00, 0.55, 0), ("nightjar", 0.55, 0.53, 0), ("kite", 1.08, 0.53, 0)]),
+     # Isha (24 Nov): "we have more images" -> 6-photo burst from her archive, ~0.27 s each
+     [("kingfisher_fish", 0.000, 0.267, 0), ("mongoose", 0.267, 0.267, 0), ("nightjar", 0.533, 0.267, 0),
+      ("harrier", 0.800, 0.267, 0), ("littlebird", 1.067, 0.267, 0), ("duck", 1.333, 0.27, 0)]),
     (1, 9.30, 10.62, 1.00, "r2_clip01_hi", "paanch baje ka alarm.", []),
     (3, 4.42, 8.13, 1.00, "r2_clip03_en", "Kabhi ek wild dhole mila, sharing intimate moments with its mate.",
      [("dholes", 0.45, 2.92, 0)]),
