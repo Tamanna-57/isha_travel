@@ -21,3 +21,4 @@ Rebuild: `python make.py --no-render && python sfx.py && python make.py`
 ## v2 · Isha's feedback (24 Nov)
 1. **Less saturation:** her clips keep the natural grade, then saturation x0.85 (frame measure 0.30 → 0.27). Pipeline: clips take an optional "sat".
 2. **Kingfisher on moss no longer dark/dull:** the original photo is very dark (avg luma ~36/255) and our crop cut the bird at the edge. Re-cropped so the whole bird is centred and bigger, lifted (gamma 1.45, saturation 1.3) → luma ~89; encoded with BT.709 tags.
+3. **Nightjar shown whole (v3):** Isha: "use it as it is, the edges are black so it merges if you put it in the center". The photo is no longer cropped to fill; it's the full image centred on black (scaled 1.5x, trimming only vignette-black sides), so its black edges melt into the frame.
