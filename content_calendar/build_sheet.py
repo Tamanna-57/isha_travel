@@ -6,28 +6,32 @@ from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 from posts import P as ALL, TH, TH_OUT, VO, FLAT, ARCH
 
-# Run ends Wed 2 Dec 2026 (contract review that day). Week 2 keeps Mon-Wed: the FAQ carousel, the sea-vs-jungle reel,
-# and the price breakdown (moved from Fri 4 Dec to Wed 2 Dec because it converts; the guide reel needs LAF to film first).
-KEEP = ["W1-L1", "W1-T1", "W1-L2", "W1-L3", "W1-T2b", "W2-L1", "W2-T1", "W2-L3"]
-P = [dict(p) for k in KEEP for p in ALL if p["id"] == k]
-for p in P:
-    if p["id"] == "W2-L3":
-        p.update(date="Wed 2 Dec 2026", day="Wed")
+# Plan runs Mon 23 Nov - Sun 6 Dec 2026. Contract review on Wed 2 Dec: Thu 3 - Sun 6 Dec go out only if it continues.
+# 24 Nov update: three topics from the Monday-reel feedback became the 3-part @lostandfree series "Corbett, unfiltered"
+# (W2-C1/C2/C3 in posts_week2.py) on next week's three Lost & Free slots. The FAQ carousel and the price-breakdown reel
+# moved to the backlog (the FAQ's tiger question is answered by W2-C3). Sat 5 Dec gets the Himachal-in-December reel.
+from posts_week2 import W2, W2T2_V2
+ALLP = ALL + W2
+KEEP = ["W1-L1", "W1-T1", "W1-L2", "W1-L3", "W1-T2b", "W2-C1", "W2-T1", "W2-C2", "W2-C3", "W2-T2"]
+P = [dict(p) for k in KEEP for p in ALLP if p["id"] == k]
 BACKLOG = [p for p in ALL if p["id"] not in KEEP]
 from posts_v2 import V2          # v2: scripts, beats, hooks, captions, hashtags rewritten with the social-media skills
+V2["W2-T2"] = W2T2_V2
 for p in P:
-    p.update(V2[p["id"]])
+    p.update(V2.get(p["id"], {}))
+STATUS = {"W1-L1": "Edited v3 (Isha's notes in)", "W1-T1": "Edited v1 (sent for review)"}
+REVIEW = {"W2-C3": "After 2 Dec review", "W2-T2": "After 2 Dec review"}
 
 OUT = Path(__file__).parent / "Isha_Safari_Content_Calendar.xlsx"
 GREEN, GOLD, CREAM, SKY = "2E5B3B", "F6C445", "F7F3EA", "E3EEF7"
-PHASE = {1: "1 · Launch + trust", 2: "2 · Objections + convert"}
+PHASE = {1: "1 · Launch + trust", 2: "2 · Corbett, unfiltered + convert"}
 thin = Side(style="thin", color="D0D0D0")
 
-# sanity: week 1 = 3 LAF + 2 TWI; Mon-Wed of week 2 = 2 LAF + 1 TWI
-c1 = Counter(p["acct"] for p in P if p["week"] == 1)
-c2 = Counter(p["acct"] for p in P if p["week"] == 2)
-assert (c1["@lostandfree"], c1["@travelwithisha"], c2["@lostandfree"], c2["@travelwithisha"]) == (3, 2, 2, 1)
-assert len(P) == 8
+# sanity: 3 LAF + 2 TWI in each week
+for wk in (1, 2):
+    c = Counter(p["acct"] for p in P if p["week"] == wk)
+    assert (c["@lostandfree"], c["@travelwithisha"]) == (3, 2), (wk, c)
+assert len(P) == 10
 
 wb = Workbook()
 
@@ -62,17 +66,17 @@ ws = wb.active
 ws.title = "Read me"
 readme = [
     ["ISHA × LOST & FREE · SAFARI SIGN-UP CONTENT CALENDAR"],
-    ["Mon 23 Nov → Wed 2 Dec 2026 · 8 posts · 3/week on @lostandfree + 2/week on @travelwithisha (week 2 runs Mon-Wed: 2 + 1)"],
+    ["Mon 23 Nov → Sun 6 Dec 2026 · 10 posts · 3/week on @lostandfree + 2/week on @travelwithisha · updated 24 Nov"],
     [""],
     ["MAIN GOAL", "Safari sign-ups from Instagram (50/50 deal). Every sign-up must come through the keyword SAFARI (comment → auto-DM) or Isha's tracked link, so it's counted."],
-    ["HOW THE 10 DAYS WORK", "Mon 23 - Sun 29 Nov, LAUNCH + TRUST: real details, day-by-day itinerary, a shareable 5:30 AM POV, Isha as a wildlife photographer, solo-travel trust.\nMon 30 Nov - Wed 2 Dec, OBJECTIONS + CONVERT: FAQ (safety, fitness, tiger odds), sea vs jungle reach reel, what the price actually covers."],
+    ["HOW THE TWO WEEKS WORK", "Mon 23 - Sun 29 Nov, LAUNCH + TRUST: real details, the activities, a shareable 5:30 AM POV, Isha as a wildlife photographer, Lakshadweep Part 2.\nMon 30 Nov - Sun 6 Dec, CORBETT, UNFILTERED (3-part series on @lostandfree, from the topics received 23 Nov): 1 the history nobody tells you (Mon), 2 the uncomfortable truth about tiger numbers (Wed), 3 the safari reality: you might not see a tiger, go anyway (Fri). @travelwithisha: sea vs jungle (Tue), Himachal in December (Sat)."],
     ["AIM (till Wed 2 Dec)", "Promote the safari and Lost & Free. Every one of the 8 posts points to the safari.\n@lostandfree (3/week): all safari posts, mostly COLLABS with @travelwithisha so they land on both grids, each ending on 'Comment SAFARI'.\n@travelwithisha (2/week): either promotes the safari directly or continues the series she's already posting (e.g. Lakshadweep Part 2), always with a safari hand-off: end card, caption line + link sticker in stories."],
-    ["TABS", "Calendar = the overview (date, time, account, type, title).\nPost briefs = full script, screenplay (second-by-second), on-screen text, edit notes, caption, what's blocking.\nShots for Isha = every shot she has to send, with how to shoot it and the deadline. Isha: start here every Saturday.\nHow to shoot = the rules for every shoot (light, framing, sound, files).\nIsha's style = what Isha likes and dislikes, from her feedback so far. The edit follows these.\nNeeded from Lost & Free = details we must get before posts can go out.\nBacklog (after 2 Dec) = ideas already worked out, only used if the engagement continues."],
+    ["TABS", "Calendar = the overview (date, time, account, type, title).\nPost briefs = full script, screenplay (second-by-second), on-screen text, edit notes, caption, what's blocking.\nShots for Isha = every shot she has to send, with how to shoot it and the deadline. Isha: start here every Saturday.\nHow to shoot = the rules for every shoot (light, framing, sound, files).\nIsha's style = what Isha likes and dislikes, from her feedback so far. The edit follows these.\nNeeded from Lost & Free = details we must get before posts can go out.\nBacklog = ideas already worked out (incl. the FAQ carousel and the price-breakdown reel moved out on 24 Nov)."],
     ["REACH RULES (every post)", "1. Hook in the first 3 sec on all three channels at once: striking first frame + bold on-screen text + first spoken line. No intro, no 'hi guys', no logo.\n2. Muted-first: the on-screen text tells the whole story (most people watch without sound).\n3. Search keyword: said in the first 3 sec, shown on screen, and in the caption's first line.\n4. A new visual every 2-4 sec; reels 15-35 sec; one call to action; the last shot loops back into the first.\n5. Captions: first line under 125 characters earns the '...more' tap; max 5 hashtags (Instagram's cap): topic + niche + #JungleWithIsha.\n6. Post hook #1. Test hook #2 as an Instagram Trial Reel (shown to non-followers first) and keep the winner for the next post.\n7. Judge posts on 3-sec hold, average watch time, shares/sends and saves, not likes."],
     ["CAMPAIGN HASHTAG", "#JungleWithIsha on every post of both accounts, in bio and stories. Check on Instagram that the tag is unused before the first post."],
     ["{{ }} PLACEHOLDERS", "Anything in {{double brackets}} (dates, price, seats, location…) must be filled with Lost & Free's real details. Never post with a {{ }} left in, and only post a seat count if it's true that day."],
-    ["SHOOT DAYS", "Sat 21 / Sun 22 Nov for week 1, Sat 28 Nov for 30 Nov - 2 Dec (see 'Isha shoots by' in Calendar)."],
-    ["WED 2 DEC · REVIEW", "This calendar ends on Wed 2 Dec, the day the engagement is reviewed. Bring: reach, saves, shares and SAFARI comments per post (Insights at 24 h, and 7 days where a post is old enough), link taps, follower change on both accounts, and Lost & Free's sign-up count by keyword/link. The 'Backlog' tab has the ideas ready for after 2 Dec if the work continues."],
+    ["SHOOT DAYS", "Sat 21 / Sun 22 Nov for week 1 (done: R1 + R2 albums received). Sat 28 Nov for next week: talking heads for W2-C1 and W2-C3, Google Earth recording, Himachal VO + clips (see 'Shots for Isha')."],
+    ["WED 2 DEC · REVIEW", "The engagement is reviewed on Wed 2 Dec. Mon 30 Nov - Wed 2 Dec go out as planned; Fri 4 (series part 3) and Sat 5 Dec are marked 'After 2 Dec review' and only go out if the work continues. Bring to the review: reach, saves, shares and SAFARI comments per post, link taps, follower change on both accounts, and Lost & Free's sign-up count by keyword/link. The 'Backlog' tab has worked-out ideas for after that."],
     ["STORIES (every day, not counted in the 8)", "Both accounts: share the day's post + one sticker (poll, quiz, question box or countdown). Safari link sticker daily on @lostandfree; on @travelwithisha every Mon, Wed, Fri. Save answers from question boxes for the FAQ posts."],
     ["MID-POINT CHECK (Sun 29 Nov)", "Pull Insights for each post (reach, saves, shares, SAFARI comments, link taps) + Lost & Free's sign-up count. Double down on the best hook type next week."],
 ]
@@ -89,7 +93,7 @@ for row in ws.iter_rows(min_row=4):
 
 # ---------------- 2. Calendar ----------------
 cal_rows = [[p["id"], p["week"], PHASE[p["week"]], p["date"], p["day"], p["time"] + " IST", p["acct"], p["collab"],
-             p["type"], p["fmt"], p["title"], p["goal"], p["cta"], p["shoot_by"], p["source"], p["deps"], "Planned"] for p in P]
+             p["type"], p["fmt"], p["title"], p["goal"], p["cta"], p["shoot_by"], p["source"], p["deps"], STATUS.get(p["id"], REVIEW.get(p["id"], "Planned"))] for p in P]
 sheet("Calendar",
       ["ID", "Week", "Phase", "Date", "Day", "Post time", "Account", "Collab", "Content type", "Format / length",
        "Title / hook", "Goal", "Call to action", "Isha shoots by", "Footage source", "Blocking / needs", "Status"],
@@ -163,6 +167,12 @@ style = [
     ["Dislikes", "Murky / random shots (e.g. dull coral close-ups)", "Lakshadweep reorder (12 Nov)"],
     ["Dislikes", "Similar clips next to each other, repetitive order", "Lakshadweep reorder (12 Nov)"],
     ["Dislikes", "Long pauses, slow pace", "R1 v3 notes"],
+    ["Likes", "Key words highlighted in the captions (e.g. 4 nights, 5 days, Jim Corbett)", "Isha on the W1-L1 edit, 22 Nov"],
+    ["Likes", "Opening title bolder, in a different font (now Anton, two-tone marigold/white)", "Isha on the W1-L1 edit, 22 Nov"],
+    ["Likes", "Her OWN photos as B-roll, not stock photos", "Isha on the W1-L1 edit, 22 Nov"],
+    ["Likes", "Colour-corrected video (natural grade: warmer skin, richer greens)", "Isha on the W1-L1 edit, 22 Nov"],
+    ["Dislikes", "Gaps, glitches or flashes between shots (e.g. a frame of her face between two tiger photos)", "Isha on W1-L1 v1 and v2, 22 Nov"],
+    ["Dislikes", "Two near-identical photos in one reel", "Isha on W1-L1 v2, 22 Nov"],
     ["Rules", "Captions always on (Hinglish in Roman script), never invent words she didn't say", "ISHA_REEL_SYSTEM.md §9"],
     ["Rules", "One special transition max, hard cuts otherwise; one big title per reel", "ISHA_REEL_SYSTEM.md §0"],
     ["Rules", "Safe zones: no text in the bottom 20% or right edge; covers readable in the 4:5 grid crop", "ISHA_REEL_SYSTEM.md §10"],
@@ -173,14 +183,15 @@ sheet("Isha's style", ["Type", "What", "Where it came from"], style, [12, 80, 60
 
 # ---------------- 7. Needed from Lost & Free ----------------
 need = [
-    ["Safari details: name, park/location, dates, nights, price, inclusions/exclusions, seats, sign-up close date", "Before Sun 22 Nov", "W1-L1, W1-L2, W2-L1, W2-L3", "Open"],
-    ["Isha's tracked sign-up link (UTM) and/or code, for the 50/50 split", "Before Sun 22 Nov", "Every post", "Open"],
-    ["SAFARI keyword auto-DM switched on (ManyChat or Meta automation) on BOTH accounts", "Before Mon 23 Nov", "Every post", "Open"],
-    ["Which handle to tag: @lostandfree or @lostandfreesafaris (their carousel says @lostandfreesafaris)", "Before Mon 23 Nov", "Every post", "Open"],
-    ["Safari footage + photos with permission: jeep POV (6+ s unbroken), dawn forest, alarm-call deer, guide, camp, tiger", "Before Sun 22 Nov", "W1-L1, W1-L3, W2-T1, W2-L3", "Open"],
-    ["Which activities are on the trip (morning + evening safari, nature walk, bonfire, stargazing, photography with Isha) + B-roll/photos of each. No day-by-day plan needed yet", "Before Sun 22 Nov", "W1-L2", "Open"],
-    ["Answers to FAQ: solo women safety, fitness, tiger odds, network, food, who's in the group", "Before Sat 28 Nov", "W2-L1", "Open"],
-    ["Honest cost breakdown (stay, food, safaris, permits, transfers)", "Before Mon 30 Nov", "W2-L3", "Open"],
+    ["Safari details: dates, price, inclusions/exclusions, seats, sign-up close date (Corbett, 4N/5D confirmed by Isha on camera)", "ASAP (blocks captions)", "W1-L1, W1-L2, W2-C3", "Open"],
+    ["Isha's tracked sign-up link (UTM) and/or code, for the 50/50 split", "ASAP", "Every post", "Open"],
+    ["SAFARI keyword auto-DM switched on (ManyChat or Meta automation) on BOTH accounts", "ASAP", "Every post", "Open"],
+    ["Which handle to tag: @lostandfree or @lostandfreesafaris", "ASAP", "Every post", "Open"],
+    ["Which activities are on the trip + footage/photos of each", "Before Tue 24 Nov", "W1-L2", "Open"],
+    ["Fact check, Corbett history: Hailey NP 1936, renamed Ramganga then Corbett (exact years), Project Tiger launch 1973", "Before Sat 28 Nov", "W2-C1", "Open"],
+    ["Fact check, tiger numbers: NTCA Status of Tigers 2022 estimate + India's share of wild tigers", "Before Sun 29 Nov", "W2-C2", "Open"],
+    ["Lost & Free's own stance for the 'uncomfortable truth' carousel: pressures on the forest, conflict, and what they actually do (slides 5-7)", "Before Sun 29 Nov", "W2-C2", "Open"],
+    ["Rights to any archival Jim Corbett photos (else we use only Isha's photos)", "Before Sat 28 Nov", "W2-C1", "Open"],
     ["Sign-up report by link/keyword (for the Wed 2 Dec review)", "Sun 29 Nov + Wed 2 Dec", "Review", "Open"],
 ]
 sheet("Needed from Lost & Free", ["What", "Needed by", "Used in", "Status"], need, [90, 18, 34, 10])
