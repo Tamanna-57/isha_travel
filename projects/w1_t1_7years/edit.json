@@ -1,0 +1,303 @@
+{
+ "name": "w1_t1_7years",
+ "format": "A",
+ "grade": "natural",
+ "clips": [
+  {
+   "src": "../../inbox/r2/r2_clip01.mp4",
+   "in": 3.4,
+   "out": 5.47,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r2/r2_clip01.mp4",
+   "in": 5.47,
+   "out": 6.88,
+   "speed": 1.1,
+   "punch": 1.12,
+   "grade": "natural",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r2/r2_clip01.mp4",
+   "in": 7.22,
+   "out": 8.98,
+   "speed": 1.1,
+   "punch": 1.08,
+   "grade": "natural",
+   "broll": [
+    {
+     "src": "broll/isha_kingfisher_fish.mp4",
+     "in": 0,
+     "at": 0.0,
+     "dur": 0.55,
+     "grade": "none"
+    },
+    {
+     "src": "broll/isha_nightjar.mp4",
+     "in": 0,
+     "at": 0.55,
+     "dur": 0.53,
+     "grade": "none"
+    },
+    {
+     "src": "broll/isha_kite.mp4",
+     "in": 0,
+     "at": 1.08,
+     "dur": 0.53,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r2/r2_clip01.mp4",
+   "in": 9.3,
+   "out": 10.62,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r2/r2_clip03.mp4",
+   "in": 4.42,
+   "out": 8.13,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": [
+    {
+     "src": "broll/isha_dholes.mp4",
+     "in": 0,
+     "at": 0.45,
+     "dur": 2.92,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r2/r2_clip03.mp4",
+   "in": 8.43,
+   "out": 13.88,
+   "speed": 1.1,
+   "punch": 1.08,
+   "grade": "natural",
+   "broll": [
+    {
+     "src": "broll/isha_jackal.mp4",
+     "in": 0,
+     "at": 0.8,
+     "dur": 2.6,
+     "grade": "none"
+    },
+    {
+     "src": "broll/isha_owl.mp4",
+     "in": 0,
+     "at": 4.25,
+     "dur": 0.71,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r2/r2_clip03.mp4",
+   "in": 14.17,
+   "out": 16.53,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": [
+    {
+     "src": "broll/isha_owl.mp4",
+     "in": 0.71,
+     "at": 0.0,
+     "dur": 2.15,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r2/r2_clip03.mp4",
+   "in": 17.55,
+   "out": 18.62,
+   "speed": 1.1,
+   "punch": 1.08,
+   "grade": "natural",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r2/r2_clip03.mp4",
+   "in": 18.84,
+   "out": 19.95,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": [
+    {
+     "src": "broll/isha_tiger_lookup.mp4",
+     "in": 0,
+     "at": 0.0,
+     "dur": 1.01,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/r2/r2_clip04.mp4",
+   "in": 25.5,
+   "out": 28.9,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": []
+  },
+  {
+   "src": "../../inbox/r2/r2_clip05.mp4",
+   "in": 21.25,
+   "out": 25.25,
+   "speed": 1.1,
+   "punch": 1.08,
+   "grade": "natural",
+   "broll": [
+    {
+     "src": "broll/isha_kingfisher_moss.mp4",
+     "in": 0,
+     "at": 1.55,
+     "dur": 2.1,
+     "grade": "none"
+    }
+   ]
+  },
+  {
+   "src": "broll/isha_kingfisher_moss.mp4",
+   "in": 2.1,
+   "out": 2.9,
+   "audio": false,
+   "grade": "none"
+  },
+  {
+   "src": "../../inbox/r2/r2_clip06.mp4",
+   "in": 22.15,
+   "out": 26.6,
+   "speed": 1.1,
+   "punch": 1.0,
+   "grade": "natural",
+   "broll": []
+  }
+ ],
+ "captions": {
+  "style": "karaoke",
+  "words": "words.json",
+  "y": 1420
+ },
+ "titles": [
+  {
+   "type": "hook",
+   "text": "7 YEARS",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 300,
+   "y": 100,
+   "start": 0.0,
+   "end": 3.163636363636363
+  },
+  {
+   "type": "hook",
+   "text": "OF 5 AM ALARMS",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 175,
+   "y": 420,
+   "start": 0.0,
+   "end": 3.163636363636363
+  },
+  {
+   "type": "hook",
+   "text": "SAME RULE EVERY MORNING",
+   "size": 115,
+   "start": 3.163636363636363,
+   "end": 4.763636363636364
+  },
+  {
+   "type": "hook",
+   "text": "5 AM.",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 260,
+   "y": 150,
+   "start": 4.763636363636364,
+   "end": 5.963636363636362
+  },
+  {
+   "type": "hook",
+   "text": "01 · WILD DHOLES",
+   "size": 120,
+   "start": 6.413636363636362,
+   "end": 9.336363636363636
+  },
+  {
+   "type": "hook",
+   "text": "02 · INDIAN JACKAL",
+   "size": 120,
+   "start": 10.136363636363637,
+   "end": 12.736363636363636
+  },
+  {
+   "type": "hook",
+   "text": "03 · SPOTTED OWLET",
+   "size": 120,
+   "start": 13.586363636363636,
+   "end": 16.436363636363637
+  },
+  {
+   "type": "hook",
+   "text": "AND ONE DAY…",
+   "size": 120,
+   "start": 16.436363636363637,
+   "end": 17.40909090909091
+  },
+  {
+   "type": "hook",
+   "text": "04 · THIS.",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 220,
+   "y": 150,
+   "start": 17.40909090909091,
+   "end": 18.418181818181818
+  },
+  {
+   "type": "hook",
+   "text": "THE BEST MOMENT ISN'T A PHOTO",
+   "size": 115,
+   "start": 18.418181818181818,
+   "end": 21.509090909090908
+  },
+  {
+   "type": "hook",
+   "text": "IT'S THE SECOND THE JUNGLE GOES SILENT",
+   "size": 115,
+   "start": 21.509090909090908,
+   "end": 25.945454545454545
+  },
+  {
+   "type": "hook",
+   "text": "THIS TIME, YOU'RE COMING WITH ME",
+   "size": 115,
+   "start": 25.945454545454545,
+   "end": 29.990909090909092
+  }
+ ],
+ "voice": {
+  "clean": true
+ },
+ "music": {
+  "src": "sfx_bed.wav",
+  "start": 0,
+  "gain_db": 0,
+  "duck": false
+ }
+}

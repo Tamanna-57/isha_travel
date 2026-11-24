@@ -1,0 +1,525 @@
+[
+ {
+  "text": "7",
+  "start": 0.145,
+  "end": 0.655,
+  "emph": true
+ },
+ {
+  "text": "saal",
+  "start": 0.655,
+  "end": 0.891,
+  "emph": true
+ },
+ {
+  "text": "ki",
+  "start": 0.891,
+  "end": 1.0
+ },
+ {
+  "text": "wildlife",
+  "start": 1.0,
+  "end": 1.4,
+  "emph": true
+ },
+ {
+  "text": "photography",
+  "start": 1.4,
+  "end": 1.882,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "wo",
+  "start": 1.909,
+  "end": 2.164
+ },
+ {
+  "text": "bhi",
+  "start": 2.164,
+  "end": 2.291
+ },
+ {
+  "text": "ek",
+  "start": 2.291,
+  "end": 2.618
+ },
+ {
+  "text": "hi",
+  "start": 2.618,
+  "end": 2.655
+ },
+ {
+  "text": "reel",
+  "start": 2.655,
+  "end": 2.945,
+  "emph": true
+ },
+ {
+  "text": "mein",
+  "start": 2.945,
+  "end": 3.164,
+  "br": true
+ },
+ {
+  "text": "aur",
+  "start": 3.218,
+  "end": 3.455
+ },
+ {
+  "text": "har",
+  "start": 3.455,
+  "end": 3.709
+ },
+ {
+  "text": "subah",
+  "start": 3.709,
+  "end": 3.982,
+  "emph": true
+ },
+ {
+  "text": "ka",
+  "start": 3.982,
+  "end": 4.182
+ },
+ {
+  "text": "ek",
+  "start": 4.182,
+  "end": 4.436
+ },
+ {
+  "text": "hi",
+  "start": 4.436,
+  "end": 4.509
+ },
+ {
+  "text": "rule",
+  "start": 4.509,
+  "end": 4.764,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "paanch",
+  "start": 4.8,
+  "end": 5.218,
+  "emph": true
+ },
+ {
+  "text": "baje",
+  "start": 5.218,
+  "end": 5.436,
+  "emph": true
+ },
+ {
+  "text": "ka",
+  "start": 5.436,
+  "end": 5.582
+ },
+ {
+  "text": "alarm",
+  "start": 5.582,
+  "end": 5.964,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "Kabhi",
+  "start": 6.127,
+  "end": 6.327
+ },
+ {
+  "text": "ek",
+  "start": 6.327,
+  "end": 6.509
+ },
+ {
+  "text": "wild",
+  "start": 6.509,
+  "end": 6.818,
+  "emph": true
+ },
+ {
+  "text": "dhole",
+  "start": 6.818,
+  "end": 7.091,
+  "emph": true
+ },
+ {
+  "text": "mila",
+  "start": 7.091,
+  "end": 7.418,
+  "br": true
+ },
+ {
+  "text": "sharing",
+  "start": 7.691,
+  "end": 7.891
+ },
+ {
+  "text": "intimate",
+  "start": 7.891,
+  "end": 8.364,
+  "emph": true
+ },
+ {
+  "text": "moments",
+  "start": 8.364,
+  "end": 8.727
+ },
+ {
+  "text": "with",
+  "start": 8.727,
+  "end": 8.964
+ },
+ {
+  "text": "its",
+  "start": 8.964,
+  "end": 9.164
+ },
+ {
+  "text": "mate",
+  "start": 9.164,
+  "end": 9.336,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "Toh",
+  "start": 9.582,
+  "end": 9.673
+ },
+ {
+  "text": "kabhi",
+  "start": 9.673,
+  "end": 10.0
+ },
+ {
+  "text": "ek",
+  "start": 10.0,
+  "end": 10.236
+ },
+ {
+  "text": "Indian",
+  "start": 10.236,
+  "end": 10.6,
+  "emph": true
+ },
+ {
+  "text": "jackal",
+  "start": 10.6,
+  "end": 11.0,
+  "emph": true
+ },
+ {
+  "text": "who",
+  "start": 11.0,
+  "end": 11.091
+ },
+ {
+  "text": "looked",
+  "start": 11.091,
+  "end": 11.418
+ },
+ {
+  "text": "straight",
+  "start": 11.418,
+  "end": 11.855,
+  "emph": true
+ },
+ {
+  "text": "at",
+  "start": 11.855,
+  "end": 12.091
+ },
+ {
+  "text": "the",
+  "start": 12.091,
+  "end": 12.291
+ },
+ {
+  "text": "camera",
+  "start": 12.291,
+  "end": 12.618,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "ya",
+  "start": 12.618,
+  "end": 13.145
+ },
+ {
+  "text": "phir",
+  "start": 13.145,
+  "end": 13.255
+ },
+ {
+  "text": "kabhi",
+  "start": 13.255,
+  "end": 13.527
+ },
+ {
+  "text": "ek",
+  "start": 13.527,
+  "end": 13.782
+ },
+ {
+  "text": "owl",
+  "start": 13.782,
+  "end": 14.291,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "jo",
+  "start": 14.5,
+  "end": 14.536
+ },
+ {
+  "text": "beautifully",
+  "start": 14.536,
+  "end": 15.318,
+  "emph": true
+ },
+ {
+  "text": "camouflage",
+  "start": 15.318,
+  "end": 15.845,
+  "emph": true
+ },
+ {
+  "text": "ho",
+  "start": 15.845,
+  "end": 16.064
+ },
+ {
+  "text": "gaya",
+  "start": 16.064,
+  "end": 16.173
+ },
+ {
+  "text": "tha",
+  "start": 16.173,
+  "end": 16.436,
+  "br": true
+ },
+ {
+  "text": "Aur",
+  "start": 16.609,
+  "end": 16.736
+ },
+ {
+  "text": "ek",
+  "start": 16.736,
+  "end": 16.991
+ },
+ {
+  "text": "din…",
+  "start": 16.991,
+  "end": 17.409,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "ye",
+  "start": 17.518,
+  "end": 17.918,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "Lekin",
+  "start": 19.236,
+  "end": 19.493
+ },
+ {
+  "text": "the",
+  "start": 19.493,
+  "end": 19.647
+ },
+ {
+  "text": "best",
+  "start": 19.647,
+  "end": 19.852,
+  "emph": true
+ },
+ {
+  "text": "moment",
+  "start": 19.852,
+  "end": 20.159,
+  "emph": true
+ },
+ {
+  "text": "kabhi",
+  "start": 20.159,
+  "end": 20.416
+ },
+ {
+  "text": "ek",
+  "start": 20.416,
+  "end": 20.518
+ },
+ {
+  "text": "photo",
+  "start": 20.518,
+  "end": 20.775,
+  "emph": true
+ },
+ {
+  "text": "nahi",
+  "start": 20.775,
+  "end": 20.98
+ },
+ {
+  "text": "hota",
+  "start": 20.98,
+  "end": 21.236,
+  "br": true
+ },
+ {
+  "text": "Wo",
+  "start": 21.609,
+  "end": 21.739
+ },
+ {
+  "text": "second",
+  "start": 21.739,
+  "end": 22.129,
+  "emph": true
+ },
+ {
+  "text": "hota",
+  "start": 22.129,
+  "end": 22.39
+ },
+ {
+  "text": "hai",
+  "start": 22.39,
+  "end": 22.65,
+  "br": true
+ },
+ {
+  "text": "jab",
+  "start": 22.65,
+  "end": 22.845
+ },
+ {
+  "text": "poora",
+  "start": 22.845,
+  "end": 23.17
+ },
+ {
+  "text": "jungle",
+  "start": 23.17,
+  "end": 23.56,
+  "emph": true
+ },
+ {
+  "text": "ekdum",
+  "start": 23.56,
+  "end": 23.885,
+  "emph": true
+ },
+ {
+  "text": "shaant",
+  "start": 23.885,
+  "end": 24.276,
+  "emph": true
+ },
+ {
+  "text": "ho",
+  "start": 24.276,
+  "end": 24.406
+ },
+ {
+  "text": "jaata",
+  "start": 24.406,
+  "end": 24.731
+ },
+ {
+  "text": "hai",
+  "start": 24.731,
+  "end": 24.991,
+  "br": true
+ },
+ {
+  "text": "Aur",
+  "start": 26.118,
+  "end": 26.32
+ },
+ {
+  "text": "iss",
+  "start": 26.32,
+  "end": 26.522,
+  "emph": true
+ },
+ {
+  "text": "baar",
+  "start": 26.522,
+  "end": 26.791,
+  "emph": true
+ },
+ {
+  "text": "tum",
+  "start": 26.791,
+  "end": 26.993
+ },
+ {
+  "text": "mere",
+  "start": 26.993,
+  "end": 27.262
+ },
+ {
+  "text": "saath",
+  "start": 27.262,
+  "end": 27.599,
+  "emph": true
+ },
+ {
+  "text": "chal",
+  "start": 27.599,
+  "end": 27.868
+ },
+ {
+  "text": "rahe",
+  "start": 27.868,
+  "end": 28.137
+ },
+ {
+  "text": "ho",
+  "start": 28.137,
+  "end": 28.339,
+  "br": true
+ },
+ {
+  "text": "through",
+  "start": 28.339,
+  "end": 28.81
+ },
+ {
+  "text": "Lost",
+  "start": 28.81,
+  "end": 29.08,
+  "emph": true
+ },
+ {
+  "text": "&",
+  "start": 29.08,
+  "end": 29.147,
+  "emph": true
+ },
+ {
+  "text": "Free",
+  "start": 29.147,
+  "end": 29.416,
+  "emph": true
+ },
+ {
+  "text": "Safaris",
+  "start": 29.416,
+  "end": 29.955,
+  "emph": true,
+  "br": true
+ }
+]

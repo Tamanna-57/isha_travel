@@ -530,7 +530,8 @@ def paginate(words, style):
         if cur:
             gap = w["start"] - cur[-1]["end"]
             chars = sum(len(x["text"]) + 1 for x in cur) + len(w["text"])
-            if gap > 0.45 or len(cur) >= maxw or chars > maxc or re.search(r"[.?!,;:]$", cur[-1]["text"]):
+            if (gap > 0.45 or len(cur) >= maxw or chars > maxc or re.search(r"[.?!,;:]$", cur[-1]["text"])
+                    or cur[-1].get("br")):                # "br": true in words.json = end the page after this word
                 pages.append(cur); cur = []
         cur.append(w)
     if cur:
