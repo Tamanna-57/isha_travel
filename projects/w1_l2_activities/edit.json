@@ -1,0 +1,206 @@
+{
+ "name": "w1_l2_activities",
+ "format": "A",
+ "grade": "natural",
+ "clips": [
+  {
+   "src": "broll/photos.mp4",
+   "in": 0.0,
+   "out": 12.9,
+   "audio": false,
+   "grade": "none"
+  },
+  {
+   "src": "../../inbox/r1/r1_clip01.mov",
+   "in": 6.3,
+   "out": 8.3,
+   "audio": false,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.06
+  },
+  {
+   "src": "../../inbox/r1/r1_clip06.mov",
+   "in": 3.72,
+   "out": 6.66,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85
+  },
+  {
+   "src": "../../inbox/r1/r1_clip07.mov",
+   "in": 17.5,
+   "out": 20.05,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.08
+  }
+ ],
+ "captions": {
+  "style": "karaoke",
+  "words": "words.json",
+  "y": 1420
+ },
+ "titles": [
+  {
+   "type": "hook",
+   "text": "5 THINGS WE DO",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 175,
+   "y": 110,
+   "start": 0.0,
+   "end": 1.9
+  },
+  {
+   "type": "hook",
+   "text": "ON A JUNGLE SAFARI",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 105,
+   "y": 320,
+   "start": 0.0,
+   "end": 1.9
+  },
+  {
+   "type": "hook",
+   "text": "ONLY ONE IS THE TIGER",
+   "font": "sans_semi",
+   "color": "chalk",
+   "size": 62,
+   "y": 455,
+   "start": 0.55,
+   "end": 1.9
+  },
+  {
+   "type": "hook",
+   "text": "01",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 230,
+   "y": 100,
+   "start": 1.9,
+   "end": 5.0
+  },
+  {
+   "type": "hook",
+   "text": "MORNING OPEN JEEP",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 84,
+   "y": 360,
+   "start": 2.02,
+   "end": 5.0
+  },
+  {
+   "type": "hook",
+   "text": "02",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 230,
+   "y": 100,
+   "start": 5.0,
+   "end": 7.9
+  },
+  {
+   "type": "hook",
+   "text": "EVENING SAFARI",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 100,
+   "y": 360,
+   "start": 5.12,
+   "end": 7.9
+  },
+  {
+   "type": "hook",
+   "text": "03",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 230,
+   "y": 100,
+   "start": 7.9,
+   "end": 10.7
+  },
+  {
+   "type": "hook",
+   "text": "BIRDING WALK",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 100,
+   "y": 360,
+   "start": 8.02,
+   "end": 10.7
+  },
+  {
+   "type": "hook",
+   "text": "04",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 230,
+   "y": 100,
+   "start": 10.7,
+   "end": 12.9
+  },
+  {
+   "type": "hook",
+   "text": "THE SMALL ONES",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 100,
+   "y": 360,
+   "start": 10.82,
+   "end": 12.9
+  },
+  {
+   "type": "hook",
+   "text": "05",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 230,
+   "y": 100,
+   "start": 12.9,
+   "end": 14.9
+  },
+  {
+   "type": "hook",
+   "text": "PHOTOGRAPHY WITH ME",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 84,
+   "y": 360,
+   "start": 13.02,
+   "end": 14.9
+  },
+  {
+   "type": "hook",
+   "text": "COMMENT \"SAFARI\"",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 150,
+   "y": 120,
+   "start": 14.9,
+   "end": 19.983
+  },
+  {
+   "type": "hook",
+   "text": "FOR THE LINK",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 90,
+   "y": 300,
+   "start": 15.05,
+   "end": 19.983
+  }
+ ],
+ "voice": {
+  "clean": true
+ },
+ "music": {
+  "src": "sfx_bed.wav",
+  "start": 0,
+  "gain_db": 0,
+  "duck": false
+ }
+}
