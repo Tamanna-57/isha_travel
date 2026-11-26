@@ -27,7 +27,7 @@ SLIDES = [
      ["can mean more conflict with the", "villages at its edge."], None),
     (L1 / "kingfisher_moss.jpg", 0.69, 0.62, (1.45, 1.6), "top", "WHAT WE DO", "We watch the whole forest.",
      ["•  Small groups: only 4 seats a jeep", "•  We never chase or crowd a sighting.", "    We wait.", "•  Every sighting counts,", "    from kingfisher to dhole"], None),
-    (P / "isha_camera.png", 0.5, 0.40, None, "bottom", None, "Come for the tiger.\nFall for the whole forest.",
+    (T1 / "nightjar.jpg", 0.5, 0.5, None, "fit", None, "Come for the tiger.\nFall for the whole forest.",
      ["Save this  ·  Comment SAFARI for the link"], None),
 ]
 
@@ -68,6 +68,15 @@ def slide(k, spec):
     im = Image.open(path).convert("RGB")
     if lift:
         g, s = lift; im = im.point(lambda v: int(255 * (v / 255) ** (1 / g))); im = ImageEnhance.Color(im).enhance(s)
+    if pos == "fit":                                          # whole photo on black (its edges are black: Isha's nightjar note)
+        canvas = Image.new("RGB", (W, H), (0, 0, 0)); s = W / im.width
+        im = im.resize((W, round(im.height * s)), Image.LANCZOS); canvas.paste(im, (0, 150)); im = canvas
+        d = ImageDraw.Draw(im); y = 150 + im.height if False else 150 + round(1280 * s) + 40
+        d.text((M, y), "AND THE ONES YOU'D DRIVE RIGHT PAST", font=f(BODYB, 28), fill=GOLD); y += 70
+        hf = f(SERIF, 72)
+        for line in ("Come for the tiger.", "Fall for the whole forest."): d.text((M, y), line, font=hf, fill=GOLD); y += 86
+        d.text((M, y + 24), "Save this  ·  Comment SAFARI for the link", font=f(BODY, 38), fill=WHITE)
+        return im
     im = cover_crop(im, fx, fy)
     if pos == "cover":
         im = gradient(im, "bottom", 0.92, 0.5)
