@@ -1,0 +1,9 @@
+Real recordings from Mixkit (mixkit.co, Mixkit Sound Effects Free License: free for commercial use, no attribution required).
+alarm_clock_ring_mixkit1003.mp3  'Morning clock alarm'
+morning_birds_mixkit2472.mp3  'Morning birds'
+car_engine_start_mixkit1566.mp3  'Car engine start'
+keys_mixkit1558.mp3  'Keys moving'
+quiet_forest_mixkit1220.mp3  'Quiet forest ambience'
+leaves_step_mixkit2429.mp3  'Stepping on leaves in a forest'
+leaves_rustle_mixkit2430.mp3  'Dry leaves rustling'
+branch_snap_jungle_mixkit2423.mp3  'Snapping branch in jungle ambience'
