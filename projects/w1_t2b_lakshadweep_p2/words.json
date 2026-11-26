@@ -1,1 +1,553 @@
-[]
+[
+ {
+  "text": "Yaar",
+  "start": 0.0,
+  "end": 0.065,
+  "br": true
+ },
+ {
+  "text": "aur",
+  "start": 0.25,
+  "end": 0.361
+ },
+ {
+  "text": "ek",
+  "start": 0.361,
+  "end": 0.528
+ },
+ {
+  "text": "dive",
+  "start": 0.528,
+  "end": 0.731,
+  "emph": true
+ },
+ {
+  "text": "toh",
+  "start": 0.731,
+  "end": 1.046
+ },
+ {
+  "text": "kabhi",
+  "start": 1.046,
+  "end": 1.269
+ },
+ {
+  "text": "enough",
+  "start": 1.269,
+  "end": 1.546,
+  "emph": true
+ },
+ {
+  "text": "nahi",
+  "start": 1.546,
+  "end": 1.676
+ },
+ {
+  "text": "hota",
+  "start": 1.676,
+  "end": 1.676,
+  "br": true
+ },
+ {
+  "text": "So",
+  "start": 1.685,
+  "end": 1.87
+ },
+ {
+  "text": "I",
+  "start": 1.87,
+  "end": 2.056
+ },
+ {
+  "text": "went",
+  "start": 2.056,
+  "end": 2.37
+ },
+ {
+  "text": "for",
+  "start": 2.37,
+  "end": 2.63
+ },
+ {
+  "text": "round",
+  "start": 2.63,
+  "end": 2.87,
+  "emph": true
+ },
+ {
+  "text": "2",
+  "start": 2.87,
+  "end": 2.972,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "Open",
+  "start": 3.176,
+  "end": 3.343,
+  "emph": true
+ },
+ {
+  "text": "waters",
+  "start": 3.343,
+  "end": 3.769,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "deep",
+  "start": 4.065,
+  "end": 4.343,
+  "emph": true
+ },
+ {
+  "text": "sea",
+  "start": 4.343,
+  "end": 4.583,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "12",
+  "start": 4.676,
+  "end": 5.046,
+  "emph": true
+ },
+ {
+  "text": "metres",
+  "start": 5.046,
+  "end": 5.509,
+  "emph": true
+ },
+ {
+  "text": "down",
+  "start": 5.509,
+  "end": 5.833,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "Aur",
+  "start": 6.056,
+  "end": 6.074
+ },
+ {
+  "text": "mera",
+  "start": 6.074,
+  "end": 6.333
+ },
+ {
+  "text": "dil",
+  "start": 6.333,
+  "end": 6.5,
+  "emph": true
+ },
+ {
+  "text": "na",
+  "start": 6.5,
+  "end": 6.648
+ },
+ {
+  "text": "ocean",
+  "start": 6.648,
+  "end": 7.037,
+  "emph": true
+ },
+ {
+  "text": "se",
+  "start": 7.037,
+  "end": 7.185
+ },
+ {
+  "text": "bhi",
+  "start": 7.185,
+  "end": 7.333
+ },
+ {
+  "text": "zyada",
+  "start": 7.333,
+  "end": 7.537
+ },
+ {
+  "text": "dhadak",
+  "start": 7.537,
+  "end": 7.889,
+  "emph": true
+ },
+ {
+  "text": "raha",
+  "start": 7.889,
+  "end": 8.0
+ },
+ {
+  "text": "tha",
+  "start": 8.0,
+  "end": 8.0,
+  "br": true
+ },
+ {
+  "text": "And",
+  "start": 8.093,
+  "end": 8.352
+ },
+ {
+  "text": "phir",
+  "start": 8.352,
+  "end": 8.556
+ },
+ {
+  "text": "bhi",
+  "start": 8.556,
+  "end": 9.037,
+  "br": true
+ },
+ {
+  "text": "I",
+  "start": 9.111,
+  "end": 9.296
+ },
+ {
+  "text": "had",
+  "start": 9.296,
+  "end": 9.537
+ },
+ {
+  "text": "never",
+  "start": 9.537,
+  "end": 9.852
+ },
+ {
+  "text": "felt",
+  "start": 9.852,
+  "end": 10.111
+ },
+ {
+  "text": "so",
+  "start": 10.111,
+  "end": 10.407
+ },
+ {
+  "text": "calm",
+  "start": 10.407,
+  "end": 10.648,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "But",
+  "start": 10.778,
+  "end": 10.926
+ },
+ {
+  "text": "this",
+  "start": 10.926,
+  "end": 11.204
+ },
+ {
+  "text": "is",
+  "start": 11.204,
+  "end": 11.333
+ },
+ {
+  "text": "when",
+  "start": 11.333,
+  "end": 11.444
+ },
+ {
+  "text": "you",
+  "start": 11.444,
+  "end": 11.685
+ },
+ {
+  "text": "realise",
+  "start": 11.685,
+  "end": 12.037,
+  "br": true
+ },
+ {
+  "text": "ki",
+  "start": 12.259,
+  "end": 12.278
+ },
+ {
+  "text": "asli",
+  "start": 12.278,
+  "end": 12.667
+ },
+ {
+  "text": "magic",
+  "start": 12.667,
+  "end": 12.981,
+  "emph": true
+ },
+ {
+  "text": "na",
+  "start": 12.981,
+  "end": 13.333
+ },
+ {
+  "text": "raat",
+  "start": 13.333,
+  "end": 13.722,
+  "emph": true
+ },
+ {
+  "text": "mein",
+  "start": 13.722,
+  "end": 13.833
+ },
+ {
+  "text": "hai",
+  "start": 13.833,
+  "end": 13.898,
+  "br": true
+ },
+ {
+  "text": "So",
+  "start": 13.917,
+  "end": 14.065
+ },
+ {
+  "text": "raat",
+  "start": 14.065,
+  "end": 14.38,
+  "emph": true
+ },
+ {
+  "text": "ke",
+  "start": 14.38,
+  "end": 14.435
+ },
+ {
+  "text": "10",
+  "start": 14.435,
+  "end": 14.713,
+  "emph": true
+ },
+ {
+  "text": "baje",
+  "start": 14.713,
+  "end": 14.88,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "you",
+  "start": 14.954,
+  "end": 15.046
+ },
+ {
+  "text": "leave",
+  "start": 15.046,
+  "end": 15.361
+ },
+ {
+  "text": "everything",
+  "start": 15.361,
+  "end": 15.935,
+  "emph": true
+ },
+ {
+  "text": "behind",
+  "start": 15.935,
+  "end": 16.343
+ },
+ {
+  "text": "and",
+  "start": 16.343,
+  "end": 16.528
+ },
+ {
+  "text": "walk",
+  "start": 16.528,
+  "end": 16.731
+ },
+ {
+  "text": "into",
+  "start": 16.731,
+  "end": 16.935
+ },
+ {
+  "text": "the",
+  "start": 16.935,
+  "end": 17.102
+ },
+ {
+  "text": "dark",
+  "start": 17.102,
+  "end": 17.343,
+  "emph": true
+ },
+ {
+  "text": "ocean",
+  "start": 17.343,
+  "end": 17.694,
+  "emph": true
+ },
+ {
+  "text": "with",
+  "start": 17.694,
+  "end": 17.954
+ },
+ {
+  "text": "your",
+  "start": 17.954,
+  "end": 18.213
+ },
+ {
+  "text": "people",
+  "start": 18.213,
+  "end": 18.398,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "Not",
+  "start": 18.463,
+  "end": 18.778
+ },
+ {
+  "text": "a",
+  "start": 18.778,
+  "end": 19.074
+ },
+ {
+  "text": "single",
+  "start": 19.074,
+  "end": 19.407
+ },
+ {
+  "text": "light",
+  "start": 19.407,
+  "end": 19.741,
+  "emph": true
+ },
+ {
+  "text": "in",
+  "start": 19.741,
+  "end": 20.148
+ },
+ {
+  "text": "sight",
+  "start": 20.148,
+  "end": 20.37
+ },
+ {
+  "text": "other",
+  "start": 20.37,
+  "end": 20.63
+ },
+ {
+  "text": "than",
+  "start": 20.63,
+  "end": 20.833
+ },
+ {
+  "text": "the",
+  "start": 20.833,
+  "end": 21.037
+ },
+ {
+  "text": "sky",
+  "start": 21.037,
+  "end": 21.241
+ },
+ {
+  "text": "full",
+  "start": 21.241,
+  "end": 21.722
+ },
+ {
+  "text": "of",
+  "start": 21.722,
+  "end": 21.861
+ },
+ {
+  "text": "stars",
+  "start": 21.861,
+  "end": 21.861,
+  "emph": true,
+  "br": true
+ },
+ {
+  "text": "And",
+  "start": 21.861,
+  "end": 22.083
+ },
+ {
+  "text": "this",
+  "start": 22.083,
+  "end": 22.361
+ },
+ {
+  "text": "is",
+  "start": 22.361,
+  "end": 22.75
+ },
+ {
+  "text": "how",
+  "start": 22.75,
+  "end": 22.935
+ },
+ {
+  "text": "one",
+  "start": 22.935,
+  "end": 23.306
+ },
+ {
+  "text": "random",
+  "start": 23.306,
+  "end": 23.694,
+  "emph": true
+ },
+ {
+  "text": "yes",
+  "start": 23.694,
+  "end": 23.972,
+  "emph": true
+ },
+ {
+  "text": "becomes",
+  "start": 23.972,
+  "end": 24.287
+ },
+ {
+  "text": "the",
+  "start": 24.287,
+  "end": 24.528
+ },
+ {
+  "text": "most",
+  "start": 24.528,
+  "end": 24.676
+ },
+ {
+  "text": "peaceful",
+  "start": 24.676,
+  "end": 25.176,
+  "emph": true
+ },
+ {
+  "text": "moment",
+  "start": 25.176,
+  "end": 25.546,
+  "emph": true
+ },
+ {
+  "text": "of",
+  "start": 25.546,
+  "end": 25.75
+ },
+ {
+  "text": "your",
+  "start": 25.75,
+  "end": 25.861
+ },
+ {
+  "text": "life",
+  "start": 25.861,
+  "end": 26.009,
+  "emph": true,
+  "br": true
+ }
+]

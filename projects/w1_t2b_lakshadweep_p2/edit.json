@@ -1,19 +1,194 @@
 {
  "name": "w1_t2b_lakshadweep_p2",
  "format": "A",
- "grade": "none",
+ "grade": "natural",
  "clips": [
   {
-   "src": "../../inbox/lakshadweep_part2/lakshadweep_reel_part2_no_music.mp4",
-   "in": 0.0,
-   "out": 11.633,
-   "grade": "none"
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 0.73,
+   "out": 2.54,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.0,
+   "broll": []
   },
   {
-   "src": "../../inbox/lakshadweep_part2/lakshadweep_reel_part2_no_music.mp4",
-   "in": 11.7,
-   "out": 34.7,
-   "grade": "none"
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 3.35,
+   "out": 4.75,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.08,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3971.MOV",
+     "in": 0.6,
+     "at": 0.0,
+     "dur": 1.352,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 5.22,
+   "out": 6.96,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.0,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3971.MOV",
+     "in": 1.952,
+     "at": 0.0,
+     "dur": 0.157,
+     "grade": "natural",
+     "sat": 0.9
+    },
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3972.MOV",
+     "in": 0.4,
+     "at": 0.157,
+     "dur": 1.509,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 7.28,
+   "out": 8.63,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.08,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3815.MP4",
+     "in": 0.5,
+     "at": 0.0,
+     "dur": 1.306,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 9.02,
+   "out": 11.36,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.0,
+   "broll": []
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 11.66,
+   "out": 18.029999999999998,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.08,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3976.MP4",
+     "in": 9.0,
+     "at": 1.491,
+     "dur": 1.204,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 18.400000000000002,
+   "out": 23.259999999999998,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.0,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3884.MOV",
+     "in": 0.3,
+     "at": 0.0,
+     "dur": 1.009,
+     "grade": "natural",
+     "sat": 0.9
+    },
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3970.MOV",
+     "in": 2.0,
+     "at": 1.009,
+     "dur": 1.389,
+     "grade": "natural",
+     "sat": 0.9
+    },
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3979.MP4",
+     "in": 0.3,
+     "at": 2.398,
+     "dur": 2.157,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 23.830000000000002,
+   "out": 27.569999999999997,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.08,
+   "broll": []
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 28.48,
+   "out": 31.439999999999998,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.0,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3889.MOV",
+     "in": 0.3,
+     "at": 2.38,
+     "dur": 0.417,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/IMG_3982.MP4",
+   "in": 31.76,
+   "out": 33.4,
+   "speed": 1.08,
+   "grade": "natural",
+   "sat": 0.85,
+   "punch": 1.08,
+   "broll": [
+    {
+     "src": "../../inbox/lakshadweep_part2/IMG_3889.MOV",
+     "in": 0.717,
+     "at": 0.0,
+     "dur": 1.574,
+     "grade": "natural",
+     "sat": 0.9
+    }
+   ]
   },
   {
    "src": "../w1_l1_details_out/broll/isha_tiger_road.mp4",
@@ -26,7 +201,7 @@
  "captions": {
   "style": "karaoke",
   "words": "words.json",
-  "enabled": false
+  "y": 1420
  },
  "titles": [
   {
@@ -37,7 +212,7 @@
    "size": 190,
    "y": 110,
    "start": 0.0,
-   "end": 3.0
+   "end": 2.8
   },
   {
    "type": "hook",
@@ -47,7 +222,17 @@
    "size": 150,
    "y": 330,
    "start": 0.0,
-   "end": 3.0
+   "end": 2.8
+  },
+  {
+   "type": "hook",
+   "text": "12 M DOWN",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 220,
+   "y": 150,
+   "start": 4.675925925925926,
+   "end": 6.275925925925925
   },
   {
    "type": "hook",
@@ -56,8 +241,8 @@
    "color": "marigold",
    "size": 250,
    "y": 160,
-   "start": 34.633,
-   "end": 37.233000000000004
+   "start": 26.120370370370352,
+   "end": 28.720370370370354
   },
   {
    "type": "hook",
@@ -66,18 +251,21 @@
    "color": "chalk",
    "size": 175,
    "y": 440,
-   "start": 34.883,
-   "end": 37.233000000000004
+   "start": 26.370370370370352,
+   "end": 28.720370370370354
   },
   {
    "type": "hook",
    "text": "COMMENT \"SAFARI\" FOR THE LINK",
    "size": 105,
    "y": 1330,
-   "start": 35.233000000000004,
-   "end": 37.233000000000004
+   "start": 26.720370370370354,
+   "end": 28.720370370370354
   }
  ],
+ "voice": {
+  "clean": true
+ },
  "music": {
   "src": "sfx_bed.wav",
   "start": 0,
