@@ -1,0 +1,87 @@
+{
+ "name": "w1_t2b_lakshadweep_p2",
+ "format": "A",
+ "grade": "none",
+ "clips": [
+  {
+   "src": "../../inbox/lakshadweep_part2/lakshadweep_reel_part2_no_music.mp4",
+   "in": 0.0,
+   "out": 11.633,
+   "grade": "none"
+  },
+  {
+   "src": "../../inbox/lakshadweep_part2/lakshadweep_reel_part2_no_music.mp4",
+   "in": 11.7,
+   "out": 34.7,
+   "grade": "none"
+  },
+  {
+   "src": "../w1_l1_details_out/broll/isha_tiger_road.mp4",
+   "in": 0.0,
+   "out": 2.6,
+   "audio": false,
+   "grade": "none"
+  }
+ ],
+ "captions": {
+  "style": "karaoke",
+  "words": "words.json",
+  "enabled": false
+ },
+ "titles": [
+  {
+   "type": "hook",
+   "text": "LAKSHADWEEP",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 190,
+   "y": 110,
+   "start": 0.0,
+   "end": 3.0
+  },
+  {
+   "type": "hook",
+   "text": "PART 2",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 150,
+   "y": 330,
+   "start": 0.0,
+   "end": 3.0
+  },
+  {
+   "type": "hook",
+   "text": "PART 3?",
+   "font": "condensed",
+   "color": "marigold",
+   "size": 250,
+   "y": 160,
+   "start": 34.633,
+   "end": 37.233000000000004
+  },
+  {
+   "type": "hook",
+   "text": "THE JUNGLE.",
+   "font": "condensed",
+   "color": "chalk",
+   "size": 175,
+   "y": 440,
+   "start": 34.883,
+   "end": 37.233000000000004
+  },
+  {
+   "type": "hook",
+   "text": "COMMENT \"SAFARI\" FOR THE LINK",
+   "size": 105,
+   "y": 1330,
+   "start": 35.233000000000004,
+   "end": 37.233000000000004
+  }
+ ],
+ "music": {
+  "src": "sfx_bed.wav",
+  "start": 0,
+  "gain_db": 0,
+  "duck": false
+ }
+}
