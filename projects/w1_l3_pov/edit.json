@@ -4,51 +4,44 @@
  "grade": "none",
  "clips": [
   {
-   "src": "broll/black.mp4",
-   "in": 0.0,
-   "out": 1.3,
-   "audio": false,
-   "grade": "none"
-  },
-  {
-   "src": "broll/isha_dawn.mp4",
+   "src": "broll/vf_dawn.mp4",
    "in": 0.0,
    "out": 2.2,
    "audio": false,
    "grade": "none"
   },
   {
-   "src": "../w1_t1_7years/broll/isha_kingfisher_moss.mp4",
-   "in": 0.6,
-   "out": 2.6,
-   "audio": false,
-   "grade": "none"
-  },
-  {
-   "src": "../w1_t1_7years/broll/isha_jackal.mp4",
-   "in": 0.4,
-   "out": 2.4,
-   "audio": false,
-   "grade": "none"
-  },
-  {
-   "src": "../w1_t1_7years/broll/isha_owl.mp4",
-   "in": 0.4,
+   "src": "broll/vf_kingfisher.mp4",
+   "in": 0.0,
    "out": 1.9,
    "audio": false,
    "grade": "none"
   },
   {
-   "src": "../w1_l1_details_out/broll/isha_tiger_walk.mp4",
+   "src": "broll/vf_jackal.mp4",
    "in": 0.0,
-   "out": 2.4,
+   "out": 2.0,
    "audio": false,
    "grade": "none"
   },
   {
-   "src": "../w1_l1_details_out/broll/isha_jeeps_tiger.mp4",
+   "src": "broll/vf_owl.mp4",
    "in": 0.0,
-   "out": 2.2,
+   "out": 1.7,
+   "audio": false,
+   "grade": "none"
+  },
+  {
+   "src": "broll/vf_tiger.mp4",
+   "in": 0.0,
+   "out": 2.8,
+   "audio": false,
+   "grade": "none"
+  },
+  {
+   "src": "broll/vf_jeeps.mp4",
+   "in": 0.0,
+   "out": 2.1,
    "audio": false,
    "grade": "none"
   },
@@ -73,65 +66,69 @@
    "text": "POV: 5:30 AM",
    "font": "condensed",
    "color": "marigold",
-   "size": 260,
-   "y": 560,
+   "size": 200,
+   "y": 130,
    "start": 0,
-   "end": 1.3
+   "end": 2.2
   },
   {
    "type": "hook",
    "text": "YOUR FIRST JUNGLE SAFARI",
    "font": "condensed",
    "color": "chalk",
-   "size": 140,
-   "y": 860,
+   "size": 110,
+   "y": 345,
    "start": 0,
-   "end": 1.3
-  },
-  {
-   "type": "hook",
-   "text": "5:47 AM \u00b7 OPEN JEEP",
-   "size": 115,
-   "start": 1.5,
-   "end": 3.5
+   "end": 2.2
   },
   {
    "type": "hook",
    "text": "ENGINE OFF.",
    "size": 125,
-   "start": 3.5,
-   "end": 5.5
+   "y": 300,
+   "start": 2.2,
+   "end": 4.1
   },
   {
    "type": "hook",
-   "text": "ALARM CALL. NOBODY MOVES.",
-   "size": 115,
-   "start": 5.5,
-   "end": 7.5
-  },
-  {
-   "type": "hook",
-   "text": "WAIT FOR IT\u2026",
+   "text": "ALARM CALL.",
    "size": 125,
-   "start": 7.5,
-   "end": 9.0
+   "y": 300,
+   "start": 4.1,
+   "end": 6.1
   },
   {
    "type": "hook",
-   "text": "WORTH THE ALARM.",
+   "text": "SOMETHING'S COMING\u2026",
+   "size": 120,
+   "y": 300,
+   "start": 6.1,
+   "end": 7.8
+  },
+  {
+   "type": "hook",
+   "text": "THERE.",
    "font": "condensed",
    "color": "marigold",
-   "size": 200,
-   "y": 150,
-   "start": 11.4,
-   "end": 13.600000000000001
+   "size": 260,
+   "y": 170,
+   "start": 8.15,
+   "end": 10.6
+  },
+  {
+   "type": "hook",
+   "text": "WORTH THE 5:30 ALARM.",
+   "size": 115,
+   "y": 300,
+   "start": 10.6,
+   "end": 12.7
   },
   {
    "type": "hook",
    "text": "SEND THIS TO YOUR 5 AM FRIEND",
    "size": 110,
-   "start": 13.600000000000001,
-   "end": 15.100000000000001
+   "start": 12.7,
+   "end": 14.2
   }
  ],
  "music": {
